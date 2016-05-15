@@ -1,0 +1,22 @@
+<{extends '../Layouts/default.html'}>
+
+<{block 'content'}>
+  <div class="goumai width_thousand">
+    <div class="title font_green">购买点卡</div>
+    <div class="demo">
+      <{foreach item=p from=$products}>
+      <div class="dklist dkyellow" data-id="<{$p.id}>"><dl><span><{$p.title}></span></dl><dt><span><{$p.price}>元</span></dt><dd><a href="/home/product/buy/<{$p.id}>" class="blue_01 buybtn" target="_blank">立即购买</a></dd></div>
+      <{/foreach}>
+    </div>
+  </div>
+    
+  <div class="notice width_thousand">
+    <div class="title font_green bold">注意事项</div>
+    <div class="demo">
+      <p>&#8226; 点数在你支付成功后自动充值到您的账户中；<br /><p>&#8226; 支付的过程中，请慢慢操作，不要随意刷新网页。如果支付失败，请重新下单支付；<br /><p>&#8226; 目前支持支付宝、财付通和易宝在线充值，网银在线充值，以及银行汇款支付；<br /><p>&#8226; 请在充值之前确认清楚，如须帮助，请联系客服。《、</div>
+  </div>
+<{/block}>
+<{block 'footer_script'}>
+<script type="text/javascript">
+</script>
+<{/block}>
