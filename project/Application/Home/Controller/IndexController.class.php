@@ -9,6 +9,9 @@ class IndexController extends Controller {
         if (session('?passport')) {
             $this->redirect('/home/product/lists');
         }
+        else {
+            $this->redirect('/login');
+        }
         $this->display();
     }
 
