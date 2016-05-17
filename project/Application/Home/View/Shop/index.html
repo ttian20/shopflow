@@ -1,0 +1,72 @@
+<{extends '../Layouts/default.html'}>
+<{block 'content'}>
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="/" class="maincolor">首页</a> <span class="c-999 en">&gt;</span><span class="c-666">绑定店铺</span> <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="panel panel-default mt-20">
+                <div class="panel-header">选择平台</div>
+                <div class="panel-body">
+                    <ul class="choosebox clearfix">
+                        <li>
+                            <input type="radio" name="name" value="taobao" id="" />
+                            <a href="javascript:void(0);" class="platform_radioToggle current"><span class="value">淘宝</span></a>
+                        </li>
+                        <li>
+                            <input type="radio" name="name" value="tianmao" id="" />
+                            <a href="javascript:void(0);" class="platform_radioToggle"><span class="value">天猫</span></a>
+                        </li>
+                        <li>
+                            <input type="radio" name="name" value="jingdong" id="" />
+                            <a href="javascript:void(0);" class="platform_radioToggle"><span class="value">京东</span></a>
+                        </li>
+                        <li>
+                            <input type="radio" name="name" value="mogujie" id="" />
+                            <a href="javascript:void(0);" class="platform_radioToggle"><span class="value">蘑菇街</span></a>
+                        </li>
+                        
+                    </ul>
+                    <div class="rtBindShop">
+                        <a href="javascript:void(0);" id="btnBindShop" class="" onclick="bindShop(this,'10001')"><span class="value">绑定新店铺</span></a>
+                        <span class="grey f11">(仅任务对应的买手可见，不会被泄漏)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default mt-20">
+                <div class="panel-header">已绑定的店铺</div>
+                <div class="panel-body">
+                    <table class="table table-border table-bordered table-bg">
+                        <thead>
+                            <tr class="text-c">
+                                <th>店铺账号</th>
+                                <th>发货人姓名</th>
+                                <th>发货人电话</th>
+                                <th>发货地区</th>
+                                <th>快递揽件网点编码</th>
+                                <th>店铺网址</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-c">
+                                <td>洛奇服饰</td>
+                                <td>刘生</td>
+                                <td>02034730239</td>
+                                <td>广东省-广州市-番禺区</td>
+                                <td>511487</td>
+                                <td><a class="maincolor" href="#">http://luckyjean...</a></td>
+                                <td><a class="btn btn-success" href="javascript:;" onclick="bindShop(this,'10001')">修改店铺信息</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </article>
+        <footer class="footer">
+            <p>Copyright &copy;2015 H-ui.admin v2.4 All Rights Reserved.<br>
+                本后台系统由<a href="http://www.h-ui.net/" target="_blank" title="H-ui前端框架">H-ui前端框架</a>提供前端技术支持</p>
+        </footer>
+    </div>
+</section>
+
+<{/block}>
