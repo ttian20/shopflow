@@ -1,0 +1,133 @@
+<!--_menu 作为公共模版分离出去-->
+<aside class="Hui-aside">
+    <input runat="server" id="divScrollValue" type="hidden" value="" />
+    <div class="menu_dropdown bk_2">
+            <dl id="menu-person">
+                <dt><i class="Hui-iconfont">&#xe705;</i> 个人中心<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="/home/user" title="个人中心">个人中心</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <{*
+            <dl id="menu-workOrder">
+                <dt><i class="Hui-iconfont">&#xe6b3;</i> 我的工单<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="workOrder.html" title="我的工单">我的工单</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            *}>
+            <dl id="menu-shop">
+                <dt><i class="Hui-iconfont">&#xe66a;</i> 绑定店铺<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="/home/shop" title="绑定店铺">绑定店铺</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-tasks">
+                <dt><i class="Hui-iconfont">&#xe681;</i> 我的任务<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="/home/task" title="我的任务">我的任务</a></li>
+                        <li><a href="/home/task/traffic" title="流量任务">流量任务</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <{*
+            <dl id="menu-sellerOrder">
+                <dt><i class="Hui-iconfont">&#xe627;</i> 查看订单<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="sellerOrder.html" title="查看订单">查看订单</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-publish">
+                <dt><i class="Hui-iconfont">&#xe692;</i> 发布任务<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="publish.html" title="发布任务">发布任务</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            *}>
+            <dl id="menu-findflow">
+                <dt><i class="Hui-iconfont">&#xe695;</i> 查看流量<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="findflow.html" title="查看流量">查看流量</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-publishflow">
+                <dt><i class="Hui-iconfont">&#xe60c;</i> 发布流量<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="flow.html" title="发布流量">发布流量</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-bill">
+                <dt><i class="Hui-iconfont">&#xe6b6;</i> 查看账单<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="bill-list.html" title="查看账单">查看账单</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-money">
+                <dt><i class="Hui-iconfont">&#xe63a;</i> 资金管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="money.html" title="资金管理">资金管理</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-withdraw">
+                <dt><i class="Hui-iconfont">&#xe628;</i> 提现管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="withdraw.html" title="提现管理">提现管理</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-invite">
+                <dt><i class="Hui-iconfont">&#xe62b;</i> 邀请好友<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="invite.html" title="邀请好友">邀请好友</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-taskInvite">
+                <dt><i class="Hui-iconfont">&#xe6bb;</i> 任务奖励<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="taskInvite.html" title="任务奖励">任务奖励</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-suggest">
+                <dt><i class="Hui-iconfont">&#xe691;</i> 意见建议<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="suggest.html" title="意见建议">意见建议</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl id="menu-config">
+                <dt><i class="Hui-iconfont">&#xe63c;</i> 个性设置<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        <li><a href="sellconfig.html" title="个性设置">个性设置</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+</aside>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+<!--/_menu 作为公共模版分离出去-->

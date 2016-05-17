@@ -7,7 +7,7 @@ class IndexController extends Controller {
             $this->assign('error', $_GET['err']);
         }
         if (session('?passport')) {
-            $this->redirect('/home/product/lists');
+            $this->redirect('/home/desktop');
         }
         else {
             $this->redirect('/login');

@@ -1,94 +1,53 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>流量云</title>
-<link href="/src/css/public.css" rel="stylesheet" type="text/css" />
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<LINK rel="Bookmark" href="/favicon.ico" >
+<LINK rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/lib/html5.js"></script>
+<script type="text/javascript" src="/lib/respond.min.js"></script>
+<script type="text/javascript" src="/lib/PIE_IE678.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/static/h-ui/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="/lib/Hui-iconfont/1.0.7/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="/lib/icheck/icheck.css" />
+<link rel="stylesheet" type="text/css" href="/static/h-ui/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="/static/h-ui/css/style.css" />
 <{block 'style'}>
 <{/block}>
-<script type="text/javascript" src="/src/js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="/src/js/jquery.caroufredsel-6.0.4-packed.js" ></script>
-<script type="text/javascript" src="/src/js/tankuan.js" ></script>
+
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--/meta 作为公共模版分离出去-->
+<title><{$title}></title>
+<meta name="keywords" content="shopflow">
+<meta name="description" content="shopflow">
+
 <{block 'header_script'}>
 <{/block}>
 </head>
-
 <body>
-  <{include file="../Common/header.html"}>
-  <{block 'content'}>
-  <{/block}>
-  <{include file="../Common/footer.html"}>
 
 
-<!--弹框开始-->
-  <div id="screen"></div><!--screen end-->
+<{include file="../Common/header.html"}>
+<{include file="../Common/menu.html"}>
+<{block "content"}>
+<{/block}>
 
-  <div class="popbox">
-	<div class="demo biaozhun">
-	  <ul>
-      
-        <div class="title">收费标准</div>
-        <div class="list">
-          <dl><span class="font14 font_green bold">基础IP费：</span></dl>
-          <dt>
-            <li>111,<font class="font_orange">222</font></li>
-            <li>111,<font class="font_orange">222</font></li>
-            <li>111,<font class="font_orange">222</font></li>
-            <li>111,<font class="font_orange">222</font></li>
-            <li class="zhushi">注：as发大水法撒旦发射点发</li>
-          </dt>
-        </div>
-        <div class="list">
-          <dl><span class="font14 font_green bold">增值服务费：</span><font class="font_yellow">提示文字</font></dl>
-          <dt>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li><font class="font_blue02 bold">10-15</font>秒，加收基础IP费用<font class="font_orange">0.5</font>倍的流量费</li>
-            <li class="zhushi">注：as发大水法撒旦发射点发</li>
-          </dt>
-        </div>
-        <div class="list">
-          <dl><span class="font14 font_green bold">折扣优惠：</span><font class="font_yellow">提示文字</font></dl>
-          <dt>
-            <li>一次性订购<font class="font_blue02 bold">30</font>天以上服务，按照<font class="font_orange">9.5</font>折</li>
-            <li>一次性订购<font class="font_blue02 bold">30</font>天以上服务，按照<font class="font_orange">9.5</font>折</li>
-            <li>一次性订购<font class="font_blue02 bold">30</font>天以上服务，按照<font class="font_orange">9.5</font>折</li>
-            <li>一次性订购<font class="font_blue02 bold">30</font>天以上服务，按照<font class="font_orange">9.5</font>折</li>
-            <li class="zhushi">注：as发大水法撒旦发射点发</li>
-          </dt>
-        </div>
-        <div class="buy" style="text-align:center;"><input type="button" value="立即去充值" name=""  style="border:none;background:#f60;color:#fff;font:18px '微软雅黑'; cursor:pointer;width:260px;height:50px;font-weight:bold;"/></div>
-	  </ul>
-	</div>
-	<div class="close"><a class="close-btn" href="#"></a></div>
-  </div>
-  <!--弹框结束-->
+<{include file="../Common/footer.html"}>
+
+<!--请在下方写此页面业务相关的脚本-->
 <{block 'footer_script'}>
 <{/block}> 
+<!--/请在上方写此页面业务相关的脚本-->
 </body>
 </html>
