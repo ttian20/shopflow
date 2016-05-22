@@ -119,10 +119,13 @@ $(function(){
         focusCleanup:true,
         success:"valid",
         submitHandler:function(form){
+            send('/home/index/reg', $(form).serialize(), 'post');
+            /*
             $(form).ajaxSubmit();
             var index = parent.layer.getFrameIndex(window.name);
             parent.$('.btn-refresh').click();
             parent.layer.close(index);
+            */
         }
     });
 });
