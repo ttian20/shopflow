@@ -25,7 +25,7 @@ class IndexController extends Controller {
             $passport = $res['data']['passport'];
             unset($passport['password'], $passport['salt']);
             session('passport', $passport);
-            echo json_encode(array('status' => 'success', 'data' => array('redirect_url' => '/home/product/lists')));
+            echo json_encode(array('status' => 'success', 'data' => array('redirect_url' => '/home/desktop')));
             exit;
         }
         else {
