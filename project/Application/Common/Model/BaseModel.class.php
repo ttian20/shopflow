@@ -21,7 +21,7 @@ class BaseModel extends Model {
         return $row;
     }
 
-    public function getList($filter, $limit=10, $page=1, $order="update_time desc") {
+    public function getList($filter, $limit=10, $page=1, $order="updated_at desc") {
         $row = $this->where($filter)->limit($limit)->page($page)->order($order)->select();
         return $row;
     }

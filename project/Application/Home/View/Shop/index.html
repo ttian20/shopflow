@@ -13,11 +13,11 @@
                             <a href="javascript:void(0);" class="platform_radioToggle current"><span class="value">淘宝</span></a>
                         </li>
                         <li>
-                            <input type="radio" name="name" value="tianmao" id="" />
+                            <input type="radio" name="name" value="tmall" id="" />
                             <a href="javascript:void(0);" class="platform_radioToggle"><span class="value">天猫</span></a>
                         </li>
                         <li>
-                            <input type="radio" name="name" value="jingdong" id="" />
+                            <input type="radio" name="name" value="jd" id="" />
                             <a href="javascript:void(0);" class="platform_radioToggle"><span class="value">京东</span></a>
                         </li>
                         <li>
@@ -48,24 +48,26 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <{foreach item=shop from=$shops}>
                             <tr class="text-c">
-                                <td>洛奇服饰</td>
-                                <td>刘生</td>
-                                <td>02034730239</td>
-                                <td>广东省-广州市-番禺区</td>
-                                <td>511487</td>
-                                <td><a class="maincolor" href="#">http://luckyjean...</a></td>
+                                <td><{$shop.shop_name}></td>
+                                <td><{$shop.sender_name}></td>
+                                <td><{$shop.sender_mobile}></td>
+                                <td><{$shop.sender_province}>-<{$shop.sender_city}>-<{$shop.sender_district}></td>
+                                <td><{$shop.sender_code}></td>
+                                <td><a class="maincolor" href="<{$shop.shop_url}>"><{$shop.shop_url}></a></td>
                                 <td><a class="btn btn-success" href="javascript:;" onclick="bindShop(this,'10001')">修改店铺信息</a></td>
                             </tr>
+                            <{foreachelse}>
+                            <tr class="text-c">
+                                <td colspan="7">暂无绑定店铺</td>
+                            </tr>
+                            <{/foreach}>
                         </tbody>
                     </table>
                 </div>
             </div>
         </article>
-        <footer class="footer">
-            <p>Copyright &copy;2015 H-ui.admin v2.4 All Rights Reserved.<br>
-                本后台系统由<a href="http://www.h-ui.net/" target="_blank" title="H-ui前端框架">H-ui前端框架</a>提供前端技术支持</p>
-        </footer>
     </div>
 </section>
 <{/block}>
