@@ -59,7 +59,7 @@
                 <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe70c;</i></label>
                 <div class="formControls col-xs-8">
                     <input class="input-text size-L" type="text" placeholder="验证码" style="width:150px;">
-                    <img src="/static/h-ui/images/verifyCode.jpg" style="width:90px"> <a id="kanbuq" href="javascript:;">看不清，换一张</a> </div>
+                    <img id="captcha" src="/home/captcha" height="35px" width="120px"> <a id="kanbuq" href="javascript:void(0);">看不清，换一张</a> </div>
             </div>
             <div class="row cl">
                 <div class="formControls col-xs-8 col-xs-offset-3">
@@ -87,6 +87,9 @@
 <script type="text/javascript">
 $(function(){
     //全局方法
+    $("#kanbuq").click(function(){
+        $("#captcha").attr("src", $("#captcha").attr("src") + "?_=" + Date.parse(new Date()));
+    });
     $("#login").validate({
         rules:{
             loginname:{
