@@ -1,0 +1,112 @@
+<{extends '../Layouts/default.html'}>
+<{block 'content'}>
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="/" class="maincolor">首页</a> <span class="c-999 en">&gt;</span><span class="c-666">提现设置</span> <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="panel panel-default mt-20">
+                <div class="panel-header">提现设置</div>
+                <div class="panel-body">
+                    <div id="tab" class="HuiTab mt-20">
+                        <div class="tabBar cl"><span>提现/退款账号</span><span>提现申请</span></div>
+                        <div class="tabCon boxBindAccount">
+                            <ul class="choosebox clearfix">
+                                <li>
+                                    <input type="radio" name="name" value="tenpay" id="" />
+                                    <a href="javascript:void(0);" class="platform_radioToggle current"><p class="value">财付通</p><p class="grey">464001605</p></a>
+                                </li>
+                                <li>
+                                    <input type="radio" name="name" value="alipay" id="" />
+                                    <a href="javascript:void(0);" class="platform_radioToggle"><p class="value">支付宝</p><p class="grey">未绑定</p></a>
+                                </li>
+                                <li>
+                                    <input type="radio" name="name" value="bank" id="" />
+                                    <a href="javascript:void(0);" class="platform_radioToggle"><p class="value">中国工商银行</p><p class="grey">6212263602005578943</p></a>
+                                </li>
+                                
+                            </ul>
+                            <div class="showBind">
+                                <ul class="tenpayBind none">
+                                    <li><span class="ml20">原财付通账号</span><span class="gold">464001605</span></li>
+                                </ul>
+                                <ul class="alipayBind none">
+                                    <li><span class="fl ml20" style="margin-right: 52px;">姓名:</span><input class="input-smalltext" type="text" value=""><span class="grey">支付宝姓名一般为真实姓名，请务必准确填写，否则将无法给你退款</span></li>
+                                    <li><span class="fl ml20">支付宝账号:</span><input class="input-smalltext" type="text" value=""></li>
+                                    <li><button name="" id="" class="btn btn-success btnSure " type="submit">确认</button></li>
+                                </ul>
+                                <ul class="bankBind none">
+                                    <li><span class="ml20">原银行卡账号</span><span class="gold">6212263602005578943</span></li>
+                                    <li class="bankTip">
+                                        <p>温馨提示:</p> 
+                                        <p>1、如果您填写的开户行支行不正确，可能将无法成功提现，由此产生的提现费用将不予返还 </p> 
+                                        <p>2、如果您不确定开户行支行名称，可打电话到所在地银行的营业网点询问或上网查询 </p> 
+                                        <p>3、如果有接手的任务还没有全部完成，暂不能修改退款账号，请先完成任务后再修改 </p> 
+                                        <p>4、不支持提现至信用卡账号</p> 
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tabCon">
+                            <ul class="withDrawArea">
+                                <li><span>可提现押金</span><span class="gold">3.82</span>元</li>
+                                <li><span>银行卡</span><strong class="ml20">中国工商银行</strong><span>尾号</span><strong>6212263602005578943</strong></li>
+                                <li><span>提现金额</span><input class="input-smalltext" type="text" value="100">元<span class="grey">单次最少提现100元</span></li>
+                                <li><span>实际到帐金额</span><span class="gold">99.70</span>元</li>
+                                <li class="warnBox"><p>提现操作平台将收取0.3%的手续费，预计2个工作日内（国家法定假日和双休日顺延）平台完成提现操作，到账时间以各大银行为准，预计3-5天左右</p></li>
+                                <li><span>支付密码</span><input class="input-smalltext" type="password" value=""></li>
+                                <li><button name="" id="" class="btn btn-success btnSure mt-20" type="submit">申请提现</button></li>
+                                <li class="bankTip">
+                                        <p>温馨提示:</p> 
+                                        <p>1.请确保您输入的提现金额，以及财付通、支付宝或银行卡账号信息准确无误。 </p> 
+                                        <p>2.如果您填写的提现信息不正确也可能会导致提现失败，由此产生的提现费用将不予返还。  </p> 
+                                        <p>3.在国家法定假日和双休日期间，用户可以申请提现，平台会在7个工作日内进行处理。由此造成的不便，请多多谅解!  </p> 
+                                        <p>4.平台禁止洗钱、信用卡套现、虚假交易等行为，一经发现并确认，将终止该账号的使用。 </p> 
+                                        <p>5.平台操作提现后，到账金额可能会分为几笔打入您的账户，查询时请注意计算到账总金额</p>
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+<{/block}>
+
+<{block 'footer_script'}>
+<script type="text/javascript" src="/lib/My97DatePicker/WdatePicker.js"></script> 
+
+<script type="text/javascript">
+    $("#menu-withdraw dt").addClass("selected");
+    $("#menu-withdraw dd").show();
+    $("#menu-withdraw li").addClass("current");
+
+    $(function(){
+        $.Huitab("#tab .tabBar span","#tab .tabCon","current","click","0");
+    });
+    $(function(){   
+        $('.choosebox li a').click(function(){
+            var thisToggle = $(this).is('.platform_radioToggle') ? $(this) : $(this).prev();
+            var checkBox = thisToggle.prev();
+            checkBox.trigger('click');
+            $('.platform_radioToggle').removeClass('current');
+            thisToggle.addClass('current');
+            return false;
+        });
+    });
+
+    $('.tenpayBind').addClass("block");
+    $(".choosebox li :radio").on('click' ,function(){
+        var _that =this.value;
+        $('.showBind >ul').removeClass('block');
+        if(_that=="alipay"){
+            $('.alipayBind').addClass("block");
+        }else if(_that=="tenpay"){
+            $('.tenpayBind').addClass("block");
+        }else if(_that=="bank"){
+            $('.bankBind').addClass("block");
+        }
+    })
+</script> 
+<{/block}>
