@@ -1,0 +1,45 @@
+<{extends '../Layouts/default.html'}>
+<{block 'content'}>
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="/" class="maincolor">首页</a> <span class="c-999 en">&gt;</span><span class="c-666">个人中心</span> <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="panel panel-default mt-20">
+                <div class="panel-header">意见和建议</div>
+                <div class="panel-body">
+                    <div class="suggestCont clearfix">
+                        <ul class="suggest clearfix">
+                            <li><span class="fl ml20">类&nbsp;&nbsp;&nbsp;型:</span><span class="select-box inline">
+                                    <select name="" class="select suggestType">
+                                        <option value="SUGGEST">意见建议</option>
+                                        <option value＝"BUSINESS">商务合作</option>
+                                        <option value＝"ADVERT">广告合作</option>
+                                        <option value＝"SELLER_COMPLAIN">商家投诉</option>
+                                        <option value＝"BUYER_COMPLAIN">买手投诉</option>
+                                        <option value＝"OTHER">其他问题</option>
+                                    </select>
+                                </span> 
+                            </li>
+                            <li><span class="fl ml20">Q&nbsp;&nbsp;&nbsp;&nbsp;Q:</span><input class="input-smalltext" type="text" value="411250306"></li>
+                            <li><span class="fl ml20">Email:&nbsp;</span><input class="input-smalltext" type="text" value="411250306@qq.com"></li>
+                            <li><span class="fl ml20">手&nbsp;&nbsp;&nbsp;机:</span><input class="input-smalltext" type="text" value="13719356653"></li>
+                        </ul>
+                        <div class="textAreaCon clearfix"><span class="fl ml20">信&nbsp;&nbsp;&nbsp;&nbsp;息:</span></span><textarea maxlength="300" rows="10" cols="70"></textarea></div>
+                    </div>
+                    <button name="" id="" class="btn btn-success btnSure mt-20" type="submit">提交</button>
+                </div>
+            </div>
+            <div class="panel panel-default mt-20">
+                <div class="panel-header">我的建议</div>
+                <div class="panel-body">
+                    <p>您还没有给我们提建议！</p>
+                </div>
+            </div>
+        </article>
+        <footer class="footer">
+            <p>Copyright &copy;2015 H-ui.admin v2.4 All Rights Reserved.<br>
+                本后台系统由<a href="http://www.h-ui.net/" target="_blank" title="H-ui前端框架">H-ui前端框架</a>提供前端技术支持</p>
+        </footer>
+    </div>
+</section>
+<{/block}>

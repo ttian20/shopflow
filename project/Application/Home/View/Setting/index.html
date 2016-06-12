@@ -1,0 +1,27 @@
+<{extends '../Layouts/default.html'}>
+<{block 'content'}>
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="/" class="maincolor">首页</a> <span class="c-999 en">&gt;</span><span class="c-666">个人中心</span> <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="personLevel mt-20">
+                <span>您当前的VIP等级为</span><span class="gold">VP1</span>
+            </div>
+            <div class="panel panel-default mt-20">
+                <div class="panel-header">接单时间间隔设置</div>
+                <div class="panel-body">
+                    <ul class="sellTimeList">
+                        <li>同一个账号，接同一个商家，需要间隔<input name="user_passport_interval" type="number" value="<{if $setting.user_passport_interval}><{$setting.user_passport_interval}><{else}>7<{/if}>">天（系统默认7天，若填写0天，则记为系统默认配置）</li>
+                        <li>同一个账号，接同一个店铺，需要间隔<input name="user_shop_interval" type="number" value="<{if $setting.user_shop_interval}><{$setting.user_shop_interval}><{else}>0<{/if}>">天（系统暂时未对此规则进行限制）</li>
+                        <li>同一个买号，接同一个店铺，需要间隔<input name="buyer_shop_interval" type="number" value="<{if $setting.buyer_shop_interval}><{$setting.buyer_shop_interval}><{else}>20<{/if}>">天（系统默认20天，若填写0天，则记为系统默认配置）</li>
+                        <li>同一个买号，接同一个商品，需要间隔<input name="buyer_goods_interval" type="number" value="<{if $setting.buyer_goods_interval}><{$setting.buyer_goods_interval}><{else}>60<{/if}>">天（系统默认60天，若填写0天，则记为系统默认配置）</li>
+                    </ul>
+                    <button name="" id="" class="btn btn-success btnSure mt-20" onclick="showMSG(this,'10001')" type="submit">确认</button>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+<{/block}>
+
+
