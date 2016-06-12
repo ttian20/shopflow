@@ -19,6 +19,13 @@ class IndexController extends Controller {
         header('Content-type: application/json');
         $p = I("post.");
         $passportMdl = D("Passport");
+
+        $verify_code = trim($p['verify_code']);
+        if (!$this->verify_code($verify_code)) {
+            echo json_encode(array('status' => 'fail', 'msg' => "验证码错误"));
+            exit;
+        }
+
         $res = $passportMdl->verify($p['loginname'], $p['password']);
         if ('success' == $res['status']) {
             //写session
@@ -49,6 +56,7 @@ class IndexController extends Controller {
             'loginname' => '用户名',
             'password' => '密码',
             'confirm_password' => '确认密码',
+            'verify_code' => '验证码',
         );
         foreach ($necessaryArgs as $k => $v) {
             if (!isset($p[$k]) || empty($p[$k])) {
@@ -59,6 +67,12 @@ class IndexController extends Controller {
 
         if ($p['password'] != $p['confirm_password']) {
             echo json_encode(array('status' => 'fail', 'msg' => "两次密码不一致"));
+            exit;
+        }
+
+        $verify_code = trim($p['verify_code']);
+        if (!$this->verify_code($verify_code)) {
+            echo json_encode(array('status' => 'fail', 'msg' => "验证码错误"));
             exit;
         }
 
@@ -90,5 +104,11 @@ class IndexController extends Controller {
 
     private function _setLoginSession($passport) {
         session('passport', $passport);
+    }
+
+    //验证验证码是否正确
+    public function verify_code($code){
+         $verify = new \Think\Verify();
+         return $verify->check($code);
     }
 }
