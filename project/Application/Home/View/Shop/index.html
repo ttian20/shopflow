@@ -90,6 +90,8 @@ $("#menu-shop li").addClass("current");
         });     
     });
     function bindShop(obj,id){
+       // alert(JSON.stringiy());
+        var thisCur = $(' .choosebox .current span').html().trim();
         if(id=='10001'){
             layer.open({
               type: 1,
@@ -100,6 +102,7 @@ $("#menu-shop li").addClass("current");
             });
         };
         $("#province").ProvinceCity();
+        $('.bindShopTip').append("<input type='hidden' value='"+ thisCur+"' >");
     }
           
  </script>
