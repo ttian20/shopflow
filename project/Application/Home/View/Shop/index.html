@@ -87,7 +87,7 @@ $("#menu-shop li").addClass("current");
             $('.platform_radioToggle').removeClass('current');
             thisToggle.addClass('current');
             return false;
-        });     
+        });        
     });
     function bindShop(obj,id){
        // alert(JSON.stringiy());
@@ -98,12 +98,11 @@ $("#menu-shop li").addClass("current");
               title: '绑定新店铺',
               skin: 'layui-layer-rim', //加上边框
               area: ['620px', '440px'], //宽高
-              content:'<div class="bindShopTip"><ul class="shopTipContent"><li>店铺首页网址<span class="grey">（店铺绑定后无法修改）</span><input type="text" class="input-text"></li><li>店铺账号（主账号）<span class="grey">（绑定后无法修改，非淘宝平台，请填写店铺名称)</span><input type="text" class="input-text"></li></ul><span class="senderName">发件人姓名：<input type="text"></span><span class="senderPhone">发件人电话：<input type="text"></span><br><span class="treCitylist clearfix"><span>发件人地址：</span><div id="province"></div></span><span class="senderPlace clearfix">发件详细地址：<input type="text"></span><span class="placeCode">揽件网点编码：<input type="text"><span class="grey">填写【公司编号】</span></span><span class="CodeSearch clearfix">编号查询网站：<a href="#" class="gold">http://www.yundaex.com/fuwuwangdian_search.php</a></span><button name="" id="" class="btn btn-success btnSure mt-20" type="submit">确认</button></div>'
+              content:'<form action="" method="post"><div class="bindShopTip"><ul class="shopTipContent"><li>店铺首页网址<span class="grey">（店铺绑定后无法修改）</span><input type="text" class="input-text"></li><li>店铺账号（主账号）<span class="grey">（绑定后无法修改，非淘宝平台，请填写店铺名称)</span><input type="text" class="input-text"></li></ul><span class="senderName">发件人姓名：<input type="text"></span><span class="senderPhone">发件人电话：<input type="text"></span><br><span class="treCitylist clearfix"><span>发件人地址：</span><div id="province"></div></span><span class="senderPlace clearfix">发件详细地址：<input type="text"></span><span class="placeCode">揽件网点编码：<input type="text"><span class="grey">填写【公司编号】</span></span><span class="CodeSearch clearfix">编号查询网站：<a href="#" class="gold">http://www.yundaex.com/fuwuwangdian_search.php</a></span><button name="" id="" class="btn btn-success btnSure mt-20" type="submit">确认</button></div></form>'
             });
         };
         $("#province").ProvinceCity();
         $('.bindShopTip').append("<input type='hidden' value='"+ thisCur+"' >");
     }
-          
- </script>
+</script>
 <{/block}>

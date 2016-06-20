@@ -42,4 +42,9 @@ class CommonController extends Controller {
         echo json_encode(array('status' => 'success', 'data' => $data));
         exit;
     }
+
+    public function perror($msg) {
+        $this->assign('msg', $msg);
+        $this->display('Error:index');
+    }
 }
