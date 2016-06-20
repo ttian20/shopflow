@@ -6,33 +6,60 @@
         <article class="cl pd-20">
             <div class="panel panel-default mt-20">
                 <div class="panel-header">意见和建议</div>
+                <form action="/home/feedback/save" method="post">
                 <div class="panel-body">
                     <div class="suggestCont clearfix">
                         <ul class="suggest clearfix">
                             <li><span class="fl ml20">类&nbsp;&nbsp;&nbsp;型:</span><span class="select-box inline">
-                                    <select name="" class="select suggestType">
-                                        <option value="SUGGEST">意见建议</option>
-                                        <option value＝"BUSINESS">商务合作</option>
-                                        <option value＝"ADVERT">广告合作</option>
-                                        <option value＝"SELLER_COMPLAIN">商家投诉</option>
-                                        <option value＝"BUYER_COMPLAIN">买手投诉</option>
-                                        <option value＝"OTHER">其他问题</option>
+                                    <select name="type" class="select suggestType">
+                                        <{foreach from=$types item="item" key="key"}>
+                                        <option value="<{$key}>"><{$item}></option>
+                                        <{/foreach}>
                                     </select>
                                 </span> 
                             </li>
-                            <li><span class="fl ml20">Q&nbsp;&nbsp;&nbsp;&nbsp;Q:</span><input class="input-smalltext" type="text" value="411250306"></li>
-                            <li><span class="fl ml20">Email:&nbsp;</span><input class="input-smalltext" type="text" value="411250306@qq.com"></li>
-                            <li><span class="fl ml20">手&nbsp;&nbsp;&nbsp;机:</span><input class="input-smalltext" type="text" value="13719356653"></li>
+                            <li><span class="fl ml20">Q&nbsp;&nbsp;&nbsp;&nbsp;Q:</span><input class="input-smalltext" name="qq" type="text" value="<{$passport.qq}>"></li>
+                            <li><span class="fl ml20">Email:&nbsp;</span><input class="input-smalltext" type="text" name="email" value="<{$passport.emaill}>"></li>
+                            <li><span class="fl ml20">手&nbsp;&nbsp;&nbsp;机:</span><input class="input-smalltext" name="mobile" type="text" value="<{$passport.mobile}>"></li>
                         </ul>
-                        <div class="textAreaCon clearfix"><span class="fl ml20">信&nbsp;&nbsp;&nbsp;&nbsp;息:</span></span><textarea maxlength="300" rows="10" cols="70"></textarea></div>
+                        <div class="textAreaCon clearfix"><span class="fl ml20">信&nbsp;&nbsp;&nbsp;&nbsp;息:</span></span><textarea maxlength="300" name="content" rows="10" cols="70"></textarea></div>
                     </div>
-                    <button name="" id="" class="btn btn-success btnSure mt-20" type="submit">提交</button>
+                    <button name="s" id="s" class="btn btn-success btnSure mt-20" type="submit">提交</button>
                 </div>
+                </form>
             </div>
             <div class="panel panel-default mt-20">
                 <div class="panel-header">我的建议</div>
                 <div class="panel-body">
+                    <{if $feeds}>
+                    <table>
+                    <tr>
+                        <th>问题类型</th>
+                        <th>QQ</th>
+                        <th>邮件</th>
+                        <th>手机号</th>
+                        <th>意见</th>
+                        <th>提意见时间</th>
+                        <th>管理员回复</th>
+                        <th>管理员回复时间</th>
+                    </tr>
+                    <{foreach from=$feeds item="item"}>
+                    <tr>
+                       <td><{$types[$item.type]}></td>
+                       <td><{$item.qq}></td>
+                       <td><{$item.email}></td>
+                       <td><{$item.mobile}></td>
+                       <td><{$item.content}></td>
+                       <td><{$item.created_at|date_format:'%Y-%m-%d %H:%i:%s'}></td>
+                       <td><{$item.repeat}></td>
+                       <td><{$item.repeat_at|date_format:'%Y-%m-%d %H:%i:%s'}></td>
+                    </tr> 
+                    <{/foreach}>
+                    </table>
+                    <{$page}>
+                    <{else}>
                     <p>您还没有给我们提建议！</p>
+                    <{/if}>
                 </div>
             </div>
         </article>

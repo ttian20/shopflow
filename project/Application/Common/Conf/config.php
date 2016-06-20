@@ -51,6 +51,15 @@ $common = array(
         'notify_url' => 'http://pay.shopflow.cn/alipay/notify',
         'return_url' => 'http://pay.shopflow.cn/alipay/back',
     ),
+
+    'FEEDBACK_TYPE' => array(
+        "SUGGEST" => '意见建议',
+        "BUSINESS" => '商务合作',
+        "ADVERT" =>'广告合作',
+        "SELLER_COMPLAIN" => "商家投诉",
+        "BUYER_COMPLAIN" => "买手投诉",
+        "OTHER" => "其他问题",
+    ),
 );
 
 return array_merge($common, $conf);
