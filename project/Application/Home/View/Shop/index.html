@@ -56,7 +56,11 @@
                                 <td><{$shop.sender_province}>-<{$shop.sender_city}>-<{$shop.sender_district}></td>
                                 <td><{$shop.sender_code}></td>
                                 <td><a class="maincolor" href="<{$shop.shop_url}>"><{$shop.shop_url}></a></td>
+<<<<<<< HEAD
                                 <td><a class="btn btn-success shopModify" href="javascript:;">修改店铺信息</a></td>
+=======
+                                <td><a data-id="<{$shop.id}>" class="btn btn-success" href="javascript:;" onclick="bindShop(this,'10001')">修改店铺信息</a></td>
+>>>>>>> f6b6be18e01be56b9bb19bc5cbdf910a5fbe3ab2
                             </tr>
                             <{foreachelse}>
                             <tr class="text-c">
