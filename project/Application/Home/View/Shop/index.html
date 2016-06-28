@@ -56,11 +56,7 @@
                                 <td><{$shop.sender_province}>-<{$shop.sender_city}>-<{$shop.sender_district}></td>
                                 <td><{$shop.sender_code}></td>
                                 <td><a class="maincolor" href="<{$shop.shop_url}>"><{$shop.shop_url}></a></td>
-<<<<<<< HEAD
-                                <td><a class="btn btn-success shopModify" href="javascript:;">修改店铺信息</a></td>
-=======
-                                <td><a data-id="<{$shop.id}>" class="btn btn-success" href="javascript:;" onclick="bindShop(this,'10001')">修改店铺信息</a></td>
->>>>>>> f6b6be18e01be56b9bb19bc5cbdf910a5fbe3ab2
+                                <td><a data-id="<{$shop.id}>" class="btn btn-success shopModify" href="javascript:;">修改店铺信息</a></td>
                             </tr>
                             <{foreachelse}>
                             <tr class="text-c">
@@ -93,19 +89,54 @@
             return false;
         });        
     });
-    $(".shopModify").on('click',function(){
+    $(".shopModify").on('click',function(e){
+        e.preventDefault();
+        e.stopPropagation();
         $.ajax({
             type: "GET",
              url: "/home/shop/getinfo",
-             data: {id:2},
+             data: {id:$(this).attr('data-id')},
              dataType: "json",
+             timeout:20000,
              success: function(data){
-
-             }
+                if(!!data){
+                    var data = data.data.shop;
+                    layer.open({
+                        type: 1,
+                        title: '编辑店铺',
+                        skin: 'layui-layer-rim', //加上边框
+                        area: ['620px', '440px'], //宽高
+                        content:'<form action="/home/test" method="post" id="shopMod"><div class="bindShopTip"><ul class="shopTipContent"><li>店铺首页网址<span class="grey">（店铺绑定后无法修改）</span><p>'+data.shop_url+'</p><input type="hidden" class="input-text"  name="shop_url" value="'+data.shop_url+ '""></li><li>店铺账号（主账号）<span class="grey">（绑定后无法修改)</span><p>'+data.shop_name+'</p><input type="hidden" name="shop_name" class="input-text" value="'+data.shop_name+ '""></li></ul><span class="senderName">发件人姓名：<input type="text" name="sender_name" value="'+data.sender_name+'" ></span><span class="senderPhone">发件人电话：<input type="text" name="sender_mobile" value="'+data.sender_mobile+'" ></span><br><span class="treCitylist clearfix"><span>发件人地址：</span><div id="province"></div></span><span class="senderPlace clearfix">发件详细地址：<input type="text" name="sender_address" value="'+data.sender_address+'" ></span><span class="placeCode">揽件网点编码：<input type="text" name="sender_code" value="'+data.sender_code+'" ><span class="grey">填写【公司编号】</span></span><span class="CodeSearch clearfix">编号查询网站：<a href="#" class="gold">http://www.yundaex.com/fuwuwangdian_search.php</a></span><input type="hidden" name="id" value="'+data.id+'""><button name="" id="" class="btn btn-success btnSure mt-20 sureMod" type="button">确认</button></div></form>'
+                    });
+                    $("#province").ProvinceCity();
+                    var prc=data.sender_province,
+                        city = data.sender_city,
+                        district = data.sender_district;
+                    $("#province select:eq(0)").find("option[value="+prc+"]").attr("selected",true);
+                    $("#province select:eq(0)").change();
+                    setTimeout(function(){$("#province select:eq(1)").find("option[value="+city+"]").attr("selected",true);$("#province select:eq(1)").change();}, 100);
+                    setTimeout(function(){$("#province select:eq(2)").find("option[value="+district+"]").attr("selected",true);$("#province select:eq(2)").change();}, 100);
+                    
+                }
+            }
         })
     });
+    $(document).on('click',".sureMod",function() {
+        var datas = $("#shopMod").serialize(); 
+        $.ajax({
+            type: "GET",
+             url: "/home/shop/edit",
+             data: {data:datas},
+             dataType: "json",
+             timeout:20000,
+             success: function(){
+                
+             }
+        
+        }) 
+    });
     function bindShop(obj,id){
-       // alert(JSON.stringiy());
+       
         var thisCur = $(' .choosebox .current span').html().trim();
         if(id=='10001'){
             layer.open({
@@ -113,11 +144,26 @@
               title: '绑定新店铺',
               skin: 'layui-layer-rim', //加上边框
               area: ['620px', '440px'], //宽高
-              content:'<form action="/home/test" method="post"><div class="bindShopTip"><ul class="shopTipContent"><li>店铺首页网址<span class="grey">（店铺绑定后无法修改）</span><input type="text" class="input-text"></li><li>店铺账号（主账号）<span class="grey">（绑定后无法修改，非淘宝平台，请填写店铺名称)</span><input type="text" class="input-text"></li></ul><span class="senderName">发件人姓名：<input type="text"></span><span class="senderPhone">发件人电话：<input type="text"></span><br><span class="treCitylist clearfix"><span>发件人地址：</span><div id="province"></div></span><span class="senderPlace clearfix">发件详细地址：<input type="text"></span><span class="placeCode">揽件网点编码：<input type="text"><span class="grey">填写【公司编号】</span></span><span class="CodeSearch clearfix">编号查询网站：<a href="#" class="gold">http://www.yundaex.com/fuwuwangdian_search.php</a></span><button name="" id="" class="btn btn-success btnSure mt-20" type="submit">确认</button></div></form>'
+              content:'<form id="shopBind" method="post"><div class="bindShopTip"><ul class="shopTipContent"><li>店铺首页网址<span class="grey">（店铺绑定后无法修改）</span><input type="text" name="shop_url" class="input-text"></li><li>店铺账号（主账号）<span class="grey">（绑定后无法修改，非淘宝平台，请填写店铺名称)</span><input type="text" class="input-text" name="shop_name"></li></ul><span class="senderName">发件人姓名：<input type="text" name="sender_name"></span><span class="senderPhone">发件人电话：<input type="text" name="sender_mobile"></span><br><span class="treCitylist clearfix"><span>发件人地址：</span><div id="province"></div></span><span class="senderPlace clearfix">发件详细地址：<input type="text" name="sender_address"></span><span class="placeCode">揽件网点编码：<input type="text" name="sender_code"><span class="grey">填写【公司编号】</span></span><span class="CodeSearch clearfix">编号查询网站：<a href="#" class="gold">http://www.yundaex.com/fuwuwangdian_search.php</a></span><button name="" id="" class="btn btn-success btnSure mt-20 addSure" type="button">确认</button></div></form>'
             });
         };
         $("#province").ProvinceCity();
-        $('.bindShopTip').append("<input type='hidden' value='"+ thisCur+"' >");
+        $('.bindShopTip').append("<input type='hidden' type='id' value='"+ thisCur+"' >");
     }
+
+    $(document).on('click',".addSure",function() {
+        var datas = $("#shopBind").serialize(); debugger;
+        $.ajax({
+            type: "GET",
+             url: "/home/shop/add",
+             data: {data:datas},
+             dataType: "json",
+             timeout:20000,
+             success: function(){
+                
+             }
+        
+        }) 
+    });
 </script>
 <{/block}>
