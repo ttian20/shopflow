@@ -129,8 +129,17 @@
              data: datas,
              dataType: "json",
              timeout:20000,
-             success: function(){
+             success: function(res){
+                if(res.status){
+                    debugger;
+                    location.href=res.data.redirect;
+                }else{
+                    layer.msg(res.msg);
+                }
                 
+             },
+             error:function() {
+                layer.msg('服务器错误，请稍后重试');
              }
         
         }) 
@@ -159,8 +168,17 @@
              data: datas,
              dataType: "json",
              timeout:20000,
-             success: function(){
+             success: function(res){
+                if(res.status){
+                    debugger;
+                    location.href=res.data.redirect;
+                }else{
+                    layer.msg(res.msg);
+                }
                 
+             },
+             error:function() {
+                layer.msg('服务器错误，请稍后重试');
              }
         
         }) 
