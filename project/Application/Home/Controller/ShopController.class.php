@@ -71,16 +71,19 @@ class ShopController extends CommonController {
     }
 
     public function edit() {
-        $necessaryArgs = array('id', 'shop_name', 'shop_url', 'sender_name', 'sender_mobile', 'sender_province', 'sender_city', 'sender_district', 'sender_address', 'sender_code');
+        //$necessaryArgs = array('id', 'shop_name', 'shop_url', 'sender_name', 'sender_mobile', 'sender_province', 'sender_city', 'sender_district', 'sender_address', 'sender_code');
+        $necessaryArgs = array('shop_name', 'shop_url', 'sender_name', 'sender_mobile', 'sender_province', 'sender_city', 'sender_district', 'sender_address', 'sender_code');
         $p = I('post.');
+
         foreach ($necessaryArgs as $necessaryArg) {
-            if (!in_array($necessaryArg, $p)) {
+            if (!array_key_exists($necessaryArg, $p)) {
                 $this->error('缺少参数');
+                //$this->error($p);
             }
         }
         
         $shopMdl = D('Shop');
-        $shop = $shopMdl->getRow(array('id' => trim($p['id']), 'passport_id' => $tihs->passport['id']));
+        $shop = $shopMdl->getRow(array('id' => trim($p['id']), 'passport_id' => $this->passport['id']));
         if (!$shop) {
             $this->error('没有权限');
         }
