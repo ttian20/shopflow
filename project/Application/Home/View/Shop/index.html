@@ -124,7 +124,7 @@
     $(document).on('click',".sureMod",function() {
         var datas = $("#shopMod").serialize(); 
         $.ajax({
-            type: "post",
+            type: "POST",
              url: "/home/shop/edit",
              data: datas,
              dataType: "json",

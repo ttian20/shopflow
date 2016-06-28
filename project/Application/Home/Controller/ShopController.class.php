@@ -71,7 +71,7 @@ class ShopController extends CommonController {
     }
 
     public function edit() {
-        $necessaryArgs = array('id', 'shop_name', 'shop_type', 'shop_url', 'sender_name', 'sender_mobile', 'sender_province', 'sender_city', 'sender_district', 'sender_address', 'sender_code');
+        $necessaryArgs = array('id', 'shop_name', 'shop_url', 'sender_name', 'sender_mobile', 'sender_province', 'sender_city', 'sender_district', 'sender_address', 'sender_code');
         $p = I('post.');
         foreach ($necessaryArgs as $necessaryArg) {
             if (!in_array($necessaryArg, $p)) {
@@ -89,7 +89,6 @@ class ShopController extends CommonController {
         $data = array(
             'id' => trim($p['id']),
             'shop_name' => trim($p['shop_name']),
-            'shop_type' => trim($p['shop_type']),
             'shop_url' => trim($p['shop_url']),
             'sender_name' => trim($p['sender_name']),
             'sender_mobile' => trim($p['sender_mobile']),
