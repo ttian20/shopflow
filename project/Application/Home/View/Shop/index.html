@@ -124,9 +124,9 @@
     $(document).on('click',".sureMod",function() {
         var datas = $("#shopMod").serialize(); 
         $.ajax({
-            type: "GET",
+            type: "POST",
              url: "/home/shop/edit",
-             data: {data:datas},
+             data: datas,
              dataType: "json",
              timeout:20000,
              success: function(){
