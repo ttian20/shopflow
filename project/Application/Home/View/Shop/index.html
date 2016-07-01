@@ -131,7 +131,6 @@
              timeout:20000,
              success: function(res){
                 if(res.status){
-                    debugger;
                     location.href=res.data.redirect;
                 }else{
                     layer.msg(res.msg);
@@ -170,7 +169,6 @@
              timeout:20000,
              success: function(res){
                 if(res.status){
-                    debugger;
                     location.href=res.data.redirect;
                 }else{
                     layer.msg(res.msg);

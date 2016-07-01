@@ -13,63 +13,2780 @@
 <{/block}>
 
 <{block 'content'}>
-<div class="bshop_location width_max"><div class="width_thousand"><a class="blue_01" href="">首页</a> &gt; <a class="blue_01" href="">编辑任务</a> &gt; <a class="blue_01" href="">聚划算流量
-</a></div></div>
+<section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="/" class="maincolor">首页</a> <span class="c-999 en">&gt;</span><span class="c-666">发布任务</span> <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont"></i></a></nav>
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <div class="panel panel-default mt-20">
+                    <div class="panel-header">任务进度</div>
+                    <div class="panel-body">
+                        <div class="stepWrapper mt30">
+                            <div class="stepWaiting" style="position:absolute;top:0;left:-5px;"><div class="stepOn">1</div><div class="caption" style="width:72px;margin-left:-36px;">选择任务类型</div></div>
+                            <div class="stepWaiting" style="margin-left:22%;">2<div class="caption" style="width:72px;margin-left:-36px;">填写商品信息</div></div>
+                            <div class="stepWaiting" style="margin-left:22%;">
+                                3
+                                <div class="caption" style="width:72px;margin-left:-36px;">填写刷单数量</div>
+                            </div>
+                            <div class="stepWaiting" style="margin-left:22%;">
+                                4
+                                <div class="caption" style="width:60px;margin-left:-30px;">选增值服务</div>
+                            </div>
+                            <div class="stepWaiting" style="position:absolute;top:0;right:-5px;">
+                                5
+                                <div class="caption" style="width:48px;margin-left:-24px;">支付</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default mt-20 contentCard stepCard" style="display: block;" id="taskStep-1">
+                    <div class="panel-header">第一步：选择任务类型</div>
+                    <div class="panel-body">
+                        <div class="contentBody" id="step-1">
+                            <div class="panelLine sec">
+                                <span class="secondTile floatLeft mr20">选择平台</span>
+                                <span class="checkTextBtn  platform selectedCtb" href="javascript:;" value="TAOBAO">淘宝</span>
+                                <span class="checkTextBtn  platform" href="javascript:;" value="TMALL">天猫</span>
+                                <span class="checkTextBtn  platform" href="javascript:;" value="JD">京东</span>
+                                <span class="checkTextBtn  platform" href="javascript:;" value="MOGUJIE">蘑菇街</span>
+                            </div>
+                            <div class="panelLine sec">
+                                <span class="secondTile floatLeft mr20">选择店铺</span>
+                                <div id="dianpuContainer" curr-shop=""> <span class="checkTextBtn shop selectedCtb" href="javascript:;" value="535">洛奇服饰</span>
+                                    <span class="checkTextBtn shop" href="javascript:;" value="589">百能品牌折扣店</span>
+                                    <span class="checkTextBtn shop" href="javascript:;" value="974">完肌pinski</span>
+                                    <span class="checkTextBtn shop" href="javascript:;" value="1632">拉薇丽衣</span>
+                                    <span class="checkTextBtn shop" href="javascript:;" value="8128">捷径教育企业店</span>
+                                </div>
+                                <a href="shop.html" target="_blank" id="btnBindNewShop">
+                                    绑定新店铺&nbsp;&nbsp;
+                                    <i class="Hui-iconfont"></i>
+                                </a>
+                            </div>
+                            <div class="panelLine sec">
+                                <span class="secondTile floatLeft mr20">选择类型</span>
+                                <span class="checkTextBtn  taskType selectedCtb" href="javascript:;" value="ORDER">订单</span>
+                                <span class="checkTextBtn  taskType" href="javascript:;" value="JHS">聚划算</span>
+                                <span class="checkTextBtn  taskType" href="javascript:;" value="SUBWAY">直通车</span>
+                                <span class="checkTextBtn  taskType" href="javascript:;" value="TQG">淘抢购</span>
+                                <span class="checkTextBtn  taskType" href="javascript:;" value="TTTJ">天天特价</span>
+                                <span class="checkTextBtn  taskType" href="javascript:;" value="ZWTG">推广</span>
+                                <span>注意：二维码，淘口令，折800，卷皮等请选择<span class="red">【推广】</span></span>
+                            </div>
+                            <div class="panelLine sec">
+                                <span class="secondTile floatLeft mr20">选择评价</span>
+                                <span class="checkTextBtn selectedCtb commentType" href="javascript:;" value="common">普通好评</span>
+                                <span class="checkTextBtn   commentType" href="javascript:;" value="picComment">图片好评</span>
+                                <span>注意：如果选择图片好评，每个任务只能发布<span class="red">1</span>单</span>
+                            </div>
+                            <div class="panelLine sec">
+                                <div class="panelLine clickable" id="delaySpan">
+                                    <span class="secondTile floatLeft mr20">延时发布</span>
+                                    <select class="floatLeft ls mt8" value="" id="selDelaySpan">
+                                        <option value="0">立即发布</option>
+                                        <option value="60">1小时之后发布</option>
+                                        <option value="180">3小时之后发布</option>
+                                        <option value="360">6小时之后发布</option>
+                                        <option value="540">9小时之后发布</option>
+                                        <option value="720">12小时之后发布</option>
+                                        <option value="1080">18小时之后发布</option>
+                                        <option value="1440">1天之后发布</option>
+                                        <option value="2880">2天之后发布</option>
+                                        <option value="4320">3天之后发布</option>
+                                        <option value="5760">4天之后发布</option>
+                                        <option value="7200">5天之后发布</option>
+                                        <option value="8640">6天之后发布</option>
+                                        <option value="10080">7天之后发布</option>
+                                        <option value="11520">8天之后发布</option>
+                                        <option value="12960">9天之后发布</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="buttonSection">
+                                <a href="javascript:;" class="stdColorButton next">
+                    下一步
 
-<div class="edittask width970">
-    <form name="taskadd" id="taskadd" method="post" action="/home/task/doadd">
-    <input type="hidden" name="platform" value="<{$smarty.get.platform}>">
-    <div class="title font16 font_green bold">基础设置</div>
-    <div class="demo">
-      <table cellspacing="0" cellpadding="0">
-        <tbody><tr>
-          <td width="60">任务类型:</td>
-          <td><select name="platform" id="platform">
-            <{foreach item=t from=$taskTypes}>
-            <option value="<{$t.value}>"<{if $taskType eq $t.value}> selected<{/if}>><{$t.label}></option>
-            <{/foreach}>
-          </select></td>
-          <td width="55">关键词：</td>
-          <td><input type="text" style="width:180px;border:1px solid #c9c9c9;background:#fff;height:18px;font-size:14px; line-height:18px;" name="kwd"></td>
-          <td width="55">宝贝ID：</td>
-          <td><input type="text" style="width:180px;border:1px solid #c9c9c9;background:#fff;height:18px;font-size:14px; line-height:18px;" name="nid"></td>
-        </tr>
-      </tbody></table>
-    </div>
-    <div class="title font16 font_green bold">流量计划</div>
-    <div class="demo">
-      <table cellspacing="0" cellpadding="0">
-        <tbody><tr>
-          <td width="40">日期：</td>
-          <td><input type="text" style="width:100px;border:1px solid #c9c9c9;background:#fff;height:18px;font-size:14px; line-height:18px;" name="begin_time" id="begin_time"></td>
-          <td width="40">数量：</td>
-          <td><input type="text" style="width:100px;border:1px solid #c9c9c9;background:#fff;height:18px;font-size:14px; line-height:18px;" name="times"></td>
-          <td width="65">开始时间：</td>
-          <td><input type="text" style="width:100px;border:1px solid #c9c9c9;background:#fff;height:18px;font-size:14px; line-height:18px;" name="click_start"></td>
-          <td width="65">结束时间：</td>
-          <td><input type="text" style="width:100px;border:1px solid #c9c9c9;background:#fff;height:18px;font-size:14px; line-height:18px;" name="click_end"></td>
-        </tr>
-        <{*
-        <tr>
-          <td width="40">日期：</td>
-          <td><input type="text" style="width:100px;border:1px solid #c9c9c9;background:#fff;height:18px;font-size:14px; line-height:18px;" name=""></td>
-          <td width="40">数量：</td>
-          <td><input type="text" style="width:100px;border:1px solid #c9c9c9;background:#fff;height:18px;font-size:14px; line-height:18px;" name=""></td>
-          <td width="65">开始时间：</td>
-          <td><input type="text" style="width:100px;border:1px solid #c9c9c9;background:#fff;height:18px;font-size:14px; line-height:18px;" name=""></td>
-          <td width="65">结束时间：</td>
-          <td><input type="text" style="width:100px;border:1px solid #c9c9c9;background:#fff;height:18px;font-size:14px; line-height:18px;" name=""></td>
-        </tr>
-        <tr><td colspan="8"><input type="button" style="border:1px solid #a4bc86;background:#dbe8ca;color:#5a733b; font:12px '微软雅黑'; cursor:pointer;width:90px;height:22px;" value="继续添加" name=""></td></tr>
-        *}>
-        <tr><td colspan="8"><input type="submit" style="border:none;background:#5a733b; cursor:pointer;width:140px;font:14px '微软雅黑';color:#fff;height:36px;" value="保存计划" name="">&nbsp;&nbsp;&nbsp;&nbsp;<{*<input type="button" style="border:none;background:#c9c9c9; cursor:pointer;width:140px;font:14px '微软雅黑';color:#666;height:36px;" value="取消计划" name="">*}></td></tr>
-      </tbody></table>
-    </div>
-    </form>
-  </div>
+                     <i class="Hui-iconfont"></i>
+                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default mt-20 contentCard stepCard" style="display: none;" id="taskStep-2">
+                    <div class="panel-header">第二步：设置商品信息</div>
+                    <div class="panel-body">
+                        <div class="contentBody">
+                            <div class="secondTile">
+                                填写商品信息
+                            </div>
+                            <div class="panelBox" style="border-bottom:dashed 1px #DEDEDE;">
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft itemUrl">
+                                        商品链接
+                                        <span class="red bold">*</span>
+                                    </span>
+                                    <input type="text" class="inputText floatLeft ls long required" id="txtItemUrl" name="itemUrl" value="" aria-required="true">
+                                    <!-- <a href="javascript:;" class="stdColorButton floatLeft ls" id="btnAutoFillItemInfo">自动填写商品信息</a>  -->
+                                </div>
+                                <div id="itemInfo">
+                                    <div class="panelLine sec">
+                                        <span class="ls floatLeft">
+                                        商品标题
+                                        <span class="red bold">*</span>
+                                        </span>
+                                        <input type="text" class="inputText floatLeft ls long required" id="txtItemTitle" name="itemTitle" value="" aria-required="true">
+                                    </div>
+                                    <div class="panelLine sec">
+                                        <span class="ls floatLeft itemPic" original-title="">
+                                        商品主图
+                                        <span class="red bold">*</span>
+                                        </span>
+                                        <span class="btn-upload form-group">
+                                             <input class="input-text upload-url" type="text" name="uploadfile-1" id="uploadfile-1" readonly=""><a href="javascript:void();" class="btn btn-primary">选择并上传主图</a>
+                                              <input type="file" multiple="" name="file-1" class="input-file">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panelBox">
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft">商品规格</span>
+                                    <input type="text" class="inputText floatLeft ls short" id="txtSku1" name="sku1">
+                                    <span class="ls floatLeft grey">如：颜色</span>
+                                    <input type="text" class="inputText floatLeft ls short" id="txtSku2" name="sku2">
+                                    <span class="ls floatLeft grey">如：尺码</span>
+                                </div>
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft">
+                                    单品售价
+                                    <span class="red bold">*</span>
+                                    </span>
+                                    <input type="text" class="inputText floatLeft ls short required" id="txtItemPrice" name="itemPrice" value="" aria-required="true">
+                                    <span class="ls floatLeft">元</span>
+                                    <span class="ls floatLeft">
+                                    每单拍
+                                    <span class="red bold">*</span>
+                                    </span>
+                                    <input type="text" class="inputText floatLeft ls short required" id="itemBuyNum" name="itemBuyNum" value="1" aria-required="true">
+                                    <span class="ls floatLeft">件</span>
+                                </div>
+                                <div class="panelLine sec search_price taobao_search">
+                                    <span class="ls floatLeft">搜索页面展示价格</span>
+                                    <input type="text" class="inputText floatLeft ls short" id="itemDisplayPrice" name="itemDisplayPrice" value="">
+                                    <span class="ls floatLeft grey">若该商品有满减、促销、多规格等情况下需填写</span>
+                                </div>
+                            </div>
+                            <div id="taobao_search" class="taobao_search">
+                                <div class="secondTile">如何找到您的商品</div>
+                                <div class="grey">请添加几个订单来源方式，任务发布时系统会随机安排买手通过不同的方式来模拟真实购物流程</div>
+                                <!-- 京东搜索 -->
+                                <div id="jdSearch" style="display: none;">
+                                    <div class="thirdTile">
+                                        <a href="javascript:;" class="inputCheckBox inputCheckBox-checked" id="ckSearchJd">&nbsp;</a> 通过“京东搜索框”查找商品&nbsp;&nbsp; <span class="grey">(让买手在 jd.com
+                                    搜索关键字进入“搜索列表”，在当前列表中通过筛选分类找到商品)</span>
+                                    </div>
+                                    <div class="panelBox" id="jdSearchWordBox" data-in-tmall="0">
+                                        <div class="legendPanel">
+                                            <div class="l_title">
+                                                搜索关键字方案
+                                            </div>
+                                            <div class="panelLine wordPlan">
+                                                <span class="floatLeft ls"> 关键词 <span class="red bold">*</span>
+                                                </span>
+                                                <input type="text" class="inputText floatLeft ls middle required" maxlength="15" name="word" aria-required="true">
+                                                <input type="hidden" value="" name="planTotalNum">
+                                                <input type="hidden" value="" name="planFlowNum">
+                                                <input type="hidden" value="" name="planCollectProduct">
+                                                <input type="hidden" value="$" name="planShoppingCart"><span class="floatLeft ls">筛选分类</span>
+                                                <input type="text" class="inputText floatLeft ls short" maxlength="30" name="skus">
+                                                <input type="text" class="inputText floatLeft ls short" maxlength="30" name="skus">
+                                                <input type="text" maxlength="30" class="inputText floatLeft ls short" name="skus">
+                                                <input maxlength="30" type="text" class="inputText floatLeft ls short" name="skus">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="taobaoAndTmallSearch">
+                                    <!-- 淘宝搜索 -->
+                                    <div class="thirdTile">
+                                        <a href="javascript:;" class="inputCheckBox inputCheckBox-checked" id="ckSearchTaobao">&nbsp;</a> 通过“淘宝搜索框”查找商品&nbsp;&nbsp; <span class="grey">(让买手在 taobao.com
+                                    搜索关键字进入“搜索列表”，在当前列表中通过筛选分类找到商品)</span>
+                                    </div>
+                                    <div class="panelBox" id="tbSearchWordBox" data-in-tmall="0">
+                                        <div class="legendPanel">
+                                            <div class="l_title">
+                                                搜索关键字方案
+                                            </div>
+                                            <div class="panelLine wordPlan">
+                                                <span class="floatLeft ls"> 关键词 <span class="red bold">*</span>
+                                                </span>
+                                                <input type="text" class="inputText floatLeft ls middle required" name="word" aria-required="true">
+                                                <input type="hidden" value="" name="planTotalNum">
+                                                <input type="hidden" value="" name="planFlowNum">
+                                                <input type="hidden" value="" name="planCollectProduct">
+                                                <input type="hidden" value="" name="planShoppingCart"> <span class="floatLeft ls">筛选分类</span>
+                                                <input type="text" class="inputText floatLeft ls short" name="skus">
+                                                <input type="text" class="inputText floatLeft ls short" name="skus">
+                                                <input type="text" class="inputText floatLeft ls short" name="skus">
+                                                <input type="text" class="inputText floatLeft ls short" name="skus">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 天猫搜索 -->
+                                    <div class="thirdTile">
+                                        <a href="javascript:;" class="inputCheckBox " id="ckSearchTmall">&nbsp;</a> 使用“天猫搜索框”查找商品&nbsp;&nbsp; <span class="grey">(让买手在 tmall.com
+                                    搜索关键字进入“搜索列表”，在当前列表中通过筛选分类找到商品)</span>
+                                    </div>
+                                    <div class="panelBox" id="tmSearchWordBox" style=" ?'': 'display:none'" data-in-tmall="1">
+                                        <div class="legendPanel">
+                                            <div class="l_title">
+                                                搜索关键字方案
+                                            </div>
+                                            <div class="panelLine wordPlan">
+                                                <span class="floatLeft ls"> 关键词 <span class="red bold">*</span>
+                                                </span>
+                                                <input type="text" class="inputText floatLeft ls middle required" name="word" aria-required="true">
+                                                <input type="hidden" value="" name="planFlowNum">
+                                                <input type="hidden" value="" name="planTotalNum">
+                                                <input type="hidden" value="" name="planCollectProduct">
+                                                <input type="hidden" value="" name="planShoppingCart"> <span class="floatLeft ls">筛选分类</span>
+                                                <input type="text" class="inputText floatLeft ls short" name="skus">
+                                                <input type="text" class="inputText floatLeft ls short" name="skus">
+                                                <input type="text" class="inputText floatLeft ls short" name="skus">
+                                                <input type="text" class="inputText floatLeft ls short" name="skus">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panelBox panelBox2" style="margin: 10px 0px; display: none;" id="tmSearchBtnBox">
+                                        <a class="plusBlockBtn" id="tmAddWordPlan" href="javascript:;" on="tm">
+                                            <span>点击多添加1个搜索关键字方案（最多可添加4个方案）</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="secondTile">缩小搜索范围</div>
+                                <div class="panelBox">
+                                    <div class="panelLine sec">
+                                        让买手用列表筛选中 <span class="red">价格筛选</span> 、 <span class="red">商品所在地</span> 缩小范围 <span class="grey">非必填，买手可通过筛选价格或所在地更方便的找到您的商品</span>
+                                    </div>
+                                    <div class="panelLine sec">
+                                        <span class="floatLeft ls">商品价格：</span>
+                                        <input type="text" class="inputText floatLeft ls short" id="startPrice" name="startPrice" value=""> <span class="floatLeft ls">元&nbsp;-</span>
+                                        <input type="text" class="inputText floatLeft ls short" id="endPrice" name="endPrice" value=""> <span class="floatLeft ls" style="margin-right: 40px;">元</span> <span class="floatLeft ls">商品所在地：</span>
+                                        <div class="LocationWrap">
+                                            <a href="javascript:;" class="floatLeft ls" id="btnRegionPicker" data-value="全国">全国</a>
+                                            <div id="regionFloatDiv">
+                                                <div class="most-location">
+                                                    <span class="grey">上次使用</span>
+                                                    <a class="green" trace="" id="spLocation" href="javascript:;" data-value="全国">全国</a>
+                                                </div>
+                                                <div class="clearfix">
+                                                    <div class="list-innerwrap clearfix">
+                                                        <ul>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">[全国]</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">北京</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">上海</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">广州</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">深圳</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">杭州</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">海外</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">江浙沪</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">珠三角</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">京津冀</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">东三省</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">港澳台</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">江浙沪皖</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="list-innerwrap clearfix">
+                                                        <ul>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">长沙</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">长春</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">成都</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">重庆</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">大连</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">东莞</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">佛山</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">福州</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">贵阳</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">合肥</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">金华</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">济南</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">嘉兴</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">昆明</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">宁波</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">南昌</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">南京</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">青岛</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">泉州</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">沈阳</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">苏州</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">天津</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">温州</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">无锡</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">武汉</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">西安</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">厦门</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">郑州</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">中山</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">石家庄</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">哈尔滨</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="list-innerwrap clearfix">
+                                                        <ul>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">安徽</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">福建</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">甘肃</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">广东</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">广西</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">贵州</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">海南</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">河北</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">河南</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">湖北</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">湖南</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">江苏</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">江西</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">吉林</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">辽宁</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">宁夏</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">青海</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">山东</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">山西</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">陕西</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">云南</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">四川</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">西藏</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">新疆</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">浙江</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">澳门</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">香港</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">台湾</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">内蒙古</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="address" href="javascript:;">黑龙江</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="secondTile">设置任务要求</div>
+                            <span class="grey">
+                                该任务有特殊要求，想对买手说点什么，请填写在这里（例如：商品大致在第*页、不用聊天、请拍套餐等,限100字）。<br>
+                                平台已经对买号做了限制，商家不得限制买号做任务，不能在此限制评论内容等与平台流程不一致的要求。<br>
+                                <span class="red">【聚划算，淘抢购，天天特价，推广】</span>须在任务要求里填写推广的链接地址和找到宝贝的方法。
+                            <br>
+                            <span class="red">【淘口令】</span>须在任务要求里填写淘口令。
+                            <br>
+                            <span class="red">【二维码】</span>“商品主图”请上传二维码图片，在任务要求里注明“扫码二维码进入”。
+                            </span>
+                            <div class="panelBox">
+                                <div class="panelLine" style="margin-bottom: 30px;">
+                                    <span class="ls floatLeft">
+                                        任务要求：
+                                    </span>
+                                    <textarea id="taskRequest" name="taskRequest" rows="3" maxlength="100" cols="100"></textarea>
+                                </div>
+                            </div>
+                            <div class="secondTile">设置快递包裹重量</div>
+                            <div class="panelBox">
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft">
+                                        快递重量
+                                        <span class="red bold">*</span>
+                                    </span>
+                                    <input type="text" class="inputText floatLeft ls short required" id="txtItemWeight" min="0" max="40" maxlength="5" name="expressWeight" value="" aria-required="true">
+                                    <span class="ls floatLeft">公斤</span>
+                                    <span class="grey">（请不要大于40公斤。快递单上，会随机加减0.01-0.03公斤）</span>
+                                </div>
+                            </div>
+                            <div class="secondTile">设置商品收取运费的方式</div>
+                            <div class="panelBox" id="express">
+                                <div class="panelLine">
+                                    <input class="rad ls floatLeft isFreeShipping" type="radio" name="r_express_type" value="0">
+                                    <span class="floatLeft">商品本身包邮，买手按商品实际金额下单</span>
+                                </div>
+                                <div class="panelLine sec">
+                                    <input class="rad ls floatLeft isFreeShipping" type="radio" name="r_express_type" checked="" value="10">
+                                    <span class="floatLeft">商品不包邮，无需买手联系客服。商家每单额外支出10元作为运费押金，任务完成后运费押金会退还商家。</span>
+                                </div>
+                            </div>
+                            <div class="secondTile">订单留言</div>
+                            <div class="grey">您可以指定最多10条留言内容，系统会随机指定买手下单时进行订单留言，以便区分正常订单 (15个字以内)</div>
+                            <div class="panelBox" id="orderMessages">
+                                <div class="panelLine sec">
+                                    <input type="text" class="orderMsg orderMsg5 inputText floatLeft ls long" name="orderMsg5" id="orderMsg5" value="">（回车继续添加~~）
+                                </div>
+                            </div>
+                            <div class="buttonSection">
+                                <a href="javascript:;" class="stdColorButton prev">
+                                    <i class="Hui-iconfont"></i> 上一步
+                                </a>
+                                <a href="javascript:;" class="stdColorButton next">
+                                下一步
+
+                                 <i class="Hui-iconfont"></i>
+                                </a>
+                            </div>
+                            <!-- 暂时先注释 <div class="popWrapper" style="height: 1061px; width: 1153px; display: none;" id="tr_loading_mask">
+                                <div class="maskLayer"></div>
+                                <img class="tr_juhua" src="">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default mt-20 contentCard stepCard" style="display: none;" id="taskStep-3">
+                    <div class="panel-header">第三步：设置商品信息</div>
+                    <div class="panel-body">
+                        <div class="secondTile">选择刷单数量</div>
+                        <div class="panelBox">
+                            <div class="panelLine sec trade-num-list">
+                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" data-count="3">
+                                <span class="floatLeft ls">3单</span>
+                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" data-count="5">
+                                <span class="floatLeft ls">5单</span>
+                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" data-count="10" checked="">
+                                <span class="floatLeft ls">10单</span>
+                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" data-count="20">
+                                <span class="floatLeft ls">20单</span>
+                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" data-count="100">
+                                <span class="floatLeft ls">100单</span>
+                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" data-count="250">
+                                <span class="floatLeft ls">250单</span>
+                                <!-- 自定义数量 -->
+                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" id="radCustomOrderNum" checked="checked">
+                                <span class="floatLeft ls">自定义</span>
+                                <input type="text" class="inputText floatLeft ls short valid" name="customOrderNum" id="txtCustomOrderNum" value="" aria-invalid="false" aria-describedby="txtCustomOrderNum-error"><span id="txtCustomOrderNum-error" class="error" style="display: none;"></span>
+                                <span class="floatLeft ls">单</span>
+                            </div>
+                        </div>
+                        <div class="secondTile">设置订单分布</div>
+                        <div class="panelBox">
+                            <div class="panelLine sec">
+                                <span class="floatLeft ls">电脑端</span>
+                                <input type="text" class="inputText floatLeft ls short required valid" name="pcOrderNum" id="pcOrderNum" value="10" aria-required="true" aria-invalid="false" aria-describedby="pcOrderNum-error"><span id="pcOrderNum-error" class="error" style="display: none;"></span>
+                                <span class="floatLeft ls">单</span>
+                                <span class="floatLeft ls">手机|Pad客户端</span>
+                                <input type="text" class="inputText floatLeft ls short required valid" name="wirelessOrderNum" id="wirelessOrderNum" value="0" aria-required="true" aria-invalid="false" aria-describedby="wirelessOrderNum-error"><span id="wirelessOrderNum-error" class="error" style="display: none;"></span>
+                                <span class="floatLeft mr10">单</span>
+                                <span class="floatLeft ls grey">
+                            无线订单每单须另付
+                            <span class="red">0.5</span> 金币
+                                </span>
+                            </div>
+                            <div class="panelLine">&nbsp;</div>
+                        </div>
+                        <div class="secondTile" id="searchPlan_key">请设置成交关键词分布<span class="ls grey">
+                            (各关键词订单总数为
+                            <span class="red" id="keyOrderNum">11</span> 单)
+                            </span>
+                        </div>
+                        <div class="panelBox" id="searchPlanTotalNum">
+                            <div class="panelLine sec"><span class="floatLeft ls keyText">淘宝搜索关键词:房子</span>
+                                <input type="text" class="inputText floatLeft ls short required" name="searchItemTotalNum" id="searchItemTotalNum" value=""><span class="floatLeft ls">单</span>
+                                <input type="hidden" name="searchItemFlowNum" value="">
+                                <input type="hidden" name="searchItemCollectProduct" value="">
+                                <input type="hidden" name="searchItemShoppingCart" value="">
+                            </div>
+                        </div>
+                        <div class="panelLine">&nbsp;</div>
+                        <div class="legendPanel">
+                            <div class="l_title">
+                                费用总计
+                            </div>
+                            <div class="panelLine">
+                                刷单费用：
+                                <span class="spPcUnitPrice">NaN</span> 金币/单 x
+                                <span class="num spPcOrderCount">11</span> 单&nbsp;+
+                                <span class="spWirelessUnitPrice">NaN</span> 金币/单 x
+                                <span class="num spWirelessOrderCount">0</span> 单&nbsp; =
+                                <span class="num spSumCost">0.00</span> 金币
+                            </div>
+                        </div>
+                        <div class="buttonSection">
+                            <a href="javascript:;" class="stdColorButton prev">
+                                <i class="Hui-iconfont"></i> 上一步
+                            </a>
+                            <a href="javascript:;" class="stdColorButton next">
+                        下一步
+
+                         <i class="Hui-iconfont"></i>
+                    </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default mt-20 contentCard stepCard" style="display: none;" id="taskStep-4">
+                    <div class="panel-header">第四步：选择增值服务</div>
+                    <div class="panel-body">
+                        <div class="secondTile">快速返款给买手</div>
+                        <div class="panelBox">
+                            <div class="panelLine sec clickable" id="sysRefund">
+                                <!--<a href="javascript:;" class="inputCheckBox floatLeft inputCheckBox-checked" style="margin-top:2px;">&nbsp;</a>-->
+                                <label>
+                                    <input type="checkBox" disabled="disabled">
+                                    <span class="floatLeft">押金直接返款：</span>
+                                    <span class="grey">选择此服务，买手完成后，平台将直接使用押金为您操作返款，商家无需耗费时间、人力处理退款，减少押款周期</span>
+                                </label>
+                            </div>
+                            <div class="thirdTile" id="platformRefund" style="display: block;">
+                                每单收取刷单金额的0.6%做为退款服务费，费用：
+                                <span class="green num totalOrderNum">10</span> 单&nbsp;x
+                                <span class="green num itemPrice">0.00</span> 元&nbsp;x0.6%&nbsp;=
+                                <span class="red spPlatformRefundNum">400.00</span> 金币
+                            </div>
+                        </div>
+                        <div class="secondTile">自定义快递发货</div>
+                        <div class="panelBox">
+                            <div class="panelLine sec trade-num-list" id="expressType">
+                                <input class="rad ls floatLeft" type="radio" checked="" name="expressType" data-type="YDKD" value="5"><span class="floatLeft ls">韵达快递(3金币)</span>
+                            </div>
+                            <div class="secondTile">快速完成任务</div>
+                            <div class="panelBox">
+                                <div class="thirdTile">提升完成任务速度<span class="grey">增加金币数越多，推荐任务排名越靠前，便于买手快速完成</span>
+                                </div>
+                                <div class="panelLine sec trade-num-list" id="speedTaskIngot">
+                                    <input class="rad ls floatLeft" type="radio" name="speedTaskIngot" value="5">
+                                    <span class="floatLeft ls">+5金币</span>
+                                    <input class="rad ls floatLeft" type="radio" name="speedTaskIngot" value="10">
+                                    <span class="floatLeft ls">+10金币</span>
+                                    <input class="rad ls floatLeft" type="radio" name="speedTaskIngot" value="15">
+                                    <span class="floatLeft ls">+15金币</span>
+                                    <input class="rad ls floatLeft" type="radio" name="speedTaskIngot" value="20">
+                                    <span class="floatLeft ls">+20金币</span>
+                                    <input class="rad ls floatLeft" type="radio" name="speedTaskIngot" value="0">
+                                    <span class="floatLeft ls">无</span>
+                                </div>
+                                <div class="thirdTile">
+                                    加赏任务佣金
+                                    <span class="grey">增加金币数越多，买手完成任务的积极性越大，买手会优先做此类任务</span>
+                                </div>
+                                <div class="panelLine sec clickable">
+                                    <a href="javascript:;" class="inputCheckBox  floatLeft" style="margin-top:2px;" id="cbExtraIngot">&nbsp;
+                                        </a>
+                                    <span class="floatLeft ls">每单加赏佣金</span>
+                                    <input type="text" class="inputText floatLeft ls short" value="" id="extraRewardIngot" name="extraRewardIngot">
+                                    <span class="floatLeft ls">金币</span> ，共计：
+                                    <span class="green num totalOrderNum">10</span> 单&nbsp;x
+                                    <span class="green rewardIngotNum"></span> 金币=
+                                    <span class="red totalExtraRewardIngot">0</span> 金币
+                                </div>
+                                <div class="thirdTile">
+                                    优先审单<span class="red">选择此服务后，平台将会人工审核您发布的任务，不选择人工审核的任务，如果出现发布的任务确认有问题，扣3金币补偿买手</span>
+                                </div>
+                                <div class="panelLine sec clickable" id="speedExamine">
+                                    <a href="javascript:;" class="inputCheckBox floatLeft " style="margin-top:2px;">&nbsp;</a>
+                                    <span class="floatLeft ls">订单人工审核（1金币）</span>
+                                </div>
+                            </div>
+                            <div class="secondTile">安全优化</div>
+                            <div class="panelBox">
+                                <div class="thirdTile">任务发布间隔</div>
+                                <div class="panelLine clickable" id="publishTime">
+                                    <a href="javascript:;" class="inputCheckBox floatLeft " style="margin-top:2px;">&nbsp;</a>
+                                    <span class="floatLeft ls">每隔</span>
+                                    <select class="floatLeft ls mt8" value="" id="selPublishInterval">
+                                        <option value="10">10分钟</option>
+                                        <option value="15">15分钟</option>
+                                        <option value="30">30分钟</option>
+                                        <option value="60">1小时</option>
+                                        <option value="180">3小时</option>
+                                        <option value="300">5小时</option>
+                                        <option value="480">8小时</option>
+                                        <option value="720">12小时</option>
+                                        <option value="1440">1天</option>
+                                        <option value="2880">2天</option>
+                                        <option value="5760">4天</option>
+                                    </select>
+                                    <span class="floatLeft ls">发布</span>
+                                    <select class="floatLeft ls mt8" id="selPublishTimerValue">
+                                        <option value="1">1单</option>
+                                        <option value="2">2单</option>
+                                        <option value="5">5单</option>
+                                    </select>
+                                    <span class="floatLeft ls">任务&nbsp;&nbsp;5金币</span>
+                                </div>
+                                <div class="panelLine sec orange">选择此项服务，挖顾客会将您的任务分批发布，避免订单过于集中。为了安全，建议选择此服务</div>
+                                <div class="thirdTile">延长买家购物周期</div>
+                                <div class="panelLine trade-num-list clickable" id="buyTimeInterval">
+                                    <input class="rad ls floatLeft" type="radio" name="buyTimeInterval" value="0">
+                                    <span class="floatLeft ls">不设置</span>
+                                    <input class="rad ls floatLeft" type="radio" name="buyTimeInterval" value="1">
+                                    <span class="floatLeft ls">1个月(1金币/单)</span>
+                                    <input class="rad ls floatLeft" type="radio" name="buyTimeInterval" value="2">
+                                    <span class="floatLeft ls">2个月(2金币/单)</span>
+                                    <input class="rad ls floatLeft" type="radio" name="buyTimeInterval" value="3">
+                                    <span class="floatLeft ls">3个月(3金币/单)</span>
+                                </div>
+                                <div class="panelLine sec orange">延长买家购物周期（仅推荐对重复购买频率较低的商品使用，如家电等）</div>
+                            </div>
+                            <div id="buyFlow">
+                                <div class="secondTile">稀释自然搜索转化率(每个关键词访客数不能少于5个,一个手机访客=3个流量，一个收藏=2个流量,一个加购物车=2个流量，访客数必须大于收藏和加购物车数 )</div>
+                                <div class="thirdTile ml10">设置访客分布</div>
+                                <div class="panelBox" id="flowCharge">
+                                    <div class="panelLine sec">
+                                        <span class="floatLeft ls keyText">淘宝搜索关键词:111111<span class="red">100</span>单</span>
+                                        <input type="text" class="inputText floatLeft ls short" name="searchFlowNum" value=""><span class="floatLeft ls">个访客</span>
+                                        <input type="text" class="inputText floatLeft ls short" name="collectProduct" value=""><span class="floatLeft ls">个收藏</span>
+                                        <input type="text" class="inputText floatLeft ls short" name="shoppingCart" value=""><span class="floatLeft ls">个加购物车</span>
+                                    </div>
+                                </div>
+                                <div class="panelLine sec" id="flowTip">您目前剩余流量是<span class="red">500</span>个</div>
+                            </div>
+                            <div class="secondTile">优质好评</div>
+                            <div class="panelBox" id="goodCommentBox">
+                                <div class="panelLine sec">
+                                    <span class="floatLeft ls">
+                                        <a href="javascript:;" class="inputCheckBox " id="checkCommBox">&nbsp;</a>设置商品评价关键词（<span class="red">1</span>金币）
+                                    </span>
+                                    <span class="panelLine sec orange">选择此服务，将有助于提升评价质量并优化您商品评价映像关键词 查看说明</span>
+                                </div>
+                                <div class="panelLine sec" id="textGoodCommWordDev">
+                                    <input type="text" class="inputText floatLeft ls middle textGoodCommWord" value="" name="goodcomword"><span class="floatLeft orange">（回车继续添加~~）</span>
+                                </div>
+                                <div class="commpentBoxs commentPancel" style="display: none;">
+                                    <div class="secondTile">买手评论所需上传的图（<span class="red">1</span>金币）</div>
+                                    <div class="panelLine sec orange">
+                                        如果不需要上传评论图片，请退回到第一步，选择【普通好评】
+                                    </div>
+                                    <div class="commentPic commentPicPancel">
+                                        <div class="panelLine sec comment">
+                                            <span class="ls floatLeft itemPic" original-title="">评论图<span class="red bold">*</span></span>
+                                            <input type="text" class="inputText floatLeft ls long required" id="txtCommentPicUrl1" name="itemCommentPicUrl1" value="" commentpic1="" aria-required="true">
+                                            <div class="floatLeft" id="CommentBox1">
+                                                <input type="button" id="btnCommentfiles1" value="选择并上传评论图" style="position: relative; z-index: 1;">
+                                            </div>
+                                        </div>
+                                        <a href="javascript:;" class="close iconfont commentClose"></a>
+                                        <div class="pic-box subway" id="imgCommentWrapperInStep1">
+                                            <img id="imgComment1" name="imgComment1" src="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttonSection">
+                                <a href="javascript:;" class="stdColorButton prev">
+                                    <i class="Hui-iconfont"></i> 上一步
+                                </a>
+                                <a href="javascript:;" class="stdColorButton next">
+                                    下一步
+                                    <i class="Hui-iconfont"></i>
+                                </a>
+                            </div>
+                            <div class="panelBox" style="border-bottom:dashed 1px #DEDEDE;margin-top: 20px;margin-bottom: 10px;"></div>
+                            <div class="secondTile">
+                                费用总计&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="ls">押金：
+                                        <span class="red bold spRow-total-1 mr4 ml4 ">67,600.00</span>元，金币：
+                                <span class="red bold spRow-total-4 mr4 ml4 ">2,200.00</span>个
+                                </span>
+                            </div>
+                            <div class="taskSection">
+                                <div id="taskTableTitle">
+                                    <table class="normTable">
+                                        <tbody>
+                                            <tr>
+                                                <td class="genre">分类</td>
+                                                <td class="feeDetail">项目明细</td>
+                                                <td class="r_price">每单费用小计</td>
+                                                <td class="taskNum">单数</td>
+                                                <td class="">合计</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="feeWrapper">
+                                    <div class="taskRow">
+                                        <table class="normTable">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="genre">押金</td>
+                                                    <td class="feeDetail">
+                                                        商品：
+                                                        <span class="red itemPrice">0.00</span> 元
+                                                        <br> 退款保障金：每单
+                                                        <span class="red insurance">0.00</span> 元
+                                                        <br> 运费：
+                                                        <span class="red freight">10</span> 元
+                                                    </td>
+                                                    <td class="r_price">
+                                                        ¥
+                                                        <span class="spRow-unit-1">676.00</span> 元
+                                                    </td>
+                                                    <td class="taskNum">
+                                                        <span class="totalOrderNum">10</span>
+                                                    </td>
+                                                    <td class="r_commision">
+                                                        <span class="spRow-unit-1">676.00</span> &nbsp;x&nbsp;
+                                                        <span class="totalOrderNum">10</span> &nbsp;=&nbsp;
+                                                        <span class="spRow-total-1 red">67,600.00</span> 元
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="genre">金币</td>
+                                                    <td class="feeDetail">
+                                                        PC端服务费：
+                                                        <span class="red spPcUnitPrice">NaN</span> 金币/单
+                                                        <br> 无线端服务费：
+                                                        <span class="red spWirelessUnitPrice">NaN</span> 金币/单
+                                                        <br> 平台服务费：
+                                                        <span class="red ">2</span>金币/单
+                                                        <br> 运费服务费：
+                                                        <span class="red totalIngot">3</span> 金币/单
+                                                        <!-- <br/>
+                                                搜索服务费：
+                                                <span class="red spSearchWordCount">0</span>
+                                                金币 -->
+                                                    </td>
+                                                    <td class="r_price">
+                                                        <span class="spRow-unit-2 ">——</span>
+                                                    </td>
+                                                    <td class="taskNum">
+                                                        <span class="totalOrderNum">10</span>
+                                                    </td>
+                                                    <td class="r_commision">
+                                                        <span class="spPcUnitPrice">NaN</span> 金币/单 x
+                                                        <span class="num spPcOrderCount">100</span> 单&nbsp;+
+                                                        <span class="spWirelessUnitPrice">NaN</span> 金币/单 x
+                                                        <span class="num spWirelessOrderCount">0</span> 单&nbsp;+
+                                                        <span class="num">2</span> 金币/单 x
+                                                        <span class="num totalOrderNum">10</span> 单&nbsp;+
+                                                        <span class="totalIngot">3</span> 金币/单 x
+                                                        <span class="num totalOrderNum">10</span> 单
+                                                        <!-- &nbsp;
+                                                <span class="spSearchWordCount">0</span>
+                                                金币 -->
+                                                        &nbsp;=&nbsp;
+                                                        <span class=" spRow-total-2 red">1,800.00</span> 金币
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="genre">增值服务</td>
+                                                    <td class="feeDetail">
+                                                        押金直接返款：
+                                                        <span class="red spPlatformRefundNum">400.00</span> 金币
+                                                        <br> 提升完成任务速度：
+                                                        <span class="red speedTaskIngot">0</span> 金币
+                                                        <br> 人工审核：
+                                                        <span class="red priorIngot">0</span> 金币
+                                                        <br> 加赏任务佣金：
+                                                        <span class="red rewardIngotNum"></span> 金币
+                                                        <br> 任务发布间隔：
+                                                        <span class="red publishIntervalIngot">0</span> 金币
+                                                        <br> 延长购物周期：
+                                                        <span class="red buyTimeIntervalIngot">0</span> 金币
+                                                        <br> 优质好评关键词：
+                                                        <span class="red goodCommentKwd">0</span> 金币
+                                                        <br> 优质好评图片：
+                                                        <span class="red goodCommentPic">0</span> 金币
+                                                        <br>
+                                                        <!-- 优质好评：
+                                                <span class="red goodCommentIngot">0</span>
+                                                金币
+                                                <br/> -->
+                                                    </td>
+                                                    <td class="r_price">
+                                                        <span class="spRow-unit">——</span>
+                                                    </td>
+                                                    <td class="taskNum">
+                                                        <span class="totalOrderNum">10</span>
+                                                    </td>
+                                                    <td class="r_commision">
+                                                        <span class="spPlatformRefundNum">400.00</span> &nbsp;+&nbsp;
+                                                        <span class="speedTaskIngot">0</span> &nbsp;+&nbsp;
+                                                        <span class="priorIngot">0</span> &nbsp;+&nbsp;
+                                                        <span class="publishIntervalIngot">0</span> &nbsp;+&nbsp;
+                                                        <span class="spRow-unit-3">0.00</span> &nbsp;x&nbsp;
+                                                        <span class="totalOrderNum">10</span> &nbsp;=&nbsp;
+                                                        <span class="red spRow-total-3">400.00</span> 金币
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="totalcostBox secondTile">
+                                <span class="floatRight">费用总计&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="ls">押金：
+                                        <span class="red bold spRow-total-1 mr4 ml4">67,600.00</span>元，金币：
+                                            <span class="red bold spRow-total-4 mr4 ml4 ">2,200.00</span>个
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                    <div class="panel panel-default mt-20 contentCard stepCard" style="display: none;" id="taskStep-5">
+                        <div class="panel-header">第五步：支付</div>
+                        <div class="panel-body">
+                            <div class="contentBody">
+                                <div class="panelLine sec" id="pay">
+                                    <span class="mr10">本次任务需支付</span>
+                                    <span>
+                                    押金
+                                    <span class="red bold spRow-total-1 mr4 ml4">500.00</span> 元，金币
+                                    <span class="red bold spRow-total-4 mr4 ml4">132.40</span> 个
+                                    </span>
+                                </div>
+                                <div class="secondTile">选择支付方式</div>
+                                <div class="panelBox" id="payType">
+                                    <div class="panelLine sec">
+                                        <input class="rad ls floatLeft ingot" type="checkbox" name="r_pay_type" disabled="disabled">
+                                        <span class="floatLeft ls ">
+                                        使用金币支付（可用金币：
+                                        <span class="red bold ingot seller">0.00</span> 个，1个金币价值为1元）
+                                        </span>
+                                    </div>
+                                    <div class="panelLine sec">
+                                        <input class="rad ls floatLeft pledge" type="checkbox" name="r_pay_type" disabled="disabled">
+                                        <span class="floatLeft ls ">
+                                        使用押金支付（可用押金
+                                        <span class="red bold pledge">3.82</span> 元）
+                                        </span>
+                                    </div>
+                                    <div class="panelLine sec" style="">
+                                        <span class="floatLeft ls red ">余额不足，请选择银行卡支付</span>
+                                    </div>
+                                    <div class="clearfix bankListWrapper" id="platformSelect">
+                                        <div class="floatLeft panelLine sec pay checkTextBtn selectedCtb">
+                                            <input class="rad ls floatLeft bank" type="radio" name="pay_type" value="CMB" checked="checked">
+                                            <div class="wid floatLeft ls rad0">
+                                                <img src="images/CMB.gif">
+                                            </div>
+                                        </div>
+                                        <div class="floatLeft panelLine sec pay checkTextBtn selectedCtb">
+                                            <input class="rad ls floatLeft bank" type="radio" name="pay_type" value="CMB">
+                                            <div class="wid floatLeft ls rad0">
+                                                <img src="images/CMB.gif">
+                                            </div>
+                                        </div>
+                                        <div class="floatLeft panelLine sec pay checkTextBtn selectedCtb">
+                                            <input class="rad ls floatLeft bank" type="radio" name="pay_type" value="CMB">
+                                            <div class="wid floatLeft ls rad0">
+                                                <img src="images/CMB.gif">
+                                            </div>
+                                        </div>
+                                        <div class="floatLeft panelLine sec pay checkTextBtn selectedCtb">
+                                            <input class="rad ls floatLeft bank" type="radio" name="pay_type" value="CMB">
+                                            <div class="wid floatLeft ls rad0">
+                                                <img src="images/CMB.gif">
+                                            </div>
+                                        </div>
+                                        <div class="floatLeft panelLine sec pay checkTextBtn selectedCtb">
+                                            <input class="rad ls floatLeft bank" type="radio" name="pay_type" value="CMB">
+                                            <div class="wid floatLeft ls rad0">
+                                                <img src="images/CMB.gif">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="buttonSection">
+                                        <a href="javascript:;" class="stdColorButton prev">
+                                            <i class="Hui-iconfont"></i> 上一步
+                                        </a>
+                                        <a href="javascript:;" class="stdColorButton next" id="btnConfirmPayment" data-tid="">
+                                    付款并发布任务<i class="Hui-iconfont"></i>
+                                    </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </article>
+            </div>
+    </section>
 <{/block}>
 
 <{block 'footer_script'}>
+
+    <!--请在下方写此页面业务相关的脚本-->
+    <script type="text/javascript" src="/lib/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="/lib/jquery.number.min.js"></script>
+    <script type="text/javascript" src="/lib/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="/lib/mustache.min.js"></script>
+    <script type="text/javascript" src="/lib/global.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>
+    <script type="text/javascript">
+    $("#menu-publish dt").addClass("selected");
+    $("#menu-publish dd").show();
+    $("#menu-publish li").addClass("current");
+
+    $(function() {
+        $.Huitab("#tab .tabBar span", "#tab .tabCon", "current", "click", "0");
+        $.Huitab("#moneyTab .tabBar span", "#moneyTab .tabCon", "current", "click", "0");
+    });
+    //新js
+    var flowNum = 500;
+    var App = {
+        initStep: 1
+    }
+    var CDT = {
+        taskIdStr: '',
+        currStep: 1,
+        searchWordPlanTempl: null, //关键词方案
+        subwayTemp: null,
+        dianpuTempl: null,
+        orderMsgCount: 1,
+        commentWordCount: 1,
+        orderItemPrice: 0, // 商品单价*购买件数
+        baseOrderFee: 6,
+        flowNum: flowNum, //流量数量
+        commissionFee: 0,
+        freight: 5, //运费
+        totalOrderNum: 10, //默认要刷的总单量，PC+无线
+        pcOrderNum: 0,
+        mobileOrderNum: 0,
+        mobileExtIngot: 0.5, // 移动端订单额外收费
+        sysRefund: 0.006, //平台返款服务费比例
+        taskInsuranceRate: 0, //退款保障金比例【默认5%】，暂时取消
+        CALC_STEP_4: {}, //计算第4步的最后的收费清单的函数集
+        uptoken: '',
+        len: 0,
+        goodCommentKwdPrice: 0,
+        goodCommentPicPrice: 0
+    };
+
+    //计算第4步的最后的收费清单的第一行总价
+    CDT.CALC_STEP_4.calc1 = function() {
+        var insurance = parseFloat(CDT.orderItemPrice, 10) * CDT.taskInsuranceRate;
+        insurance = insurance.toFixed(2);
+        $('.insurance').number(insurance, 2);
+        freightPledge = parseFloat($('input.isFreeShipping:checked').val(), 10);
+        $('.freight').text(freightPledge);
+        var unit = parseFloat(CDT.orderItemPrice, 10) + parseFloat(insurance, 10) + parseFloat(freightPledge, 10);
+        $('.spRow-unit-1').number(unit, 2);
+        $('.spRow-total-1').number(unit * CDT.totalOrderNum, 2);
+    };
+    //计算第4步的最后的收费清单的第二行总价
+    CDT.CALC_STEP_4.calc2 = function() {
+        var $spSumCost = $('.spSumCost');
+        var count = parseFloat($('input[name="pcOrderNum"]').val());
+        $('.spPcOrderCount').text(count);
+        var THEcount = parseFloat($('input[name="wirelessOrderNum"]').val());
+        $('.spWirelessOrderCount').text(THEcount);
+        var unit = parseFloat($spSumCost.text().replace(',', ''), 10) + parseFloat(CDT.freight * CDT.totalOrderNum, 10);
+
+        $('.spRow-total-2').number(unit, 2);
+    };
+    //计算第4步的最后的收费清单的第三行总价
+    CDT.CALC_STEP_4.calc3 = function() {
+        var $feeDiv = $('#feeWrapper'),
+            platformRefund = parseFloat(CDT.orderItemPrice, 10),
+            spPlatformRefundNum = sysRefundCount(platformRefund) * CDT.totalOrderNum;
+        ingotNames = ['rewardIngotNum', 'buyTimeIntervalIngot', 'goodCommentKwd', 'goodCommentPic'],
+            onceNames = ['speedTaskIngot', 'priorIngot', 'publishIntervalIngot', 'spPlatformRefundNum'],
+            total = 0,
+            unit = 0;
+        $('#sysRefund a').hasClass('inputCheckBox-checked') ? $('.spPlatformRefundNum').number(spPlatformRefundNum, 2) : $('.spPlatformRefundNum').text(0);
+        for (var y in onceNames) {
+            var value = $('.' + onceNames[y] + ':first', $feeDiv).text();
+            value = value.replace(/,/g, '');
+
+            total += parseFloat(value, 10);
+        }
+        for (var x in ingotNames) {
+            var value = $('.' + ingotNames[x] + ':first', $feeDiv).text();
+            value = (value.length > 0) ? value : 0;
+            unit += parseFloat(value, 10);
+        }
+        $('.spRow-unit-3').number(unit, 2);
+        $('.spRow-total-3').number(total + unit * CDT.totalOrderNum, 2);
+    };
+    //计算第四步金币的总价
+    CDT.CALC_STEP_4.calc4 = function() {
+        var spRowtotal3 = parseFloat($('.spRow-total-3').text().replace(/,/g, ''));
+        var spRowtotal2 = parseFloat($('.spRow-total-2').text().replace(/,/g, ''));
+        var ingot = spRowtotal2 + spRowtotal3;
+        $('.spRow-total-4').number(ingot, 2);
+    };
+    //选择发快递类型
+    $('input[name="isSysExpress"]').click(function() {
+        var isSys = $('input[name="isSysExpress"]:checked').val();
+        CDT.freight = isSys
+        if (CDT.freight == 5) {
+            $(".totalIngot").text(3);
+        } else {
+            $(".totalIngot").text(0);
+        }
+        CDT.CALC_STEP_4.calc1();
+        CDT.CALC_STEP_4.calc2();
+        CDT.CALC_STEP_4.calc3();
+        CDT.CALC_STEP_4.calc4();
+    });
+    $('input[name="expressType"]').click(function() {
+        var isSys = $('input[name="expressType"]:checked').val();
+        CDT.freight = isSys
+        if (CDT.freight == 5) {
+            $(".totalIngot").text(3);
+        } else {
+            $(".totalIngot").text(0);
+        }
+        CDT.CALC_STEP_4.calc1();
+        CDT.CALC_STEP_4.calc2();
+        CDT.CALC_STEP_4.calc3();
+        CDT.CALC_STEP_4.calc4();
+    });
+
+    function loadDianpu(platform) {
+        //加载注释
+        // Tr.get('#' + platform, {}, function(data) {
+        //     if (data.code != 200) return;
+        //     var output = Mustache.render(CDT.dianpuTempl, data);
+        //     $('#dianpuContainer').html(output);
+
+        //     // （编辑旧任务时）默认选择当前已选择的店铺
+        //     var currShopId = $('#dianpuContainer').attr('curr-shop'),$currShop = $('#dianpuContainer .checkTextBtn[value="' + currShopId + '"]');
+        //     if($currShop.length){
+        //         $currShop.addClass('selectedCtb');
+        //             return;
+        //     }    
+        //     // 默认选择第一个店铺
+        //     $('#dianpuContainer .checkTextBtn:first').addClass('selectedCtb');
+        // });
+    }
+
+    function sysRefundCount(platformRefund) {
+        var spPlatformRefundNum = CDT.sysRefund * platformRefund;
+        return parseFloat(Math.ceil(spPlatformRefundNum * 100) / 100, 10);
+
+    }
+
+    function setTargetStep(step) {
+        if (step < 1 || step > 5) return;
+        var $stepFa = $('.stepWrapper .stepWaiting'),
+            index = step - 1,
+            $prev = $stepFa.eq(index - 1),
+            $curr = $stepFa.eq(index),
+            $next = $stepFa.eq(index + 1);
+        if (index > 0)
+            $prev.html('<div class="stepFinish"></div>' + $prev.find('.caption').outerHTML());
+        $curr.html('<div class="stepOn">' + ($curr.index() + 1) + '</div>' + $curr.find('.caption').prop("outerHTML")); //$curr.find('.caption').outerHTML());
+        if (index < 4)
+            $next.html(($next.index() + 1) + $next.find('.caption').prop("outerHTML"));
+        if (index == 1) {
+            var id = $('#dianpuContainer .shop.selectedCtb').attr('value');
+            //加载注释
+            // Tr.get('#'+id, {}, function(data) {
+            //     if(data.code!=200)return;
+            //     if(data.results.sellerName==null ||data.results.mobile==null || data.results.street==null || data.results.branch==null) {
+            //         alert("由于快递切换，请填写发货详细信息，请进入【绑定店铺】菜单完善店铺信息！");
+            //         CDT.currStep = 1;
+            //         return;
+            //     }else {
+            //         $('.stepCard').hide().eq(step - 1).show();
+            //     }
+            // });
+        } else {
+            $('.stepCard').hide().eq(step - 1).show();
+        }
+
+        if (index == 4) {
+            for (i = 0; i < index; i++) {
+                var $new_prev = $stepFa.eq(i);
+                $new_prev.html('<div class="stepFinish"></div>' + $new_prev.find('.caption').outerHTML());
+            }
+        }
+        if (index == 1 && !$('#ckSearchTmall').hasClass('inputCheckBox-checked')) {
+            $('.panelBox2').hide();
+            initUploader(1);
+        }
+    }
+
+    function initUploader(index) {
+        // 先获取token
+        //Tr.post('/user/upload/token', {}, function(data) {
+        // if (data.code != 200) return;
+        // // 初始化SDK
+        // CDT.uptoken = data.results;
+        // if (index > 1) {
+
+        //     var option = getImgSubwayUploaderOption2(index);
+        //     var newButtonId = 'btnPickfiles' + (index);
+        //     option.browse_button = newButtonId;
+        //     new QiniuJsSDK().uploader(option);
+
+        // } else {
+
+        //     var option1 = getImgSubwayUploaderOption();
+        //     var newButtonId = 'btnPickfiles1';
+        //     var button = '<input type="button" id="' + newButtonId + '" value="选择并上传直通车图">';
+        //     $('#subwayBox').html(button);
+
+        //     option1.browse_button = newButtonId;
+        //     new QiniuJsSDK().uploader(option1);
+
+        //     var option = getItemImgUploaderOption();
+        //     var newButtonId = 'btnPickfiles';
+        //     option.browse_button = newButtonId;
+        //     new QiniuJsSDK().uploader(option);
+
+        // }
+        // });
+    }
+
+    function initUploaderComment(force) {
+        // 先获取token
+        //Tr.post('/user/upload/token', {}, function(data) {
+        // if (data.code != 200) return;
+        // // 初始化SDK
+        // CDT.uptoken = data.results;
+        // if ($('.commpentBoxs').is(':visible')) {
+        //     var option1 = getImgCommentUploaderOption(1);
+        //     var newButtonId1 = 'btnCommentfiles1';
+        //     option1.browse_button = newButtonId1;
+        //     new QiniuJsSDK().uploader(option1);
+
+        //     var option2 = getImgCommentUploaderOption(2);
+        //     var newButtonId2 = 'btnCommentfiles2';
+        //     option2.browse_button = newButtonId2;
+        //     new QiniuJsSDK().uploader(option2);
+
+        //     var option3 = getImgCommentUploaderOption(3);
+        //     var newButtonId3 = 'btnCommentfiles3';
+        //     option3.browse_button = newButtonId3;
+        //     new QiniuJsSDK().uploader(option3);
+
+        //     var option4 = getImgCommentUploaderOption(4);
+        //     var newButtonId4 = 'btnCommentfiles4';
+        //     option4.browse_button = newButtonId4;
+        //     new QiniuJsSDK().uploader(option4);
+
+        // }
+        // });
+    }
+
+
+    function getFormValidator() {
+        if (CDT.FORM_VALIDATOR) {
+            return CDT.FORM_VALIDATOR;
+        }
+        var validator = $('#form').validate({
+            rules: {
+                itemUrl: {
+                    url: true,
+                    maxlength: 300
+                },
+                itemTitle: {
+                    maxwords: 50
+                },
+                itemPicUrl: {
+                    url: true,
+                    maxlength: 400
+                },
+                itemSubwayPicUrl: {
+                    url: true,
+                    maxlength: 400
+                },
+                itemPrice: {
+                    price: true,
+                    min: 0.01,
+                    max: 10000
+                },
+                itemDisplayPrice: {
+                    price: {
+                        depends: function(element) {
+                            return $.trim($('#itemDisplayPrice').val()).length > 0;
+                        }
+                    },
+                    min: 1,
+                    max: 10000
+                },
+                itemBuyNum: {
+                    digits: true,
+                    min: 1,
+                    max: 1000
+                },
+                searchFlowNum: {
+                    digits: true
+                },
+                collectProduct: {
+                    digits: true
+                },
+                shoppingCart: {
+                    digits: true
+                },
+                expressWeight: {
+                    range: [0, 500]
+                },
+                tbWord: {
+                    required: {
+                        depends: function(element) {
+                            return $('#ckSearchTaobao').hasClass('inputCheckBox-checked');
+                        }
+                    },
+                    maxwords: 15,
+                    minwords: 5
+                },
+                tmWord: {
+                    required: true,
+                    maxwords: 15,
+                    minwords: 5
+                },
+                startPrice: {
+                    price: {
+                        depends: function(element) {
+                            return $.trim($('#startPrice').val()).length > 0;
+                        }
+                    },
+                    min: 1,
+                    max: 100000
+                },
+                endPrice: {
+                    price: {
+                        depends: function(element) {
+                            return $.trim($('#endPrice').val()).length > 0;
+                        }
+                    },
+                    min: 1,
+                    max: 100000
+                },
+                customOrderNum: {
+                    required: {
+                        depends: function(element) {
+                            return $('#txtCustomOrderNum').prev(':radio').attr('checked');
+                        }
+                    },
+                    digits: true,
+                    min: 1,
+                    max: 500
+                },
+                pcOrderNum: {
+                    digits: true,
+                    min: 0
+                },
+                searchItemTotalNum: {
+                    digits: true,
+                    min: 0
+                },
+                wirelessOrderNum: {
+                    digits: true,
+                    min: 0,
+                },
+                extraRewardIngot: {
+                    required: {
+                        depends: function(element) {
+                            return $('#cbExtraIngot').hasClass('inputCheckBox-checked');
+                        }
+                    },
+                    digits: true,
+                    min: function(element) {
+                        if ($('#cbExtraIngot').hasClass('inputCheckBox-checked')) {
+                            return 1;
+                        }
+                        return 1;
+                    },
+                    max: 500
+                }
+            },
+            success: function(label, element) {
+                $e = $(element);
+                var inputName = $e.attr('name');
+                var isEmpty = $.trim($e.val()).length <= 0;
+                if (isEmpty && (inputName == 'itemDisplayPrice' || inputName == 'startPrice' || inputName == 'endPrice')) {
+                    return;
+                }
+                if (inputName == 'itemSubwayPicUrl') {
+                    flushSubwayItemImg();
+                }
+                if (inputName == 'itemBuyNum' || inputName == 'itemPrice') {
+                    var itemBuyNum = parseInt($('#itemBuyNum').val());
+                    var itemPrice = parseFloat($('#itemPrice').val());
+                    CDT.orderItemPrice = itemPrice * itemBuyNum;
+                }
+                label.html(Tr.okLeft);
+            },
+            // 配置发生错误时滚动页面定位出错元素
+            focusInvalid: false,
+            invalidHandler: function(form, validator) {
+                    if (!validator.numberOfInvalids())
+                        return;
+                    $('html, body').animate({
+                        scrollTop: $(validator.errorList[0].element).offset().top
+                    }, 2000);
+                }
+                // errorPlacement: function(error, element) {
+                //     element.after(error);
+                // },
+        });
+
+        CDT.FORM_VALIDATOR = validator;
+        return validator;
+    }
+
+
+    // 设置搜索关键词参数（加入请求参数的map中）
+    function setSearchPlanParam(paramMap) {
+        // 将包含淘宝、天猫搜索关键词的区域DIV加入数组中
+        var wordPlanBoxes = [];
+        if ($('#ckSearchTaobao').hasClass('inputCheckBox-checked')) {
+            $.merge(wordPlanBoxes, $('#tbSearchWordBox .wordPlan'));
+        }
+        if ($('#ckSearchTmall').hasClass('inputCheckBox-checked')) {
+            $.merge(wordPlanBoxes, $('#tmSearchWordBox .wordPlan'));
+        }
+        if ($('#ckSearchJd').hasClass('inputCheckBox-checked')) {
+            $.merge(wordPlanBoxes, $('#jdSearchWordBox .wordPlan'));
+        }
+
+        // 遍历筛选中目标数据
+        // 手动计算索引，避免引入null对象到后端list
+        var i = 0;
+        $(wordPlanBoxes).each(function(n) {
+            // 跳过关键词为空的项目
+            var word = $.trim($(this).find('input[name="word"]').val());
+            if (word.length <= 0) {
+                return;
+            }
+            // 构造请求参数前缀
+            var indexPrefix = 'task.searchPlans[' + i + ']';
+            paramMap[indexPrefix + '.word'] = word;
+            paramMap[indexPrefix + '.inTmall'] = $(this).parents('.panelBox').attr('data-in-tmall');
+            var skus = [];
+            $(this).find('input[name="skus"]').each(function(i) {
+                if ($(this).val().length > 0) {
+                    skus.push($(this).val());
+                }
+            });
+            paramMap[indexPrefix + '.skus'] = skus.join(',');
+            i++;
+        });
+
+        var wordPlanBoxesNum = [];
+        $.merge(wordPlanBoxesNum, $('#searchPlanTotalNum .sec'));
+        var j = 0;
+        $(wordPlanBoxesNum).each(function(n) {
+            var totalNum = $.trim($(this).find('input[name="searchItemTotalNum"]').val());
+            var indexPrefix = 'task.searchPlans[' + j + ']';
+            paramMap[indexPrefix + '.totalNum'] = totalNum;
+            j++;
+        });
+
+
+        var wordPlanBoxesFlowNum = [];
+        $.merge(wordPlanBoxesFlowNum, $('#flowCharge .sec'));
+        var k = 0;
+        $(wordPlanBoxesFlowNum).each(function(n) {
+            var totalNum = $.trim($(this).find('input[name="searchFlowNum"]').val()) == "" ? 0 : $.trim($(this).find('input[name="searchFlowNum"]').val());
+            var collectProduct = $.trim($(this).find('input[name="collectProduct"]').val()) == "" ? 0 : $.trim($(this).find('input[name="collectProduct"]').val());
+            var shoppingCart = $.trim($(this).find('input[name="shoppingCart"]').val()) == "" ? 0 : $.trim($(this).find('input[name="shoppingCart"]').val());
+            var indexPrefix = 'task.searchPlans[' + k + ']';
+            paramMap[indexPrefix + '.flowNum'] = totalNum;
+            paramMap[indexPrefix + '.collectProduct'] = collectProduct;
+            paramMap[indexPrefix + '.shoppingCart'] = shoppingCart;
+            k++;
+        });
+
+    }
+
+    //佣金计算
+    function commissionTable(price) {
+        if (price < 50.01) {
+            return CDT.baseOrderFee;
+        }
+        return Math.ceil((price - 50) / 100) + CDT.baseOrderFee;
+    }
+
+
+    function initTaskPayFee() {
+        //定义变量
+        CDT.pcOrderNum = parseFloat($('#pcOrderNum').val(), 10);
+        CDT.mobileOrderNum = parseFloat($('#wirelessOrderNum').val(), 10);
+        CDT.totalOrderNum = CDT.pcOrderNum + CDT.mobileOrderNum;
+
+        setTaskFee();
+
+        if ($('#checkCommBox').hasClass('inputCheckBox-checked')) {
+            $('.goodCommentKwd').text('1');
+        }
+
+        if ($('#ckUploadPic').hasClass('inputCheckBox-checked')) {
+            $('.goodCommentPic').text('1');
+        }
+
+        $('.totalOrderNum').text(CDT.totalOrderNum);
+        $('.speedTaskIngot').text($('input[name="speedTaskIngot"]:checked').val());
+        $('.rewardIngotNum').text($('#extraRewardIngot').val());
+        $('.buyTimeIntervalIngot').text($('input[name="buyTimeInterval"]:checked').val());
+    }
+
+    // 设置任务费用
+    function setTaskFee() {
+        CDT.orderItemPrice = parseFloat($('#txtItemPrice').val(), 10) * parseInt($('#itemBuyNum').val(), 10);
+        CDT.commissionFee = commissionTable(CDT.orderItemPrice);
+        var mobileOrderFee = CDT.commissionFee + CDT.mobileExtIngot;
+
+        var fee = CDT.commissionFee * CDT.pcOrderNum + mobileOrderFee * CDT.mobileOrderNum;
+
+        $('.itemPrice').number(CDT.orderItemPrice, 2);
+        $('.spPcUnitPrice').text(CDT.commissionFee);
+        $('.spWirelessUnitPrice').text(mobileOrderFee);
+        $('#taskStep-3 .spSumCost').number(fee, 2);
+        //console.log('--setTaskFee');
+    }
+
+    // 直通车图片填写后显示图片
+    function flushSubwayItemImg() {
+        var url = $.trim($('#txtItemSubwayPicUrl').val());
+        if (url.length <= 0) {
+            return;
+        }
+        var img = '<img id="imgSubway" name="itemImg" src="' + url + '" />';
+        $('#imgSubway').parent().html(img);
+    }
+
+    /*第二步：填写商品信息*/
+    function initSecondStepBind() {
+        // 输入商品链接后检测商品基本信息
+        $('#btnAutoFillItemInfo').click(function() {
+            var $itemUrl = $('#txtItemUrl'),
+                url = $.trim($itemUrl.val());
+            if (!Tr.regs.url.test(url)) {
+                if (!$itemUrl.hasClass('errorFocus')) {
+                    alert('请先输入商品链接！');
+                }
+                return;
+            }
+            // 校验通过
+            var platform = $('#taskStep-1 .platform.selectedCtb').attr('value');
+            var taskType = $("#taskStep-1 .taskType.selectedCtb").attr('value');
+            //加载注释
+            // Tr.get('#', {
+            //     url: url,
+            //     p: platform,
+            //     taskType:taskType
+            // }, function(data) {
+            //     if (data.code == 555) {
+            //         alert(data.msg);
+            //         return;
+            //     }
+            //     if (data.code != 200) return;
+            //     $('#itemInfo').show();
+            //     var item = data.results;
+            //     $('#txtItemTitle').val(item.title);
+            //     $('#txtItemPicUrl').val(item.imgUrl).attr('itemPic', item.itemPic);
+            //     // $('#txtItemPrice').val(item.price);
+            //     $('#itemImgWrapperInStep1').html('<img id="itemImg" name="itemImg" src="' + item.imgUrl + '" />');
+            // });
+        });
+
+        //添加搜索关键词方案
+        $(document).on('click', '.plusBlockBtn', function() {
+            var $me = $(this),
+                $tmp = CDT.searchWordPlanTempl,
+                $wordBox = $('#' + $me.attr('on') + 'SearchWordBox');
+            if ($wordBox.find('.subwayPanel').length == 3) {
+                $me.parent().hide();
+            }
+            $wordBox.append($tmp).find('.close').tipsy({
+                gravity: 's',
+                html: true,
+                opacity: 0.7,
+                fallback: ''
+            });
+        });
+
+        $(document).on('click', '.subwayplusBlockBtn', function() {
+
+            var index = $(".subwayPancel").length + 2;
+            if (index > 4) {
+                return false;
+            }
+            var html = "<div class='subwayBoxs subwayPancel'>" +
+                "<div class='panelLine sec subway' >" +
+                "<span class='ls floatLeft itemPic'>直通车图<span class='red bold'>*</span></span>" + "<input type='text' class='inputText floatLeft ls long required' id='txtItemSubwayPicUrl" + index + "' name='itemSubwayPicUrl" + index + "' value='' itemPic=''/>" + "<div class='floatLeft' id='subwayBox" + index + "'>" + "<input type='button' id='btnPickfiles" + index + "' value='选择并上传直通车图' />" + "</div>" + "</div>" + "<a href='javascript:;' class='close iconfont subwayClose'>&#xf0011;</a>" + "<div class='pic-box subway' id='imgSubwayWrapperInStep" + index + "'>" + "<img id='imgSubway" + index + "' name='itemImg" + index + "' src='' /></div></div>";
+            $(this).parent().before(html);
+            initUploader(index);
+        });
+        /*评论图模块*/
+        $(document).on('click', '.commentplusBlockBtn', function() {
+            var index = $(".commentPicPancel").length + 1;
+            if (index > 4) {
+                return false;
+            }
+            var html = "<div class='commentPic commentPicPancel'>" +
+                "<div class='panelLine sec comment' >" +
+                "<span class='ls floatLeft itemPic'>评论图<span class='red bold'>*</span></span>" + "<input type='text' class='inputText floatLeft ls long required' id='txtCommentPicUrl" + index + "' name='itemCommentPicUrl" + index + "' value='' itemPic=''/>" + "<div class='floatLeft' id='CommentBox" + index + "'>" + "<input type='button' id='btnCommentfiles" + index + "' value='选择并上传评论图' />" + "</div>" + "</div>" + "<a href='javascript:;' class='close iconfont commentClose'>&#xf0011;</a>" + "<div class='pic-box subway' id='imgCommentWrapperInStep" + index + "'>" + "<img id='imgComment" + index + "' name='imgComment" + index + "' src='' /></div></div>";
+            $(this).before(html);
+            initUploaderComment();
+        });
+
+        // 删除搜素关键词方案
+        $(document).on('click', '.legendPanel .close', function() {
+            var $me = $(this);
+            $me.parents('.panelBox').next().show();
+            $(this).parents('.legendPanel').remove();
+        });
+
+        // 删除搜素关键词方案
+        $(document).on('click', '.subwayPancel .close', function() {
+            $(this).parents('.subwayPancel').remove();
+        });
+
+        // 删除评论图
+        $(document).on('click', '.commentPicPancel .close', function() {
+            $(this).parents('.commentPicPancel').remove();
+        });
+
+        // 使用淘宝搜索框查找商品
+        $('#ckSearchTaobao').click(function() {
+            var $me = $(this);
+            if ($me.hasClass('inputCheckBox-checked')) {
+                $(this).removeClass('inputCheckBox-checked');
+                $('#tbSearchWordBox').hide();
+                $('.panelBox1').hide();
+                return;
+            }
+            $(this).addClass('inputCheckBox-checked');
+            $('#tbSearchWordBox').show();
+            if ($('#tbSearchWordBox .legendPanel').length < 6) {
+                $('#tbSearchBtnBox').show();
+            }
+        });
+        // 使用天猫搜索框查找商品
+        $('#ckSearchTmall').click(function() {
+            var $me = $(this);
+            if ($me.hasClass('inputCheckBox-checked')) {
+                $(this).removeClass('inputCheckBox-checked');
+                $('#tmSearchWordBox').hide();
+                $('.panelBox2').hide();
+                return;
+            }
+            $(this).addClass('inputCheckBox-checked');
+            $('#tmSearchWordBox').show();
+            if ($('#tmSearchWordBox .legendPanel').length < 6) {
+                $('#tmSearchBtnBox').show();
+            }
+        });
+        /*第二步是否添加图文评价*/
+        $('#ckUploadPic').click(function() {
+            var $me = $(this);
+            if ($me.hasClass('inputCheckBox-checked')) {
+                $(this).removeClass('inputCheckBox-checked');
+                CDT.goodCommentPicPrice = 0;
+                $(".orderNum").attr("disabled", false);
+
+                $("#radCustomOrderNum").attr("checked", false);
+                $("#txtCustomOrderNum").val("");
+                $("#keyOrderNum").text(10);
+                $("#txtCustomOrderNum").attr("disabled", false);
+                $("#pcOrderNum").val(1);
+                $(".commentPancel").hide();
+                $('.goodCommentPic').text('0');
+                return;
+            }
+            $(this).addClass('inputCheckBox-checked');
+            $(".orderNum").attr("disabled", true);
+            CDT.totalOrderNum = 1;
+            CDT.goodCommentPicPrice = 1;
+            $("#radCustomOrderNum").attr("checked", true);
+            $("#txtCustomOrderNum").val(1);
+            $("#keyOrderNum").text(1);
+            $("#txtCustomOrderNum").attr("disabled", true);
+            $("#pcOrderNum").val(1);
+            $('.goodCommentPic').text('1');
+            $(".commentPancel").show();
+
+        });
+
+        $('#checkCommBox').click(function() {
+            var $me = $(this);
+            if ($me.hasClass('inputCheckBox-checked')) {
+                $(this).removeClass('inputCheckBox-checked');
+                CDT.goodCommentKwdPrice = 0;
+                $('.goodCommentKwd').text('0');
+                CDT.CALC_STEP_4.calc3();
+                CDT.CALC_STEP_4.calc4();
+                return;
+            }
+            $(this).addClass('inputCheckBox-checked');
+            $('.goodCommentKwd').text('1');
+            CDT.goodCommentKwdPrice = 1;
+            CDT.CALC_STEP_4.calc3();
+            CDT.CALC_STEP_4.calc4();
+        });
+
+        // 宝贝所在地
+        $('#btnRegionPicker').click(function() {
+            var $flo = $('#regionFloatDiv');
+            if ($flo.css('visibility') == 'visible') {
+                $flo.css({
+                    visibility: 'hidden'
+                });
+                return;
+            }
+            var $me = $(this);
+            $('#regionFloatDiv').css({
+                visibility: 'visible',
+                left: $me.position().left,
+                top: $me.position().top + 32
+            });
+        });
+
+        $('body').click(function(evt) {
+            var e = window.event || evt,
+                obj = $(e.srcElement || e.target);
+            if (!obj.is('#regionFloatDiv,#regionFloatDiv *') && !obj.is('#btnRegionPicker')) {
+                $('#regionFloatDiv').css('visibility', 'hidden');
+            }
+        });
+
+        $(document).on('click', '.address', function() {
+            var me = $(this).text().replace(/[\[\]]/g, '');
+            $('#btnRegionPicker').attr('data-value', me).text(me);
+            $('#regionFloatDiv').css({
+                visibility: 'hidden'
+            });
+            $('#spLocation').attr('data-value', me).text(me);
+        });
+
+        // 回车添加多条订单留言    
+        $(document).on('keydown', '#orderMessages .orderMsg5', function() {
+            if (event.keyCode == '13') {
+                var msg = $.trim($(this).val());
+                if (Tr.countWords(msg) > 15) {
+                    alert('留言内容太长，请控制在15个字以内！');
+                    return false;
+                }
+
+                if (CDT.orderMsgCount >= 10) {
+                    alert('最多指定10条留言！');
+                    return false;
+                }
+                for (var i = 0; i < $('.orderMsg').length; i++) {
+                    if (!$('#orderMessages .orderMsg').eq(i).val()) {
+                        alert('请填写完第一条留言内容再增加');
+                        return false;
+                    }
+                }
+                CDT.orderMsgCount++;
+                var orderMsgInput = '<div class="panelLine sec"><input type="text" class="orderMsg orderMsg5 inputText floatLeft ls long" name="orderMsg' + CDT.orderMsgCount + '"></div>';
+                $(this).parent().after(orderMsgInput).next().find('.orderMsg5').focus();
+            }
+        });
+    }
+    //价格校验
+    function priceCheck() {
+        var price = parseFloat($('#pay .spRow-total-1').text().replace(/,/g, ''), 10) + parseFloat($('#pay .spRow-total-4').text().replace(/,/g, ''), 10);
+        var ingot = parseFloat(($('span.ingot').text() || 0), 10);
+        var pledge = parseFloat($('span.pledge').text(), 10);
+        Tr.checkprice(price, ingot, pledge);
+    }
+
+
+    $(function() {
+        // console.log('--page load--'+CDT.taskIdStr);
+        var isSys = $('input[name="expressType"]:checked').val();
+        CDT.freight = isSys
+        if (CDT.freight == 5) {
+            $(".totalIngot").text(3);
+        } else {
+            $(".totalIngot").text(0);
+        }
+        // 初始化任务进度
+        CDT.currStep = App.initStep;
+        setTargetStep(CDT.currStep);
+
+        if (CDT.currStep == 5) {
+            CDT.len = $('.stepFinish').length;
+        }
+
+
+        // 初始化计算任务费用所需的相关参数
+        initTaskPayFee();
+
+        initSecondStepBind();
+
+        //直接跳转步骤
+        $(document).on('click', '.stepFinish', function() {
+            if (App.initStep == 5) {
+                return;
+            }
+            var step = $(this).parent('.stepWaiting').index();
+            setTargetStep(step + 1);
+            var $stepFa = $('.stepWrapper .stepWaiting');
+            for (var i = step + 1; i < 5; i++) {
+                $stepFa.eq(i).html((i + 1) + $stepFa.eq(i).find('.caption').outerHTML());
+            }
+            CDT.currStep = step + 1;
+            if ($('#speedExamine a').hasClass('inputCheckBox-checked')) {
+                $('.priorIngot').text('1');
+            }
+            if ($('#publishTime a').hasClass('inputCheckBox-checked')) {
+                $('.publishIntervalIngot').text('5');
+            }
+            if ($('#ckUploadPic').hasClass('inputCheckBox-checked')) {
+                $('.goodCommentPic').text('1');
+            }
+            if ($('#checkCommBox').hasClass('inputCheckBox-checked')) {
+                $('.goodCommentKwd').text('1');
+            }
+            if ($('#cbExtraIngot').hasClass('inputCheckBox-checked')) {
+                var ingot = parseInt($('#extraRewardIngot').val(), 10);
+                $('.rewardIngotNum').text(ingot);
+                $('.totalExtraRewardIngot').number(ingot * CDT.totalOrderNum, 2);
+            }
+            CDT.CALC_STEP_4.calc1();
+            CDT.CALC_STEP_4.calc2();
+            CDT.CALC_STEP_4.calc3();
+            CDT.CALC_STEP_4.calc4();
+
+        });
+
+        // 搜索关键词方案：从原始片段复制一个空白副本作为模板
+        CDT.searchWordPlanTempl = $('#keywordTemp').remove().val();
+        CDT.dianpuTempl = $('#dianpuTempl').remove().val();
+        Mustache.parse(CDT.dianpuTempl);
+
+        priceCheck();
+
+
+        $.validator.addMethod('checkItemmsg', function(value, element) {
+            var flag = !0,
+                inputs = $('.orderMsg').not(element);
+            value = $.trim(value);
+            $.each(inputs, function(i) {
+                if (value == inputs.eq(i).val() && value) {
+                    flag = !1;
+                }
+            });
+            return flag;
+        }, Tr.error('订单留言不能重复！'));
+
+
+        /*下一步*/
+        $('.buttonSection .next').click(function() {
+            // 检查输入
+            // if (!getFormValidator().form()) {
+            //     return;
+            // }
+            var googdComment = $("#taskStep-1 .commentType.selectedCtb").attr("value");
+            var plat = $("#taskStep-1 .platform.selectedCtb").attr("value");
+            var shopType = $("#taskStep-1 .taskType.selectedCtb").attr("value");
+            if (CDT.currStep == 1) {
+                // 店铺存在且已选择
+                if ($('#dianpuContainer .shop.selectedCtb').length <= 0) {
+                    alert('必须先选择店铺！');
+                    return;
+                }
+                if ((plat == "TAOBAO" || plat == "TMALL" || plat == "JD") && shopType != "JHS" && shopType != "TQG" && shopType != "TTTJ" && shopType != "ZWTG") {
+                    if (plat == "JD") {
+                        $("#jdSearch").show();
+                        $("#taobaoAndTmallSearch").hide();
+                    } else {
+                        $(".taobao_search").show();
+                        $("#jdSearch").hide();
+                    }
+
+                } else {
+                    $(".taobao_search").hide();
+                    $("#searchPlan_key").hide();
+                    $("#buyFlow").hide();
+                }
+
+                if (plat != "TAOBAO" && plat != "TMALL" && plat != "JD") {
+                    CDT.baseOrderFee = 5; //其他平台5块起步
+                } else {
+                    CDT.baseOrderFee = 6;
+                }
+
+                if (shopType == "JHS" || shopType == "TQG") {
+                    CDT.baseOrderFee = 5; //聚划算和淘抢购平台5块起步
+                }
+
+                if (googdComment == "common") {
+                    CDT.goodCommentPicPrice = 0;
+                    $(".orderNum").attr("disabled", false);
+                    $("#txtCustomOrderNum").attr("disabled", false);
+                    $(".commentPancel").hide();
+                    $('.goodCommentPic').text('0');
+                } else {
+                    $(".orderNum").attr("disabled", true);
+                    CDT.totalOrderNum = 1;
+                    CDT.pcOrderNum = 1;
+                    CDT.goodCommentPicPrice = 1;
+                    $("#radCustomOrderNum").attr("checked", true);
+                    $("#txtCustomOrderNum").val(1);
+                    $("#keyOrderNum").text(1);
+                    $("#txtCustomOrderNum").attr("disabled", true);
+                    $("#pcOrderNum").val('1');
+                    $("#wirelessOrderNum").val('0');
+                    $(".spPcOrderCount").text(1);
+                    $('.goodCommentPic').text('1');
+
+                    $(".commentPancel").show();
+                }
+                $("#taskStep-1").hide();
+                $("#taskStep-2").show();
+            }
+
+            // 检查第二步输入：商品信息
+            if (CDT.currStep == 2) {
+                setTaskFee();
+                if ((plat == "TAOBAO" || plat == "TMALL") && shopType != "JHS" && shopType != "TQG" && shopType != "TTTJ" && shopType != "ZWTG") {
+                    if ($('#tmSearchWordBox:hidden').length == 1 && $('#tbSearchWordBox:hidden').length == 1) {
+                        alert('请选择一个搜索关键词');
+                        $('#ckSearchTaobao').addClass('inputCheckBox-checked');
+                        $('#tbSearchWordBox').show();
+                        return;
+                    }
+                }
+                //淘宝搜索
+                var html = "";
+                if ((plat == "TAOBAO" || plat == "TMALL") && shopType != "JHS" && shopType != "TQG" && shopType != "TTTJ" && shopType != "ZWTG") {
+                    if ($('#ckSearchTaobao').hasClass('inputCheckBox-checked')) {
+                        var wordPlanBoxes = [];
+                        $.merge(wordPlanBoxes, $('#tbSearchWordBox .wordPlan'));
+                        $(wordPlanBoxes).each(function(n) {
+                            // 跳过关键词为空的项目
+                            var word = $.trim($(this).find('input[name="word"]').val());
+                            var totalNum = $.trim($(this).find('input[name="planTotalNum"]').val());
+                            var flow = $.trim($(this).find('input[name="planFlowNum"]').val());
+                            var planCollectProduct = $.trim($(this).find('input[name="planCollectProduct"]').val());
+                            var planShoppingCart = $.trim($(this).find('input[name="planShoppingCart"]').val());
+                            if (word.length <= 0) {
+                                return;
+                            }
+                            //获取关键词，设置关键词单数
+                            html += "<div class='panelLine sec'>" + "<span class='floatLeft ls keyText'>淘宝搜索关键词:" + word + "</span>" + "<input type='text' class='inputText floatLeft ls short required' name='searchItemTotalNum' id='searchItemTotalNum' value='" + totalNum + "'/>" + "<span class='floatLeft ls'>单</span>" + "<input type='hidden' name='searchItemFlowNum' value='" + flow + "'/>" + "<input type='hidden' name='searchItemCollectProduct' value='" + planCollectProduct + "'/>" + "<input type='hidden' name='searchItemShoppingCart' value='" + planShoppingCart + "'/>" +
+                                "</div>";
+                        });
+
+                    }
+                    if ($('#ckSearchTmall').hasClass('inputCheckBox-checked')) {
+                        var wordPlanBoxest = [];
+                        $.merge(wordPlanBoxest, $('#tmSearchWordBox .wordPlan'));
+                        $(wordPlanBoxest).each(function(n) {
+                            // 跳过关键词为空的项目
+                            var word = $.trim($(this).find('input[name="word"]').val());
+                            var totalNum = $.trim($(this).find('input[name="planTotalNum"]').val());
+                            var flow = $.trim($(this).find('input[name="planFlowNum"]').val());
+                            var planCollectProduct = $.trim($(this).find('input[name="planCollectProduct"]').val());
+                            var planShoppingCart = $.trim($(this).find('input[name="planShoppingCart"]').val());
+                            if (word.length <= 0) {
+                                return;
+                            }
+                            //获取关键词，设置关键词单数
+                            html += "<div class='panelLine sec'>" + "<span class='floatLeft ls keyText'>天猫搜索关键词:" + word + "</span>" + "<input type='text' class='inputText floatLeft ls short required' name='searchItemTotalNum' id='searchItemTotalNum' value='" + totalNum + "'/>" + "<span class='floatLeft ls'>单</span>" + "<input type='hidden' name='searchItemFlowNum' value='" + flow + "'/>" + "<input type='hidden' name='searchItemCollectProduct' value='" + planCollectProduct + "'/>" + "<input type='hidden' name='searchItemShoppingCart' value='" + planShoppingCart + "'/>" +
+                                "</div>";
+
+                        });
+                    }
+                }
+                //京东搜索关键词分布
+                if (plat == "JD") {
+                    if ($('#ckSearchJd').hasClass('inputCheckBox-checked')) {
+                        var wordPlanBoxest = [];
+                        $.merge(wordPlanBoxest, $('#jdSearchWordBox .wordPlan'));
+                        $(wordPlanBoxest).each(function(n) {
+                            // 跳过关键词为空的项目
+                            var word = $.trim($(this).find('input[name="word"]').val());
+                            var totalNum = $.trim($(this).find('input[name="planTotalNum"]').val());
+                            var flow = $.trim($(this).find('input[name="planFlowNum"]').val());
+                            if (word.length <= 0) {
+                                return;
+                            }
+                            //获取关键词，设置关键词单数
+                            html += "<div class='panelLine sec'>" + "<span class='floatLeft ls keyText'>京东搜索关键词:" + word + "</span>" + "<input type='text' class='inputText floatLeft ls short required' name='searchItemTotalNum' id='searchItemTotalNum' value='" + totalNum + "'/>" + "<span class='floatLeft ls'>单</span><input type='hidden' name='searchItemFlowNum' value='" + flow + "' /></div>";
+
+                        });
+                    }
+                }
+                $("#searchPlanTotalNum").html("");
+                $("#searchPlanTotalNum").append(html);
+
+
+                if ($('.orderMsg').val().length > 15) {
+                    alert('留言内容太长，请控制在15个字以内！');
+                    return;
+                }
+
+                if ($('#ckUploadPic').hasClass('inputCheckBox-checked')) {
+                    $(".orderNum").attr("disabled", true);
+                    $("#radCustomOrderNum").attr("checked", true);
+                    $("#txtCustomOrderNum").val(1);
+                    $("#keyOrderNum").text(1);
+                    $("#txtCustomOrderNum").attr("disabled", true);
+                    $("#pcOrderNum").val(1);
+                    $(".commentPancel").show();
+                }
+            }
+
+            // 检查第三步输入：刷单数量
+            if (CDT.currStep == 3) {
+                // 检查订单分布设置是否正确
+
+                // 为下一步准备数据
+                CDT.totalOrderNum = parseFloat($('#pcOrderNum').val(), 10) + parseFloat($('#wirelessOrderNum').val(), 10);
+                $('.totalOrderNum').text(CDT.totalOrderNum);
+                if (CDT.totalOrderNum <= 0) {
+                    return alert("发布任务单数必须大于0");
+                }
+
+                if ($('#cbExtraIngot').hasClass('inputCheckBox-checked')) {
+                    var ingot = parseInt($('#extraRewardIngot').val(), 10);
+                    $('.rewardIngotNum').text(ingot);
+                    $('.totalExtraRewardIngot').number(ingot * CDT.totalOrderNum, 2);
+                }
+                if ((plat == "TAOBAO" || plat == "TMALL" || plat == "JD") && shopType != "JHS" && shopType != "TQG" && shopType != "TTTJ" && shopType != "ZWTG") {
+                    var wordPlanBoxest = [];
+                    $.merge(wordPlanBoxest, $('#searchPlanTotalNum .sec'));
+                    var total = 0;
+                    $(wordPlanBoxest).each(function(n) {
+                        var totalNum = $.trim($(this).find('input[name="searchItemTotalNum"]').val());
+                        total += parseInt(totalNum);
+                    });
+                    if (total != CDT.totalOrderNum) {
+                        return alert("搜索关键字单数分配必须与总单数相等！");
+                    }
+
+                    var lock = false;
+                    $(wordPlanBoxest).each(function(n) {
+                        var totalNum = $.trim($(this).find('input[name="searchItemTotalNum"]').val());
+                        if (parseInt(totalNum) <= 0 || totalNum == "") {
+                            lock = true;
+                            return false;
+                        }
+                    });
+                    if (lock) {
+                        return alert("搜索关键字单数必须大于1！");
+                    }
+
+                }
+                //设置评论关键词
+                if (CDT.totalOrderNum == 1) {
+                    var commentWordInput = '<input type="text" class="inputText floatLeft ls textGoodCommWord " style="width:800px;" maxlength="200" value="" name="goodcomword" />';
+                    $("#textGoodCommWordDev").html(commentWordInput);
+                } else {
+                    var commentWordInput = '<input type="text" class="inputText floatLeft ls middle textGoodCommWord"  value="" name="goodcomword" /><span class="floatLeft orange">（回车继续添加~~）</span>';
+                    $("#textGoodCommWordDev").html(commentWordInput);
+                }
+                initUploaderComment(); //初始化上传评论图片
+                CDT.CALC_STEP_4.calc1();
+                CDT.CALC_STEP_4.calc2();
+                CDT.CALC_STEP_4.calc3();
+                CDT.CALC_STEP_4.calc4();
+
+                var wordPlanBoxesNum = [];
+                var html = "";
+                var totalFlow = 0;
+                $.merge(wordPlanBoxesNum, $('#searchPlanTotalNum .sec'));
+                $(wordPlanBoxesNum).each(function(n) {
+                    var totalNum = $.trim($(this).find('input[name="searchItemTotalNum"]').val());
+                    var key = $.trim($(this).find('.keyText').text());
+                    var flowNum = $.trim($(this).find('input[name="searchItemFlowNum"]').val());
+                    var collectProduct = $.trim($(this).find('input[name="searchItemCollectProduct"]').val());
+                    var shoppingCart = $.trim($(this).find('input[name="searchItemShoppingCart"]').val());
+                    if (flowNum != "")
+                        totalFlow += parseInt(flowNum);
+                    totalFlow =
+                        html += "<div class='panelLine sec'>" + "<span class='floatLeft ls keyText'>" + key + "<span class='red'>" + totalNum + "</span>单</span>" + "<input type='text' class='inputText floatLeft ls short' name='searchFlowNum'  value='" + flowNum + "'/>" + "<span class='floatLeft ls'>个访客</span>" + "<input type='text' class='inputText floatLeft ls short' name='collectProduct'  value='" + collectProduct + "'/>" + "<span class='floatLeft ls'>个收藏</span>" + "<input type='text' class='inputText floatLeft ls short' name='shoppingCart'  value='" + shoppingCart + "'/>" + "<span class='floatLeft ls'>个加购物车</span>" + "</div>";
+                });
+                $("#flowCharge").html("");
+                $("#flowCharge").append(html);
+                if (parseInt(CDT.flowNum) >= totalFlow)
+                    $("#flowTip").html("您目前剩余流量是<span class='red'>" + CDT.flowNum + "</span>个,任务发布花费<span class='red'>" + totalFlow + "</span>个流量,任务发布后剩余流量是<span class='red'>" + (parseInt(CDT.flowNum) - totalFlow) + "</span>个");
+                else if (parseInt(CDT.flowNum) < totalFlow)
+                    $("#flowTip").html("<a class='red' href='/user/money'>您目前流量不足已支付，请先充值后再发布或者调整关键词对应的访客后再发布！</a>");
+                else
+                    $("#flowTip").html("您目前剩余流量是<span class='red'>" + CDT.flowNum + "</span>个");
+            }
+            $("input[name='searchFlowNum']").blur(function() {
+                if (parseInt($(this).val()) < 5) {
+                    $(this).val("");
+                }
+                var wordPlanBoxesFlowNum = [];
+                $.merge(wordPlanBoxesFlowNum, $('#flowCharge .sec'));
+                var totalFlow = 0;
+                $(wordPlanBoxesFlowNum).each(function(n) {
+                    var searchFlowNum = $.trim($(this).find('input[name="searchFlowNum"]').val());
+                    var collectProduct = $.trim($(this).find('input[name="collectProduct"]').val());
+                    var shoppingCart = $.trim($(this).find('input[name="shoppingCart"]').val());
+                    if (searchFlowNum != "")
+                        totalFlow += parseInt(searchFlowNum) * 3;
+                    if (collectProduct != "")
+                        totalFlow += parseInt(collectProduct) * 2;
+                    if (shoppingCart != "")
+                        totalFlow += parseInt(shoppingCart) * 2;
+
+                });
+
+                if (parseInt(CDT.flowNum) >= totalFlow)
+                    $("#flowTip").html("您目前剩余流量是<span class='red'>" + CDT.flowNum + "</span>个,任务发布花费<span class='red'>" + totalFlow + "</span>个流量,任务发布后剩余流量是<span class='red'>" + (parseInt(CDT.flowNum) - totalFlow) + "</span>个");
+                else if (totalFlow > parseInt(CDT.flowNum))
+                    $("#flowTip").html("<a class='red' href='/user/money'>您目前流量不足已支付，请先充值后再发布或者调整关键词对应的访客后再发布！</a>");
+                else
+                    $("#flowTip").html("<span class='red'>您输入错误！</span>");
+
+            });
+
+            $("input[name='collectProduct']").blur(function() {
+
+                var wordPlanBoxesFlowNum = [];
+                $.merge(wordPlanBoxesFlowNum, $('#flowCharge .sec'));
+                var totalFlow = 0;
+                $(wordPlanBoxesFlowNum).each(function(n) {
+                    var searchFlowNum = $.trim($(this).find('input[name="searchFlowNum"]').val());
+                    var collectProduct = $.trim($(this).find('input[name="collectProduct"]').val());
+                    var shoppingCart = $.trim($(this).find('input[name="shoppingCart"]').val());
+                    if (searchFlowNum != "")
+                        totalFlow += parseInt(searchFlowNum) * 3;
+                    if (collectProduct != "")
+                        totalFlow += parseInt(collectProduct) * 2;
+                    if (shoppingCart != "")
+                        totalFlow += parseInt(shoppingCart) * 2;
+
+                    if (collectProduct != "")
+                        if (parseInt(searchFlowNum) < parseInt(collectProduct)) {
+                            $(this).find('input[name="collectProduct"]').val(0)
+                            return alert("访客数不能少于收藏数");
+                        }
+                });
+
+                if (parseInt(CDT.flowNum) >= totalFlow)
+                    $("#flowTip").html("您目前剩余流量是<span class='red'>" + CDT.flowNum + "</span>个,任务发布花费<span class='red'>" + totalFlow + "</span>个流量,任务发布后剩余流量是<span class='red'>" + (parseInt(CDT.flowNum) - totalFlow) + "</span>个");
+                else if (totalFlow > parseInt(CDT.flowNum))
+                    $("#flowTip").html("<a class='red' href='/user/money'>您目前流量不足已支付，请先充值后再发布或者调整关键词对应的访客后再发布！</a>");
+                else
+                    $("#flowTip").html("<span class='red'>您输入错误！</span>");
+
+            });
+            $("input[name='shoppingCart']").blur(function() {
+
+                var wordPlanBoxesFlowNum = [];
+                $.merge(wordPlanBoxesFlowNum, $('#flowCharge .sec'));
+                var totalFlow = 0;
+                $(wordPlanBoxesFlowNum).each(function(n) {
+                    var searchFlowNum = $.trim($(this).find('input[name="searchFlowNum"]').val());
+                    var collectProduct = $.trim($(this).find('input[name="collectProduct"]').val());
+                    var shoppingCart = $.trim($(this).find('input[name="shoppingCart"]').val());
+                    if (searchFlowNum != "")
+                        totalFlow += parseInt(searchFlowNum) * 3;
+                    if (collectProduct != "")
+                        totalFlow += parseInt(collectProduct) * 2;
+                    if (shoppingCart != "")
+                        totalFlow += parseInt(shoppingCart) * 2;
+                    if (shoppingCart != "")
+                        if (parseInt(searchFlowNum) < parseInt(shoppingCart)) {
+                            $(this).find('input[name="shoppingCart"]').val(0)
+                            return alert("访客数不能少于加购物车数");
+                        }
+                });
+
+                if (parseInt(CDT.flowNum) >= totalFlow)
+                    $("#flowTip").html("您目前剩余流量是<span class='red'>" + CDT.flowNum + "</span>个,任务发布花费<span class='red'>" + totalFlow + "</span>个流量,任务发布后剩余流量是<span class='red'>" + (parseInt(CDT.flowNum) - totalFlow) + "</span>个");
+                else if (totalFlow > parseInt(CDT.flowNum))
+                    $("#flowTip").html("<a class='red' href='/user/money'>您目前流量不足已支付，请先充值后再发布或者调整关键词对应的访客后再发布！</a>");
+                else
+                    $("#flowTip").html("<span class='red'>您输入错误！</span>");
+
+            });
+            // 第三步之前直接跳下一步，第四步需保存任务成后才能进入下一步
+            if (CDT.currStep < 4) {
+                setTargetStep(++CDT.currStep);
+                return;
+            }
+
+            // 第四步：增值服务，创建任务
+            if (CDT.currStep == 4) {
+                var orderMessages = $.map($('#orderMessages .orderMsg'), function(element) {
+                    var value = $.trim($(element).val());
+                    return value.length > 0 ? value : null;
+                }).toString();
+                var islimitWord = false;
+                var textGoodCommWord = "";
+                $(".textGoodCommWord").each(function() {
+                    if ($.trim($(this).val()).length > 5 && CDT.totalOrderNum > 1) {
+                        islimitWord = true;
+                        return;
+                    }
+                    if ($.trim($(this).val()).length > 200) {
+                        islimitWord = true;
+                        return;
+                    }
+                    if ($(this).val() != "" && CDT.totalOrderNum > 1) {
+                        textGoodCommWord += $(this).val() + ",";
+                    } else if ($(this).val() != "" && CDT.totalOrderNum == 1) {
+                        textGoodCommWord += $(this).val();
+                    }
+
+                });
+                if (islimitWord && CDT.totalOrderNum > 1) {
+                    return alert("评论关键字不能超过5个字");
+                }
+                var itemSubwayPicUrl = "";
+                $(".subwayBoxs input[type='text']").each(function() {
+                    itemSubwayPicUrl += $(this).val() + ",";
+                });
+                var googdComment = $("#taskStep-1 .commentType.selectedCtb").attr("value");
+                //图片好评
+                var commentPicUrl = "";
+                if (googdComment == 'picComment') {
+                    $(".comment input[type='text']").each(function() {
+                        commentPicUrl += $(this).val() + ",";
+                    });
+                }
+                var p = {
+                    'task.platform': $('#taskStep-1 .platform.selectedCtb').attr('value'),
+                    'task.type': $('#taskStep-1 .taskType.selectedCtb').attr('value'),
+                    'task.shopId': $('#dianpuContainer .shop.selectedCtb').attr('value'),
+                    'task.shopName': $('#dianpuContainer .shop.selectedCtb').text(),
+                    'task.itemTitle': $('#txtItemTitle').val(),
+                    'task.itemUrl': $('#txtItemUrl').val(),
+                    'task.itemPicUrl': $('#txtItemPicUrl').val(),
+                    'task.itemPic': $('#txtItemPicUrl').attr('itemPic'),
+                    'task.itemSubwayPicUrl': itemSubwayPicUrl,
+                    'task.expressWeight': $('#txtItemWeight').val(),
+                    'task.itemPrice': $('#txtItemPrice').val() * 100,
+                    'task.itemBuyNum': $('#itemBuyNum').val(),
+                    'task.itemDisplayPrice': $('#itemDisplayPrice').val(),
+                    'task.itemSearchMinPrice': $('#startPrice').val(),
+                    'task.itemSearchMaxPrice': $('#endPrice').val(),
+                    'task.itemSearchLocation': $('#btnRegionPicker').attr('data-value'),
+                    'task.orderMessages': orderMessages,
+                    'task.expressIngot': $('input[name="expressType"]:checked').val(),
+                    'task.expressType': $('input[name="expressType"]:checked').attr("data-type"),
+                    // 刷单数量
+                    'task.pcOrderNum': $('#pcOrderNum').val(),
+                    'task.mobileOrderNum': $('#wirelessOrderNum').val(),
+                    'task.taskRequest': $.trim($("#taskRequest").val()),
+                    // 增值服务
+                    'task.sysRefund': $('#sysRefund .inputCheckBox').hasClass('inputCheckBox-checked'),
+                    'task.speedTaskIngot': $('#speedTaskIngot input:checked').val(),
+                    'task.speedExamine': $('#speedExamine').find('.inputCheckBox').hasClass('inputCheckBox-checked'),
+
+                    // 优质好评
+                    'task.goodCommentImg': $.trim(commentPicUrl)
+                };
+                // 商品规格
+                var props = $.trim($('#txtSku1').val()) + ',' + $.trim($('#txtSku2').val());
+                if (props.length > 1) {
+                    p['task.itemProps'] = props;
+                }
+                // 搜索关键词方案
+                setSearchPlanParam(p);
+                // 是否包邮
+                var isFreeShipping = ($('#express .isFreeShipping:checked').val() == '0');
+
+                p['task.isFreeShipping'] = isFreeShipping;
+
+                // 增值服务
+                p['task.speedTaskIngot'] = 0;
+                if ($('#speedTaskIngot input:checked').val()) {
+                    p['task.speedTaskIngot'] = $('#speedTaskIngot input:checked').val();
+                }
+                p['task.extraRewardIngot'] = 0;
+                if ($('#cbExtraIngot').hasClass('inputCheckBox-checked')) {
+                    p['task.extraRewardIngot'] = $('#extraRewardIngot').val();
+                }
+                p['task.goodCommentWords'] = "";
+                if ($('#checkCommBox').hasClass('inputCheckBox-checked')) {
+                    p['task.goodCommentWords'] = $.trim(textGoodCommWord);
+                }
+                p['task.publishTimerInterval'] = 0;
+                p['task.publishTimerValue'] = 0;
+                if ($('#publishTime .inputCheckBox').hasClass('inputCheckBox-checked')) {
+                    p['task.publishTimerInterval'] = $('#selPublishInterval').val();
+                    p['task.publishTimerValue'] = $('#selPublishTimerValue').val();
+                }
+                p['task.buyTimeInterval'] = $('#buyTimeInterval input:checked').val();
+
+                p['task.delaySpan'] = $('#selDelaySpan').val();
+                // 设置ID
+                if (CDT.taskIdStr.length > 0) {
+                    p['task.id'] = CDT.taskIdStr;
+                } else {
+                    p['task.id'] = $('#btnConfirmPayment').attr('data-tid');
+                }
+
+                // console.log('--save--'+CDT.taskIdStr);
+                // Tr.post('/task/save', p, function(data) {
+                // if (data.code == 800101) {
+                //     alert('待支付的订单不能进行修改！');
+                // }
+                // if (data.code == 8001) {
+                //     alert(data.msg);
+                // }
+                // if (data.code != 200) return;
+                // CDT.taskIdStr = data.results;
+                // // console.log(CDT.taskIdStr+'---');
+
+                // //校验价格
+                // priceCheck();
+
+                // 进入下一步
+                setTargetStep(++CDT.currStep);
+                // });
+            }
+        });
+
+
+        /*上一步*/
+        $('.prev').click(function() {
+            if (App.initStep == 5) {
+                alert('待支付的订单不能进行修改！');
+                return;
+            }
+            // 第五步：确认付款
+            //为上一步准备数据
+            if ($('#speedExamine a').hasClass('inputCheckBox-checked')) {
+                $('.priorIngot').text('1');
+            }
+            if ($('#publishTime a').hasClass('inputCheckBox-checked')) {
+                $('.publishIntervalIngot').text('5');
+            }
+            if ($('#cbExtraIngot').hasClass('inputCheckBox-checked')) {
+                var ingot = parseInt($('#extraRewardIngot').val(), 10);
+                $('.rewardIngotNum').text(ingot);
+                $('.totalExtraRewardIngot').number(ingot * CDT.totalOrderNum, 2);
+            }
+            CDT.CALC_STEP_4.calc1();
+            CDT.CALC_STEP_4.calc2();
+            CDT.CALC_STEP_4.calc3();
+            CDT.CALC_STEP_4.calc4();
+            $errBox = $('#taskStep-5 .errBox');
+            if ($errBox.length > 0) {
+                $errBox.hide();
+            }
+
+            setTargetStep(--CDT.currStep);
+        });
+
+        /*第一步：选任务*/
+        $(document).on('click', '#taskStep-1 .checkTextBtn', function() {
+            // 选择平台时切换店铺
+            if ($(this).hasClass('platform')) {
+                var platform = $(this).attr('value');
+                loadDianpu(platform);
+            }
+            $(this).parent().children('.selectedCtb').removeClass('selectedCtb');
+            $(this).addClass('selectedCtb');
+            var p = $('#taskStep-1 .platform.selectedCtb').attr('value');
+            if (p == 'TAOBAO' || p == 'TMALL') {
+                $("#taskStep-1 span[value='JHS']").show();
+                $("#taskStep-1 span[value='SUBWAY']").show();
+                $("#taskStep-1 span[value='TQG']").show();
+                $("#taskStep-1 span[value='TTTJ']").show();
+                $("#taskStep-1 span[value='ZWTG']").show();
+            } else {
+                $("#taskStep-1 span[value='JHS']").hide();
+                $("#taskStep-1 span[value='SUBWAY']").hide();
+                $("#taskStep-1 span[value='TQG']").hide();
+                $("#taskStep-1 span[value='TTTJ']").hide();
+                $("#taskStep-1 span[value='ZWTG']").hide();
+            }
+            if ($(this).hasClass('shop')) {
+                $('#dianpuContainer').attr('curr-shop', $(this).attr('value'));
+            }
+            //选择类型
+            if ($('.taskType').eq(2).hasClass('selectedCtb')) {
+                $(".subwayBoxs").show();
+                $('.subway').show();
+                $('#subwayPancel').show();
+            } else {
+                $(".subwayBoxs").hide();
+                $('.subway').hide();
+                $('#subwayPancel').hide();
+            }
+        });
+
+
+        /*第二步：填写商品信息*/
+        //判断链接是否含有http://
+        $('input[name ="itemUrl"]').on('keyup', function() {
+            $(this).val(Tr.checkurl($(this).val()));
+        });
+
+
+        $('.itemPic').tipsy({
+            gravity: 's',
+            html: true,
+            opacity: 0.7,
+            fallback: '便于买手识别任务商品'
+        });
+
+        /*第三步：设置刷单数量*/
+        $('input[name="r_tade_num"]:radio').click(function() {
+            var count = $(this).attr('data-count');
+            if (!count) {
+                //自定义模式
+                CDT.orderCountModal = 'custom';
+                $('#pcOrderNum').val($('#txtCustomOrderNum').val());
+            } else {
+                CDT.orderCountModal = 'speci';
+                $('#txtCustomOrderNum').val("");
+                CDT.totalOrderNum = count;
+                $('#pcOrderNum').val(count);
+                $('#keyOrderNum').text(count);
+            }
+            $('#wirelessOrderNum').val(0);
+            CDT.pcOrderNum = count;
+            $('.spPcOrderCount').text(count);
+            $('.spWirelessOrderCount').text(0);
+            $('.spSumCost').number(CDT.commissionFee * count, 2);
+            //console.log('--设置totalOrderNum');
+        });
+
+        // 自定义数量
+        $('#radCustomOrderNum').click(function() {
+            $('#txtCustomOrderNum').focus();
+            $('#pcOrderNum').val(0);
+            $('.spPcOrderCount').text(0);
+        });
+        //获取焦点自动改变订单选择
+        $('#txtCustomOrderNum').focus(function() {
+            CDT.orderCountModal = 'custom';
+            $('input[name="r_tade_num"]').eq(6).attr('checked', 'checked');
+        });
+        // 填写自定义数量时修改订单分布
+        $('#txtCustomOrderNum').keyup(function() {
+            if (CDT.orderCountModal != 'custom') return;
+            if ($(this).hasClass('invalid')) {
+                return;
+            }
+            $('#pcOrderNum').val($(this).val());
+            $("#keyOrderNum").text($(this).val());
+            $('.spPcOrderCount').text($(this).val());
+            $('#wirelessOrderNum').val(0);
+            var pcOrderNum = commissionTable(CDT.orderItemPrice) * parseFloat($('#pcOrderNum').val(), 10);
+            var wirelessOrderNum = (commissionTable(CDT.orderItemPrice) + 0.5) * parseFloat($('#wirelessOrderNum').val(), 10);
+            var spSumCost = pcOrderNum + wirelessOrderNum;
+            if (!$('#txtCustomOrderNum').val()) {
+                $('#pcOrderNum').val(0);
+                $('.spSumCost').text('0');
+            } else {
+                $('.spSumCost').text(spSumCost);
+            }
+            //console.log('--设置customTotalOrderNum');
+        }).blur(function() {
+            if (CDT.orderCountModal != 'custom') return;
+            CDT.totalOrderNum = parseInt($(this).val(), 10);
+        });
+        // 自动计算订单分布
+        $('#pcOrderNum').keyup(function() {
+            if ($(this).hasClass('invalid')) {
+                return;
+            }
+            var theNum = parseInt($(this).val(), 10),
+                totalNum = CDT.totalOrderNum;
+            if (theNum > totalNum) {
+                theNum = totalNum;
+                $(this).val(totalNum);
+            }
+            $('#wirelessOrderNum').val(totalNum - theNum);
+            $('.spPcOrderCount').text(theNum);
+            $('.spWirelessOrderCount').text(totalNum - theNum);
+            $('.spSumCost').number(CDT.commissionFee * theNum + (CDT.commissionFee + 0.5) * (totalNum - theNum), 2);
+            //console.log('--设置pcOrderNum');
+        });
+        $('#wirelessOrderNum').keyup(function() {
+            if ($(this).hasClass('invalid')) {
+                return;
+            }
+            var theNum = parseInt($(this).val()),
+                totalNum = CDT.totalOrderNum;
+            if (theNum > totalNum) {
+                theNum = totalNum;
+                $(this).val(totalNum);
+            }
+            $('#pcOrderNum').val(totalNum - theNum);
+            $('.spWirelessOrderCount').text(theNum);
+            $('.spPcOrderCount').text(totalNum - theNum);
+            $('.spSumCost').number(CDT.commissionFee * (totalNum - theNum) + (CDT.commissionFee + 0.5) * theNum, 2);
+            //console.log('--设置mobileOrderNum');
+        });
+
+
+        /*第四步：增值服务*/
+        //平台直接返款
+        $('#sysRefund a').click(function() {
+            var platformRefund = parseInt($('#platformRefund .itemPrice').text(), 10),
+                spPlatformRefundNum = sysRefundCount(platformRefund) * CDT.totalOrderNum;
+            if (!$(this).hasClass('inputCheckBox-checked')) {
+                $(this).addClass('inputCheckBox-checked');
+                $('#platformRefund').show();
+                $('.spPlatformRefundNum').number(spPlatformRefundNum, 2);
+                //动态显示金币和总价的增减
+                CDT.CALC_STEP_4.calc3();
+                CDT.CALC_STEP_4.calc4();
+                return;
+            }
+            $(this).removeClass('inputCheckBox-checked');
+            $('#platformRefund').hide();
+            $('.spPlatformRefundNum').number(0, 2);
+            CDT.CALC_STEP_4.calc3();
+            CDT.CALC_STEP_4.calc4();
+        });
+
+
+        //提升任务完成速度
+        $('input:radio[name="speedTaskIngot"]').click(function() {
+            $('.speedTaskIngot').text($(this).val());
+            //动态显示金币和总价的增减
+            CDT.CALC_STEP_4.calc3();
+            CDT.CALC_STEP_4.calc4();
+        });
+
+        $("#txtItemUrl").change(function() {
+            $("#txtItemTitle").val("");
+            $("#txtItemPicUrl").val("");
+            $("#itemImg").attr("src", "");
+        });
+        // 输入完毕后，检查佣金输入值，自动计算费用
+        $('#extraRewardIngot').keyup(function() {
+            var ingot = parseInt($(this).val(), 10);
+            if (isNaN(ingot)) {
+                ingot = 0;
+            }
+
+            if (ingot > 0) {
+                $('#cbExtraIngot').addClass('inputCheckBox-checked');
+            } else {
+                $('#cbExtraIngot').removeClass('inputCheckBox-checked');
+            }
+
+            $('.rewardIngotNum').text(ingot);
+            $('.totalExtraRewardIngot').number(ingot * CDT.totalOrderNum, 2);
+            //动态显示金币和总价的增减
+            CDT.CALC_STEP_4.calc3();
+            CDT.CALC_STEP_4.calc4();
+        });
+        // 切换加赏勾选
+        $('#cbExtraIngot').click(function() {
+
+            if (!$(this).hasClass('inputCheckBox-checked')) {
+                $(this).addClass('inputCheckBox-checked');
+                if ($('#extraRewardIngot').val().length <= 0) {
+                    $('#extraRewardIngot').val(1);
+                }
+                var ingot = parseInt($('#extraRewardIngot').val(), 10);
+                $('.rewardIngotNum').text(ingot);
+                $('.totalExtraRewardIngot').number(ingot * CDT.totalOrderNum, 2);
+                //动态显示金币和总价的增减
+                CDT.CALC_STEP_4.calc3();
+                CDT.CALC_STEP_4.calc4();
+                return;
+            }
+            $('#extraRewardIngot').val('');
+            $(this).removeClass('inputCheckBox-checked');
+            $('.rewardIngotNum,.totalExtraRewardIngot').text('0');
+            CDT.CALC_STEP_4.calc3();
+            CDT.CALC_STEP_4.calc4();
+        });
+        // 优先审单
+        $('#speedExamine').click(function() {
+            var $ckBox = $(this).children('.inputCheckBox');
+            if ($ckBox.hasClass('inputCheckBox-checked')) {
+                $ckBox.removeClass('inputCheckBox-checked');
+                $('.priorIngot').text('0');
+                //动态显示金币和总价的增减
+                CDT.CALC_STEP_4.calc3();
+                CDT.CALC_STEP_4.calc4();
+                return;
+            }
+            $ckBox.addClass('inputCheckBox-checked');
+            $('.priorIngot').text('1');
+            //动态显示金币和总价的增减
+            CDT.CALC_STEP_4.calc3();
+            CDT.CALC_STEP_4.calc4();
+        });
+
+        //若没有在编辑的任务默认选择第一个平台，第一个选择类型
+        if (!$('.platform').hasClass('selectedCtb')) {
+            $('.platform').eq(0).addClass('selectedCtb');
+        }
+        if (!$('.taskType').hasClass('selectedCtb')) {
+            $('.taskType').eq(0).addClass('selectedCtb');
+        }
+        var platform = $('.platform.selectedCtb').attr('value');
+        loadDianpu(platform);
+        //点击任务发布间隔
+        $('#publishTime').click(function() {
+            var $me = $(this).children('.inputCheckBox');
+            if ($me.hasClass('inputCheckBox-checked')) {
+                $me.removeClass('inputCheckBox-checked');
+                $('.publishIntervalIngot').text('0');
+                //动态显示金币和总价的增减
+                CDT.CALC_STEP_4.calc3();
+                CDT.CALC_STEP_4.calc4();
+                return;
+            }
+            $me.addClass('inputCheckBox-checked');
+            $('.publishIntervalIngot').text('5');
+            //动态显示金币和总价的增减
+            CDT.CALC_STEP_4.calc3();
+            CDT.CALC_STEP_4.calc4();
+        });
+        //选择时间周期
+        $('input:radio[name="buyTimeInterval"]').click(function() {
+            $('.buyTimeIntervalIngot').text($(this).val());
+            //动态显示金币和总价的增减
+            CDT.CALC_STEP_4.calc3();
+            CDT.CALC_STEP_4.calc4();
+        });
+        var commentWordInput = '<input type="text" class="inputText floatLeft ls middle textGoodCommWord" value="" name="goodcomword" />';
+        $(document).on('keyup', '.textGoodCommWord', function() {
+            var text = $.trim($(this).val());
+            if (event.keyCode == '13') {
+                if (text.length > 5) {
+                    alert('好评词语太长，请控制在5个字以内！');
+                    $(this).val("");
+                    return false;
+                }
+                if (CDT.commentWordCount == 5) {
+                    alert('最多指定5个词语！');
+                    return false;
+                }
+                $(commentWordInput).insertAfter($('.textGoodCommWord').last()).focus();
+                CDT.commentWordCount++;
+                return;
+            }
+            if (!text && $('.textGoodCommWord').length > 1) {
+                $(this).remove();
+                CDT.commentWordCount--;
+            }
+        });
+
+        /*第五步：确认付款*/
+        $('#btnConfirmPayment').click(function() {
+            // 为“待编辑”任务设置id
+            if (CDT.taskIdStr.length <= 0) {
+                CDT.taskIdStr = $(this).attr('data-tid');
+            }
+            // console.log('--cofirm--'+CDT.taskIdStr);
+            // 设置支付方式
+            var useIngot = false,
+                usePledge = false,
+                other = false;
+            if ($('#payType .ingot').attr('checked')) {
+                useIngot = true;
+            }
+
+            if ($('#payType .pledge').attr('checked')) {
+                usePledge = true;
+            }
+
+            if ($('#platformSelect input:radio[name="pay_type"]:checked').val()) {
+                other = true;
+            }
+            if (other) {
+                if (!confirm('确认用网银支付？')) {
+                    return;
+                }
+                var win = window.open(),
+                    openDtf = function(url) {
+                        setTimeout(function() {
+                            win.location = url;
+                        }, 200);
+                    };
+            }
+            // Tr.post('/task/publish/confirmPay', {
+            //     'tidStr': CDT.taskIdStr,
+            //     'useIngot': useIngot,
+            //     'usePledge': usePledge,
+            //     'other': other
+            // }, function(data) {
+            //     if (data.code == 800101) {
+            //         alert('该任务已支付过~~');
+            //         window.location.href = '/seller/tasks';
+            //     }
+            //     if (data.code == 8001) {
+            //         alert(data.msg);
+            //     }
+            //     if (data.code != 200) return;
+            //     if (other) {
+            //         // 弹出模态窗口：支付成功 or 支付遇到问题
+            //         var bank = $('#payType .bank:checked').val();
+            //         var url = '/user/pay?type=TASK&p=' + bank + '&id=' + data.results;
+            //         Tr.popup('bankPayment');
+            //         openDtf(url);
+            //         return;
+            //     }
+            //     alert('支付成功');
+            //     window.location.href = '/seller/tasks';
+            // });
+
+        });
+
+        //银行选择小图标
+        $(document).on('click', '#taskStep-5 .pay', function() {
+            $(this).find('input').attr('checked', 'checked');
+            $('input[type="checkbox"]').removeAttr('checked');
+        });
+        $(document).on('click', '#platformSelect .checkTextBtn', function() {
+            var platform = $(this).attr('value');
+            $(this).parent().children('.selectedCtb').removeClass('selectedCtb').end().end().addClass('selectedCtb');
+            $('#' + platform + 'Bind').show().siblings().hide();
+        });
+        $('input[type="checkbox"]').click(function() {
+            $('input[type="radio"]').removeAttr('checked');
+            $('.pay').removeClass('selectedCtb');
+        });
+        //网银支付弹窗支付结果的两个方式
+        $('#btnbankpay').click(function() {
+            $('#bankPayment').hide();
+            location.href = '/seller/tasks';
+        });
+        $('#btnpayerror').click(function() {
+            $('#bankPayment').hide();
+        });
+
+    });
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+
+
+
+
+<{*
 <script type="text/javascript">
 $(function(){
     $('#begin_time').datepicker();
@@ -88,4 +2805,5 @@ $(function(){
     });       
 });
 </script>
+*}>
 <{/block}>
