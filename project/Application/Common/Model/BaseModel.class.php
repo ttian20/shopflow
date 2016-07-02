@@ -17,8 +17,8 @@ class BaseModel extends Model {
     }
 
     public function getAll($filter) {
-        $rows = $this->lock(true)->where($filter)->select();
-        return $row;
+        $rows = $this->where($filter)->select();
+        return $rows;
     }
 
     public function getList($filter, $limit=10, $page=1, $order="updated_at desc") {
