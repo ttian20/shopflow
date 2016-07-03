@@ -117,7 +117,7 @@ class ShopController extends CommonController {
         $id = trim($_GET['id']);
 
         $shopMdl = D('Shop');
-        $shop = $shopMdl->getRow(array('id' => $id, 'passport_id' => $tihs->passport['id']));
+        $shop = $shopMdl->getRow(array('id' => $id, 'passport_id' => $this->passport['id']));
         if (!$shop) {
             $this->error('没有权限');
         }
@@ -126,5 +126,16 @@ class ShopController extends CommonController {
             $result = $shopMdl->save($data);
             $this->success(array('redirect' => '/home/shop'));
         }
+    }
+
+    public function listsByType() {
+        if (!$_GET['shop_type']) {
+            $this->error('请选择店铺类型');
+        }
+        $shopType = $_GET['shop_type'];
+        $shopMdl = D('Shop');
+        $filter = array('passport_id' => $this->passport['id'], 'shop_type' => $shopType);
+        $shops = $shopMdl->getAll($filter);
+        $this->success(array('shops' => $shops));
     }
 }

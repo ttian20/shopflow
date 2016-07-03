@@ -48,9 +48,11 @@
                                 <span class="checkTextBtn  platform" href="javascript:;" value="TMALL">天猫</span>
                                 <span class="checkTextBtn  platform" href="javascript:;" value="JD">京东</span>
                                 <span class="checkTextBtn  platform" href="javascript:;" value="MOGUJIE">蘑菇街</span>
+                                <input type="hidden" name="shop_type" value="">
                             </div>
                             <div class="panelLine sec">
                                 <span class="secondTile floatLeft mr20">选择店铺</span>
+                                <input type="hidden" name="shop_id" value="">
                                 <div id="dianpuContainer" curr-shop=""> <span class="checkTextBtn shop selectedCtb" href="javascript:;" value="535">洛奇服饰</span>
                                     <span class="checkTextBtn shop" href="javascript:;" value="589">百能品牌折扣店</span>
                                     <span class="checkTextBtn shop" href="javascript:;" value="974">完肌pinski</span>
@@ -71,17 +73,19 @@
                                 <span class="checkTextBtn  taskType" href="javascript:;" value="TTTJ">天天特价</span>
                                 <span class="checkTextBtn  taskType" href="javascript:;" value="ZWTG">推广</span>
                                 <span>注意：二维码，淘口令，折800，卷皮等请选择<span class="red">【推广】</span></span>
+                                <input type="hidden" name="type" value="">
                             </div>
                             <div class="panelLine sec">
                                 <span class="secondTile floatLeft mr20">选择评价</span>
                                 <span class="checkTextBtn selectedCtb commentType" href="javascript:;" value="common">普通好评</span>
                                 <span class="checkTextBtn   commentType" href="javascript:;" value="picComment">图片好评</span>
                                 <span>注意：如果选择图片好评，每个任务只能发布<span class="red">1</span>单</span>
+                                <input type="hidden" name="comment_type" value="">
                             </div>
                             <div class="panelLine sec">
                                 <div class="panelLine clickable" id="delaySpan">
                                     <span class="secondTile floatLeft mr20">延时发布</span>
-                                    <select class="floatLeft ls mt8" value="" id="selDelaySpan">
+                                    <select class="floatLeft ls mt8" name="publish_delay" value="" id="selDelaySpan">
                                         <option value="0">立即发布</option>
                                         <option value="60">1小时之后发布</option>
                                         <option value="180">3小时之后发布</option>
@@ -124,7 +128,7 @@
                                         商品链接
                                         <span class="red bold">*</span>
                                     </span>
-                                    <input type="text" class="inputText floatLeft ls long required" id="txtItemUrl" name="itemUrl" value="" aria-required="true">
+                                    <input type="text" class="inputText floatLeft ls long required" id="txtItemUrl" name="goods_url" value="" aria-required="true">
                                     <!-- <a href="javascript:;" class="stdColorButton floatLeft ls" id="btnAutoFillItemInfo">自动填写商品信息</a>  -->
                                 </div>
                                 <div id="itemInfo">
@@ -133,7 +137,7 @@
                                         商品标题
                                         <span class="red bold">*</span>
                                         </span>
-                                        <input type="text" class="inputText floatLeft ls long required" id="txtItemTitle" name="itemTitle" value="" aria-required="true">
+                                        <input type="text" class="inputText floatLeft ls long required" id="txtItemTitle" name="goods_name" value="" aria-required="true">
                                     </div>
                                     <div class="panelLine sec">
                                         <span class="ls floatLeft itemPic" original-title="">
@@ -141,7 +145,8 @@
                                         <span class="red bold">*</span>
                                         </span>
                                         <span class="btn-upload form-group">
-                                             <input class="input-text upload-url" type="text" name="uploadfile-1" id="uploadfile-1" readonly=""><a href="javascript:void();" class="btn btn-primary">选择并上传主图</a>
+                                             <{*<input class="input-text upload-url" type="text" name="uploadfile-1" id="uploadfile-1" readonly=""><a href="javascript:void();" class="btn btn-primary">选择并上传主图</a>*}>
+                                             <input class="input-text upload-url" type="text" name="goods_image" id="uploadfile-1" readonly=""><a href="javascript:void();" class="btn btn-primary">选择并上传主图</a>
                                               <input type="file" multiple="" name="file-1" class="input-file">
                                         </span>
                                     </div>
@@ -160,18 +165,18 @@
                                     单品售价
                                     <span class="red bold">*</span>
                                     </span>
-                                    <input type="text" class="inputText floatLeft ls short required" id="txtItemPrice" name="itemPrice" value="" aria-required="true">
+                                    <input type="text" class="inputText floatLeft ls short required" id="txtItemPrice" name="goods_price" value="" aria-required="true">
                                     <span class="ls floatLeft">元</span>
                                     <span class="ls floatLeft">
                                     每单拍
                                     <span class="red bold">*</span>
                                     </span>
-                                    <input type="text" class="inputText floatLeft ls short required" id="itemBuyNum" name="itemBuyNum" value="1" aria-required="true">
+                                    <input type="text" class="inputText floatLeft ls short required" id="itemBuyNum" name="goods_quantity" value="1" aria-required="true">
                                     <span class="ls floatLeft">件</span>
                                 </div>
                                 <div class="panelLine sec search_price taobao_search">
                                     <span class="ls floatLeft">搜索页面展示价格</span>
-                                    <input type="text" class="inputText floatLeft ls short" id="itemDisplayPrice" name="itemDisplayPrice" value="">
+                                    <input type="text" class="inputText floatLeft ls short" id="itemDisplayPrice" name="goods_display_price" value="">
                                     <span class="ls floatLeft grey">若该商品有满减、促销、多规格等情况下需填写</span>
                                 </div>
                             </div>
@@ -192,7 +197,7 @@
                                             <div class="panelLine wordPlan">
                                                 <span class="floatLeft ls"> 关键词 <span class="red bold">*</span>
                                                 </span>
-                                                <input type="text" class="inputText floatLeft ls middle required" maxlength="15" name="word" aria-required="true">
+                                                <input type="text" class="inputText floatLeft ls middle required" maxlength="15" name="taobao_search_condition[keyword]" aria-required="true">
                                                 <input type="hidden" value="" name="planTotalNum">
                                                 <input type="hidden" value="" name="planFlowNum">
                                                 <input type="hidden" value="" name="planCollectProduct">
@@ -219,7 +224,7 @@
                                             <div class="panelLine wordPlan">
                                                 <span class="floatLeft ls"> 关键词 <span class="red bold">*</span>
                                                 </span>
-                                                <input type="text" class="inputText floatLeft ls middle required" name="word" aria-required="true">
+                                                <input type="text" class="inputText floatLeft ls middle required" name="tmall_search_condition[keyword]" aria-required="true">
                                                 <input type="hidden" value="" name="planTotalNum">
                                                 <input type="hidden" value="" name="planFlowNum">
                                                 <input type="hidden" value="" name="planCollectProduct">
@@ -269,10 +274,11 @@
                                     </div>
                                     <div class="panelLine sec">
                                         <span class="floatLeft ls">商品价格：</span>
-                                        <input type="text" class="inputText floatLeft ls short" id="startPrice" name="startPrice" value=""> <span class="floatLeft ls">元&nbsp;-</span>
-                                        <input type="text" class="inputText floatLeft ls short" id="endPrice" name="endPrice" value=""> <span class="floatLeft ls" style="margin-right: 40px;">元</span> <span class="floatLeft ls">商品所在地：</span>
+                                        <input type="text" class="inputText floatLeft ls short" id="startPrice" name="search_price_from" value=""> <span class="floatLeft ls">元&nbsp;-</span>
+                                        <input type="text" class="inputText floatLeft ls short" id="endPrice" name="search_price_to" value=""> <span class="floatLeft ls" style="margin-right: 40px;">元</span> <span class="floatLeft ls">商品所在地：</span>
                                         <div class="LocationWrap">
                                             <a href="javascript:;" class="floatLeft ls" id="btnRegionPicker" data-value="全国">全国</a>
+                                            <input type="hidden" name="search_location">
                                             <div id="regionFloatDiv">
                                                 <div class="most-location">
                                                     <span class="grey">上次使用</span>
@@ -534,7 +540,7 @@
                                     <span class="ls floatLeft">
                                         任务要求：
                                     </span>
-                                    <textarea id="taskRequest" name="taskRequest" rows="3" maxlength="100" cols="100"></textarea>
+                                    <textarea id="taskRequest" name="requirement" rows="3" maxlength="100" cols="100"></textarea>
                                 </div>
                             </div>
                             <div class="secondTile">设置快递包裹重量</div>
@@ -544,7 +550,7 @@
                                         快递重量
                                         <span class="red bold">*</span>
                                     </span>
-                                    <input type="text" class="inputText floatLeft ls short required" id="txtItemWeight" min="0" max="40" maxlength="5" name="expressWeight" value="" aria-required="true">
+                                    <input type="text" class="inputText floatLeft ls short required" id="delievery_weight" min="0" max="40" maxlength="5" name="expressWeight" value="" aria-required="true">
                                     <span class="ls floatLeft">公斤</span>
                                     <span class="grey">（请不要大于40公斤。快递单上，会随机加减0.01-0.03公斤）</span>
                                 </div>
@@ -552,11 +558,11 @@
                             <div class="secondTile">设置商品收取运费的方式</div>
                             <div class="panelBox" id="express">
                                 <div class="panelLine">
-                                    <input class="rad ls floatLeft isFreeShipping" type="radio" name="r_express_type" value="0">
+                                    <input class="rad ls floatLeft isFreeShipping" type="radio" name="delivery_fee" value="0">
                                     <span class="floatLeft">商品本身包邮，买手按商品实际金额下单</span>
                                 </div>
                                 <div class="panelLine sec">
-                                    <input class="rad ls floatLeft isFreeShipping" type="radio" name="r_express_type" checked="" value="10">
+                                    <input class="rad ls floatLeft isFreeShipping" type="radio" name="delivery_fee" checked="" value="10">
                                     <span class="floatLeft">商品不包邮，无需买手联系客服。商家每单额外支出10元作为运费押金，任务完成后运费押金会退还商家。</span>
                                 </div>
                             </div>
@@ -564,7 +570,7 @@
                             <div class="grey">您可以指定最多10条留言内容，系统会随机指定买手下单时进行订单留言，以便区分正常订单 (15个字以内)</div>
                             <div class="panelBox" id="orderMessages">
                                 <div class="panelLine sec">
-                                    <input type="text" class="orderMsg orderMsg5 inputText floatLeft ls long" name="orderMsg5" id="orderMsg5" value="">（回车继续添加~~）
+                                    <input type="text" class="orderMsg orderMsg5 inputText floatLeft ls long" name="comments" id="orderMsg5" value="">（回车继续添加~~）
                                 </div>
                             </div>
                             <div class="buttonSection">
@@ -590,22 +596,22 @@
                         <div class="secondTile">选择刷单数量</div>
                         <div class="panelBox">
                             <div class="panelLine sec trade-num-list">
-                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" data-count="3">
+                                <input class="rad ls floatLeft orderNum" type="radio" name="quantity" data-count="3">
                                 <span class="floatLeft ls">3单</span>
-                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" data-count="5">
+                                <input class="rad ls floatLeft orderNum" type="radio" name="quantity" data-count="5">
                                 <span class="floatLeft ls">5单</span>
-                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" data-count="10" checked="">
+                                <input class="rad ls floatLeft orderNum" type="radio" name="quantity" data-count="10" checked="">
                                 <span class="floatLeft ls">10单</span>
-                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" data-count="20">
+                                <input class="rad ls floatLeft orderNum" type="radio" name="quantity" data-count="20">
                                 <span class="floatLeft ls">20单</span>
-                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" data-count="100">
+                                <input class="rad ls floatLeft orderNum" type="radio" name="quantity" data-count="100">
                                 <span class="floatLeft ls">100单</span>
-                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" data-count="250">
+                                <input class="rad ls floatLeft orderNum" type="radio" name="quantity" data-count="250">
                                 <span class="floatLeft ls">250单</span>
                                 <!-- 自定义数量 -->
-                                <input class="rad ls floatLeft orderNum" type="radio" name="r_tade_num" id="radCustomOrderNum" checked="checked">
+                                <input class="rad ls floatLeft orderNum" type="radio" name="quantity" id="radCustomOrderNum" checked="checked">
                                 <span class="floatLeft ls">自定义</span>
-                                <input type="text" class="inputText floatLeft ls short valid" name="customOrderNum" id="txtCustomOrderNum" value="" aria-invalid="false" aria-describedby="txtCustomOrderNum-error"><span id="txtCustomOrderNum-error" class="error" style="display: none;"></span>
+                                <input type="text" class="inputText floatLeft ls short valid" name="quantity_customer" id="txtCustomOrderNum" value="" aria-invalid="false" aria-describedby="txtCustomOrderNum-error"><span id="txtCustomOrderNum-error" class="error" style="display: none;"></span>
                                 <span class="floatLeft ls">单</span>
                             </div>
                         </div>
@@ -613,10 +619,10 @@
                         <div class="panelBox">
                             <div class="panelLine sec">
                                 <span class="floatLeft ls">电脑端</span>
-                                <input type="text" class="inputText floatLeft ls short required valid" name="pcOrderNum" id="pcOrderNum" value="10" aria-required="true" aria-invalid="false" aria-describedby="pcOrderNum-error"><span id="pcOrderNum-error" class="error" style="display: none;"></span>
+                                <input type="text" class="inputText floatLeft ls short required valid" name="quantity_pc" id="pcOrderNum" value="10" aria-required="true" aria-invalid="false" aria-describedby="pcOrderNum-error"><span id="pcOrderNum-error" class="error" style="display: none;"></span>
                                 <span class="floatLeft ls">单</span>
                                 <span class="floatLeft ls">手机|Pad客户端</span>
-                                <input type="text" class="inputText floatLeft ls short required valid" name="wirelessOrderNum" id="wirelessOrderNum" value="0" aria-required="true" aria-invalid="false" aria-describedby="wirelessOrderNum-error"><span id="wirelessOrderNum-error" class="error" style="display: none;"></span>
+                                <input type="text" class="inputText floatLeft ls short required valid" name="quantity_mobile" id="wirelessOrderNum" value="0" aria-required="true" aria-invalid="false" aria-describedby="wirelessOrderNum-error"><span id="wirelessOrderNum-error" class="error" style="display: none;"></span>
                                 <span class="floatLeft mr10">单</span>
                                 <span class="floatLeft ls grey">
                             无线订单每单须另付
