@@ -130,7 +130,7 @@
              dataType: "json",
              timeout:20000,
              success: function(res){
-                if(res.status){
+                if(res.status=="success"){
                     location.href=res.data.redirect;
                 }else{
                     layer.msg(res.msg);
@@ -168,7 +168,7 @@
              dataType: "json",
              timeout:20000,
              success: function(res){
-                if(res.status){
+                if(res.status=="success"){
                     location.href=res.data.redirect;
                 }else{
                     layer.msg(res.msg);
