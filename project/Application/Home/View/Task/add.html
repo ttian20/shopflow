@@ -42,7 +42,7 @@
                     <div class="panel-header">第一步：选择任务类型</div>
                     <div class="panel-body">
                         <div class="contentBody" id="step-1">
-                            <div class="panelLine sec">
+                            <div class="panelLine sec step1-plt">
                                 <span class="secondTile floatLeft mr20">选择平台</span>
                                 <{foreach item=t from=$shopTypes}>
                                 <span class="checkTextBtn  platform" href="javascript:;" value="<{$t.shop_type}>"><{$allShopTypes[$t.shop_type]}></span>
@@ -58,7 +58,8 @@
                             <div class="panelLine sec">
                                 <span class="secondTile floatLeft mr20">选择店铺</span>
                                 <input type="hidden" name="shop_id" value="">
-                                <div id="dianpuContainer" curr-shop=""> <span class="checkTextBtn shop selectedCtb" href="javascript:;" value="535">洛奇服饰</span>
+                                <div id="dianpuContainer" curr-shop=""> 
+                                    <!--<span class="checkTextBtn shop selectedCtb" href="javascript:;" value="535">洛奇服饰</span>-->
                                     <{foreach item=s from=$shops}>
                                     <span class="checkTextBtn shop" href="javascript:;" value="<{$s.id}>"><{$s.shop_name}></span>
                                     <{/foreach}>
@@ -1077,6 +1078,11 @@
     $("#menu-publish dd").show();
     $("#menu-publish li").addClass("current");
 
+     $("#dianpuContainer span").eq(0).addClass("selectedCtb");
+     $("#step-1 .step1-plt span").on('click',function(){
+        var platfm = $(this).attr('value').trim();
+        var shopHtml = ''
+     })
     $(function() {
         $.Huitab("#tab .tabBar span", "#tab .tabCon", "current", "click", "0");
         $.Huitab("#moneyTab .tabBar span", "#moneyTab .tabCon", "current", "click", "0");
