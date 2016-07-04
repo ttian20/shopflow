@@ -33,8 +33,24 @@ class TaskController extends CommonController {
     public function add() {
         $taskType = $_GET['platform'];
         $taskTypes = $this->_getSearchTypes();
+        /*
+        echo "<pre>";
+        print_r($taskTypes);
+        echo "</pre>";
+        exit;
+        */
+        $shopMdl = D('Shop');
+        $shopTypes = $shopMdl->getMyShopTypes($this->passport['id']);
+        $allShopTypes = array('taobao' => '淘宝', 'tmall' => '天猫', 'jd' => '京东', 'mogujie' => '蘑菇街');
+        $filter = array('passport_id' => $this->passport['id']);
+        $shops = $shopMdl->field('id,shop_name,shop_type')->where($filter)->select();
         $this->assign('taskTypes', $taskTypes);
         $this->assign('taskType', $taskType);
+        $this->assign('shopTypes', $shopTypes);
+        $this->assign('shopTypesJson', json_encode($shopTypes));
+        $this->assign('shops', $shops);
+        $this->assign('shopsJson', json_encode($shops));
+        $this->assign('allShopTypes', $allShopTypes);
         $this->display();
     }
 

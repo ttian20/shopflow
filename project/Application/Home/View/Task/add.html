@@ -44,20 +44,29 @@
                         <div class="contentBody" id="step-1">
                             <div class="panelLine sec">
                                 <span class="secondTile floatLeft mr20">选择平台</span>
-                                <span class="checkTextBtn  platform selectedCtb" href="javascript:;" value="TAOBAO">淘宝</span>
-                                <span class="checkTextBtn  platform" href="javascript:;" value="TMALL">天猫</span>
+                                <{foreach item=t from=$shopTypes}>
+                                <span class="checkTextBtn  platform" href="javascript:;" value="<{$t.shop_type}>"><{$allShopTypes[$t.shop_type]}></span>
+                                <{/foreach}>
+                                <!--
+                                <span class="checkTextBtn  platform selectedCtb" href="javascript:;" value="taobao">淘宝</span>
+                                <span class="checkTextBtn  platform" href="javascript:;" value="tmall">天猫</span>
                                 <span class="checkTextBtn  platform" href="javascript:;" value="JD">京东</span>
                                 <span class="checkTextBtn  platform" href="javascript:;" value="MOGUJIE">蘑菇街</span>
+                                -->
                                 <input type="hidden" name="shop_type" value="">
                             </div>
                             <div class="panelLine sec">
                                 <span class="secondTile floatLeft mr20">选择店铺</span>
                                 <input type="hidden" name="shop_id" value="">
                                 <div id="dianpuContainer" curr-shop=""> <span class="checkTextBtn shop selectedCtb" href="javascript:;" value="535">洛奇服饰</span>
-                                    <span class="checkTextBtn shop" href="javascript:;" value="589">百能品牌折扣店</span>
+                                    <{foreach item=s from=$shops}>
+                                    <span class="checkTextBtn shop" href="javascript:;" value="<{$s.id}>"><{$s.shop_name}></span>
+                                    <{/foreach}>
+                                    <!--
                                     <span class="checkTextBtn shop" href="javascript:;" value="974">完肌pinski</span>
                                     <span class="checkTextBtn shop" href="javascript:;" value="1632">拉薇丽衣</span>
                                     <span class="checkTextBtn shop" href="javascript:;" value="8128">捷径教育企业店</span>
+                                    -->
                                 </div>
                                 <a href="shop.html" target="_blank" id="btnBindNewShop">
                                     绑定新店铺&nbsp;&nbsp;
@@ -1053,8 +1062,10 @@
 <{/block}>
 
 <{block 'footer_script'}>
+<script type="text/javascript">
+    var shops = <{$shopsJson}>;
+</script>
 
-    <!--请在下方写此页面业务相关的脚本-->
     <script type="text/javascript" src="/lib/My97DatePicker/WdatePicker.js"></script>
     <script type="text/javascript" src="/lib/jquery.number.min.js"></script>
     <script type="text/javascript" src="/lib/jquery.tipsy.js"></script>
@@ -1923,7 +1934,7 @@
                     alert('必须先选择店铺！');
                     return;
                 }
-                if ((plat == "TAOBAO" || plat == "TMALL" || plat == "JD") && shopType != "JHS" && shopType != "TQG" && shopType != "TTTJ" && shopType != "ZWTG") {
+                if ((plat == "taobao" || plat == "tmall" || plat == "JD") && shopType != "JHS" && shopType != "TQG" && shopType != "TTTJ" && shopType != "ZWTG") {
                     if (plat == "JD") {
                         $("#jdSearch").show();
                         $("#taobaoAndTmallSearch").hide();
@@ -1938,7 +1949,7 @@
                     $("#buyFlow").hide();
                 }
 
-                if (plat != "TAOBAO" && plat != "TMALL" && plat != "JD") {
+                if (plat != "taobao" && plat != "tmall" && plat != "JD") {
                     CDT.baseOrderFee = 5; //其他平台5块起步
                 } else {
                     CDT.baseOrderFee = 6;
@@ -1977,7 +1988,7 @@
             // 检查第二步输入：商品信息
             if (CDT.currStep == 2) {
                 setTaskFee();
-                if ((plat == "TAOBAO" || plat == "TMALL") && shopType != "JHS" && shopType != "TQG" && shopType != "TTTJ" && shopType != "ZWTG") {
+                if ((plat == "taobao" || plat == "tmall") && shopType != "JHS" && shopType != "TQG" && shopType != "TTTJ" && shopType != "ZWTG") {
                     if ($('#tmSearchWordBox:hidden').length == 1 && $('#tbSearchWordBox:hidden').length == 1) {
                         alert('请选择一个搜索关键词');
                         $('#ckSearchTaobao').addClass('inputCheckBox-checked');
@@ -1987,7 +1998,7 @@
                 }
                 //淘宝搜索
                 var html = "";
-                if ((plat == "TAOBAO" || plat == "TMALL") && shopType != "JHS" && shopType != "TQG" && shopType != "TTTJ" && shopType != "ZWTG") {
+                if ((plat == "taobao" || plat == "tmall") && shopType != "JHS" && shopType != "TQG" && shopType != "TTTJ" && shopType != "ZWTG") {
                     if ($('#ckSearchTaobao').hasClass('inputCheckBox-checked')) {
                         var wordPlanBoxes = [];
                         $.merge(wordPlanBoxes, $('#tbSearchWordBox .wordPlan'));
@@ -2082,7 +2093,7 @@
                     $('.rewardIngotNum').text(ingot);
                     $('.totalExtraRewardIngot').number(ingot * CDT.totalOrderNum, 2);
                 }
-                if ((plat == "TAOBAO" || plat == "TMALL" || plat == "JD") && shopType != "JHS" && shopType != "TQG" && shopType != "TTTJ" && shopType != "ZWTG") {
+                if ((plat == "taobao" || plat == "tmall" || plat == "JD") && shopType != "JHS" && shopType != "TQG" && shopType != "TTTJ" && shopType != "ZWTG") {
                     var wordPlanBoxest = [];
                     $.merge(wordPlanBoxest, $('#searchPlanTotalNum .sec'));
                     var total = 0;
@@ -2416,7 +2427,7 @@
             $(this).parent().children('.selectedCtb').removeClass('selectedCtb');
             $(this).addClass('selectedCtb');
             var p = $('#taskStep-1 .platform.selectedCtb').attr('value');
-            if (p == 'TAOBAO' || p == 'TMALL') {
+            if (p == 'taobao' || p == 'tmall') {
                 $("#taskStep-1 span[value='JHS']").show();
                 $("#taskStep-1 span[value='SUBWAY']").show();
                 $("#taskStep-1 span[value='TQG']").show();
@@ -2787,7 +2798,6 @@
 
     });
     </script>
-    <!--/请在上方写此页面业务相关的脚本-->
 
 
 
