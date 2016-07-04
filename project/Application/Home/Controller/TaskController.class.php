@@ -44,12 +44,22 @@ class TaskController extends CommonController {
         $allShopTypes = array('taobao' => '淘宝', 'tmall' => '天猫', 'jd' => '京东', 'mogujie' => '蘑菇街');
         $filter = array('passport_id' => $this->passport['id']);
         $shops = $shopMdl->field('id,shop_name,shop_type')->where($filter)->select();
+
+        $groupShops = array();
+        foreach ($shopTypes as $t) {
+            $groupShops[$t['shop_type']] = array();
+        }
+
+        foreach ($shops as $s) {
+            $groupShops[$s['shop_type']][] = $s;
+        }
         $this->assign('taskTypes', $taskTypes);
         $this->assign('taskType', $taskType);
         $this->assign('shopTypes', $shopTypes);
         $this->assign('shopTypesJson', json_encode($shopTypes));
         $this->assign('shops', $shops);
         $this->assign('shopsJson', json_encode($shops));
+        $this->assign('groupShopsJson', json_encode($groupShops));
         $this->assign('allShopTypes', $allShopTypes);
         $this->display();
     }
