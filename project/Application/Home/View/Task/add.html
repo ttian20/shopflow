@@ -1075,13 +1075,21 @@
     <script type="text/javascript" src="/lib/global.js"></script>
     <script type="text/javascript" src="/lib/main.js"></script>
     <script type="text/javascript">
+    //初始化数据
     $("#menu-publish dt").addClass("selected");
     $("#menu-publish dd").show();
     $("#menu-publish li").addClass("current");
 
      $("#dianpuContainer span").eq(0).addClass("selectedCtb");
+     $(".step1-pl input[name='shop_type']").attr('value','taobao');
+
      $("#step-1 .step1-plt span").on('click',function(){
         var platfm = $(this).attr('value').trim();
+        if(platfm="jd"){
+            group_shops.jd
+
+        }
+        $(".step1-pl input[name='shop_type']").attr('value',platfm);
         var shopHtml = ''
      })
     $(function() {
