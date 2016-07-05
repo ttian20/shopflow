@@ -46,18 +46,30 @@ class TaskController extends CommonController {
         $shops = $shopMdl->field('id,shop_name,shop_type')->where($filter)->select();
 
         $groupShops = array();
+
+        $firstShopType = '';
         foreach ($shopTypes as $t) {
+            if ('' == $firstShopType) {
+                $firstShopType = $t['shop_type'];
+            }
             $groupShops[$t['shop_type']] = array();
         }
 
         foreach ($shops as $s) {
             $groupShops[$s['shop_type']][] = $s;
         }
+        /*
+        echo "<pre>";
+        print_r($groupShops);
+        print_r($groupShops[$firstShopType]);
+        echo "</pre>";
+        exit;
+        */
         $this->assign('taskTypes', $taskTypes);
         $this->assign('taskType', $taskType);
         $this->assign('shopTypes', $shopTypes);
         $this->assign('shopTypesJson', json_encode($shopTypes));
-        $this->assign('shops', $shops);
+        $this->assign('shops', $groupShops[$firstShopType]);
         $this->assign('shopsJson', json_encode($shops));
         $this->assign('groupShopsJson', json_encode($groupShops));
         $this->assign('allShopTypes', $allShopTypes);

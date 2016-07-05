@@ -44,8 +44,8 @@
                         <div class="contentBody" id="step-1">
                             <div class="panelLine sec">
                                 <span class="secondTile floatLeft mr20">选择平台</span>
-                                <{foreach item=t from=$shopTypes}>
-                                <span class="checkTextBtn  platform" href="javascript:;" value="<{$t.shop_type}>"><{$allShopTypes[$t.shop_type]}></span>
+                                <{foreach item=t from=$shopTypes name=foo}>
+                                <span class="checkTextBtn  platform<{if $t.shop_type eq $firstShopType}> selectedCtb<{/if}>" href="javascript:;" value="<{$t.shop_type}>"><{$allShopTypes[$t.shop_type]}></span>
                                 <{/foreach}>
                                 <!--
                                 <span class="checkTextBtn  platform selectedCtb" href="javascript:;" value="taobao">淘宝</span>
@@ -58,9 +58,9 @@
                             <div class="panelLine sec">
                                 <span class="secondTile floatLeft mr20">选择店铺</span>
                                 <input type="hidden" name="shop_id" value="">
-                                <div id="dianpuContainer" curr-shop=""> <span class="checkTextBtn shop selectedCtb" href="javascript:;" value="535">洛奇服饰</span>
-                                    <{foreach item=s from=$shops}>
-                                    <span class="checkTextBtn shop" href="javascript:;" value="<{$s.id}>"><{$s.shop_name}></span>
+                                <div id="dianpuContainer" curr-shop=""> 
+                                    <{foreach item=s from=$shops name=soo}>
+                                    <span class="checkTextBtn shop<{if $smarty.foreach.soo.first}> selectedCtb<{/if}>" href="javascript:;" value="<{$s.id}>"><{$s.shop_name}></span>
                                     <{/foreach}>
                                     <!--
                                     <span class="checkTextBtn shop" href="javascript:;" value="974">完肌pinski</span>
