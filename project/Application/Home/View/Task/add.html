@@ -44,8 +44,8 @@
                         <div class="contentBody" id="step-1">
                             <div class="panelLine sec step1-plt">
                                 <span class="secondTile floatLeft mr20">选择平台</span>
-                                <{foreach item=t from=$shopTypes}>
-                                <span class="checkTextBtn  platform" href="javascript:;" value="<{$t.shop_type}>"><{$allShopTypes[$t.shop_type]}></span>
+                                <{foreach item=t from=$shopTypes name=foo}>
+                                <span class="checkTextBtn  platform<{if $t.shop_type eq $firstShopType}> selectedCtb<{/if}>" href="javascript:;" value="<{$t.shop_type}>"><{$allShopTypes[$t.shop_type]}></span>
                                 <{/foreach}>
                                 <!--
                                 <span class="checkTextBtn  platform selectedCtb" href="javascript:;" value="taobao">淘宝</span>
@@ -55,26 +55,20 @@
                                 -->
                                 <input type="hidden" name="shop_type" value="">
                             </div>
-                            <div class="panelLine sec">
+                            <div class="panelLine sec step1-shop">
                                 <span class="secondTile floatLeft mr20">选择店铺</span>
-                                <input type="hidden" name="shop_id" value="">
                                 <div id="dianpuContainer" curr-shop=""> 
-                                    <!--<span class="checkTextBtn shop selectedCtb" href="javascript:;" value="535">洛奇服饰</span>-->
-                                    <{foreach item=s from=$shops}>
-                                    <span class="checkTextBtn shop" href="javascript:;" value="<{$s.id}>"><{$s.shop_name}></span>
+                                    <{foreach item=s from=$shops name=soo}>
+                                    <span class="checkTextBtn shop<{if $smarty.foreach.soo.first}> selectedCtb<{/if}>" href="javascript:;" value="<{$s.id}>"><{$s.shop_name}></span>
                                     <{/foreach}>
-                                    <!--
-                                    <span class="checkTextBtn shop" href="javascript:;" value="974">完肌pinski</span>
-                                    <span class="checkTextBtn shop" href="javascript:;" value="1632">拉薇丽衣</span>
-                                    <span class="checkTextBtn shop" href="javascript:;" value="8128">捷径教育企业店</span>
-                                    -->
                                 </div>
+                               <input type="hidden" name="shop_id" value="">
                                 <a href="shop.html" target="_blank" id="btnBindNewShop">
                                     绑定新店铺&nbsp;&nbsp;
                                     <i class="Hui-iconfont"></i>
                                 </a>
                             </div>
-                            <div class="panelLine sec">
+                            <div class="panelLine sec step1-type">
                                 <span class="secondTile floatLeft mr20">选择类型</span>
                                 <span class="checkTextBtn  taskType selectedCtb" href="javascript:;" value="ORDER">订单</span>
                                 <span class="checkTextBtn  taskType" href="javascript:;" value="JHS">聚划算</span>
@@ -83,14 +77,14 @@
                                 <span class="checkTextBtn  taskType" href="javascript:;" value="TTTJ">天天特价</span>
                                 <span class="checkTextBtn  taskType" href="javascript:;" value="ZWTG">推广</span>
                                 <span>注意：二维码，淘口令，折800，卷皮等请选择<span class="red">【推广】</span></span>
-                                <input type="hidden" name="type" value="">
+                                <input type="hidden" name="type" value="ORDER">
                             </div>
-                            <div class="panelLine sec">
+                            <div class="panelLine sec step1-comment">
                                 <span class="secondTile floatLeft mr20">选择评价</span>
                                 <span class="checkTextBtn selectedCtb commentType" href="javascript:;" value="common">普通好评</span>
                                 <span class="checkTextBtn   commentType" href="javascript:;" value="picComment">图片好评</span>
                                 <span>注意：如果选择图片好评，每个任务只能发布<span class="red">1</span>单</span>
-                                <input type="hidden" name="comment_type" value="">
+                                <input type="hidden" name="comment_type" value="common">
                             </div>
                             <div class="panelLine sec">
                                 <div class="panelLine clickable" id="delaySpan">
@@ -1080,21 +1074,96 @@
     $("#menu-publish dd").show();
     $("#menu-publish li").addClass("current");
 
-     $("#dianpuContainer span").eq(0).addClass("selectedCtb");
-     $(".step1-pl input[name='shop_type']").attr('value','taobao');
-
-     $("#step-1 .step1-plt span").on('click',function(){
+     
+     $("#step-1 .step1-plt .platform").on('click',function(){
         var platfm = $(this).attr('value').trim();
-        if(platfm="jd"){
-            group_shops.jd
+        var shophtml="";
+        $("#dianpuContainer span").remove();
+        switch(platfm){
+            case "taobao":
+                var shopData = group_shops.taobao;
+                bindShopVal(shopData);
+                break;
 
+            case "tmall":
+                var shopData = group_shops.tmall;
+                bindShopVal(shopData);
+                break;
+
+            case "jd": 
+                var shopData = group_shops.jd;
+                bindShopVal(shopData);
+                break;
         }
-        $(".step1-pl input[name='shop_type']").attr('value',platfm);
-        var shopHtml = ''
+
+        function bindShopVal(shopData) {
+            if(shopData.length>0){
+                for(var i=0;i<shopData.length;i++){
+                    shophtml += '<span class="checkTextBtn shop" href="javascript:;" value="'+shopData[i].id+'">'+shopData[i].shop_name+'</span>'; 
+                }
+                $("#dianpuContainer").html(shophtml);
+                var shopVal = $(".step1-shop .shop").eq(0);
+                shopVal.addClass("selectedCtb");
+                $(".step1-plt input[name='shop_type']").attr('value',shopVal.attr('value').trim());
+                $("#dianpuContainer").attr("curr-shop",shopVal.attr('value').trim());
+            };
+        };
+
      })
+
+     $(".step1-type .taskType").on("click",function(){
+        var taskType = $(this).attr('value').trim();
+        $(".step1-type input[name='type']").attr('value',taskType);
+     });
+
+     $(".step1-comment .commentType").on("click",function(){
+        var commentType = $(this).attr('value').trim();
+        $(".step1-comment input[name='comment_type']").attr('value',commentType);
+     });
+
+
     $(function() {
         $.Huitab("#tab .tabBar span", "#tab .tabCon", "current", "click", "0");
         $.Huitab("#moneyTab .tabBar span", "#moneyTab .tabCon", "current", "click", "0");
+
+        setTimeout(shop_typeVal, 300);
+
+        function shop_typeVal() {
+            var platfmVal = $("#step-1 .step1-plt .platform");
+            for(var i=0;i<platfmVal.length;i++){
+                if(platfmVal.eq(i).hasClass("selectedCtb")){
+                   return $(".step1-plt input[name='shop_type']").attr('value',platfmVal.eq(i).attr('value').trim());
+                }
+            }
+        }
+        setTimeout(shop_idVal, 300);
+
+        function shop_idVal() {
+            var shopVal = $("#dianpuContainer .shop");
+            for(var i=0;i<shopVal.length;i++){
+                if(shopVal.eq(i).hasClass("selectedCtb")){
+                   return $(".step1-shop input[name='shop_id']").attr('value',shopVal.eq(i).attr('value').trim());
+                }
+            };
+            var p = $('#taskStep-1 .platform .selectedCtb').attr('value');
+            if (p == 'taobao' || p == 'tmall') {
+                $("#taskStep-1 span[value='JHS']").show();
+                $("#taskStep-1 span[value='SUBWAY']").show();
+                $("#taskStep-1 span[value='TQG']").show();
+                $("#taskStep-1 span[value='TTTJ']").show();
+                $("#taskStep-1 span[value='ZWTG']").show();
+            } else {
+                $("#taskStep-1 span[value='JHS']").hide();
+                $("#taskStep-1 span[value='SUBWAY']").hide();
+                $("#taskStep-1 span[value='TQG']").hide();
+                $("#taskStep-1 span[value='TTTJ']").hide();
+                $("#taskStep-1 span[value='ZWTG']").hide();
+            }
+        }
+         
+        
+     
+
     });
     //新js
     var flowNum = 500;
