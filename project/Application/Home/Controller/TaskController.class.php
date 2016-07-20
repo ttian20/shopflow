@@ -88,6 +88,10 @@ class TaskController extends CommonController {
     public function doAdd() {
         $p = I("post.");
 
+        $data = $this->_buildBuyData($p);
+        $taskBuyMdl = D('TaskBuy');
+        $res = $taskBuyMdl->addBuyTask($taskBuyMdl);
+
         //输入检查
         //
         //账户检查
@@ -246,35 +250,41 @@ class TaskController extends CommonController {
         exit;
     }
 
-    private function _buildApiData($platform, $p) {
+    private function _buildBuyData($p) {
+        $now = time();
         $data = array(
-            'kwd' => trim($p['kwd']),
-            'nid' => trim($p['nid']),
-            'shop_type' => $p['shop_type'],
-            'times' => trim($p['times']),
-            'sleep_time' => 20,
-            'click_start' => trim($p['click_start']),
-            'click_end' => trim($p['click_end']),
-            'status' => 'active',
-            'begin_time' => trim($p['begin_time']),
-            'end_time' => trim($p['begin_time']),
+            'passport_id' => $this->passport['id'],
+            'shop_type' => trim($p['shop_type']),
+            'shop_id' => trim($p['shop_id']),
+            'type' => trim($p['type']),
+            'comment_type' => trim($p['comment_type']),
+            'publish_delay' => trim($p['publish_delay']),
+            'publish_time' => trim($p['publish_time']),
+            'goods_url' => trim($p['goods_url']),
+            'goods_name' => trim($p['goods_name']),
+            'goods_image' => trim($p['goods_image']),
+            'goods_sku' => trim($p['goods_sku']),
+            'goods_price' => trim($p['goods_price']),
+            'goods_quantity' => trim($p['goods_quantity']),
+            'goods_display_price' => trim($p['goods_display_price']),
+            'taobao_search_condition' => trim($p['taobao_search_condition']),
+            'tmall_search_condition' => trim($p['tmall_search_condition']),
+            'search_price_from' => trim($p['search_price_from']),
+            'search_price_to' => trim($p['search_price_to']),
+            'search_location' => trim($p['search_location']),
+            'requirement' => trim($p['requirement']),
+            'delivery_weight' => trim($p['delivery_weight']),
+            'delivery_fee' => trim($p['delivery_fee']),
+            'comments' => trim($p['comments']),
+            'quantity' => trim($p['quantity']),
+            'quantity_pc' => trim($p['quantity_pc']),
+            'quantity_mobile' => trim($p['quantity_mobile']),
+            'price' => trim($p['price']),
+            'created_at' => $now,
+            'updated_at' => $now,
+            'published_at' => $now,
         );
-        switch ($platform) {
-            case 'tbpc':
-                if ('c' == $p['shop_type']) {
-                    $data['path1'] = 100;
-                    $data['path2'] = 0;
-                    $data['path3'] = 0;
-                }
-                else {
-                    $data['path1'] = 0;
-                    $data['path2'] = 0;
-                    $data['path3'] = 100;
-                }
-                break;
-            case 'jdpc':
-                break;
-        }
+
         return $data;
     }
 
