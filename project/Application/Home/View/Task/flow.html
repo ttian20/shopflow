@@ -1,0 +1,192 @@
+<{extends '../Layouts/default.html'}>
+
+<{block 'content'}>
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 查看流量<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="panel panel-default mt-20">
+                <div class="panel-header">流量任务</div>
+                <div class="panel-body">
+                    <div class="listSelectDate pt-20 clearfix">
+                        <ul class="taskOption">
+                        
+                            <li>
+                                父任务号：<input class="input-smalltext" type="text">    
+                            </li>
+                            <li>
+                                任务号：<input class="input-smalltext" type="text">    
+                            </li>
+                            <li>
+                                关键词：<input class="input-smalltext" type="text">    
+                            </li>
+                            <li>
+                                发布时间：
+                                <input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}'})" id="logmin" class="input-text Wdate" style="width:120px;">
+                                -
+                                <input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d'})" id="logmax" class="input-text Wdate" style="width:120px;">
+                            </li>
+                            <li>
+                                <button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 查询</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="tab" class="HuiTab mt-20">
+                        <div class="tabBar cl"><span>全部</span><span>待处理</span><span>处理中</span><span>已取消</span><span>已完成</span></div>
+                        <div class="tabCon">
+                            <div class="taskWrapper mt-20" style="overflow: hidden;" id="taskContainer">
+                                <div class="taskCell newtaskCell">
+                                    <div class="title clearfix">
+                                        <span class="operation">
+                                        </span>
+                                        <span class="shop floatLeft mr-20 ml10"> <i class="plat_small plat_TAOBAO"></i>
+                                            洛奇服饰
+                                        </span>
+                                        <span class="taskNo floatLeft mr-4">
+                                            任务编号：
+                                            <span>718807494025019392</span>
+                                        </span>
+                                        <a target="_blank" href="#" class="floatLeft view-detail  mr-20">【详情】</a>
+                                        <span class="floatLeft mr-4">
+                                            任务状态：
+                                            <span class="WAIT_EDIT">待编辑</span>
+                                        </span>
+                                        <span>发布时间：<span class="WAIT_EDIT">未发布</span>
+                                        </span>
+                                    </div>
+                                    <div class="body">
+                                    <table class="normTable">
+                                        <thead>
+                                            <tr>
+                                                <td class="item-list"></td>
+                                                <td class="doing"></td>
+                                                <td class="express"></td>
+                                                <td class="opera">
+                                            </td></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="item-list">
+                                                    <div class="item-box">
+                                                        <div class="pic">
+                                                            <img src="http://digg-public.qiniudn.com/o_1ad1ssvtrmto1e7b1uqgf282dgf.jpg">
+                                                        </div>
+                                                        <p class="title tl">
+                                                            拉薇丽衣韩版松紧腰修身弹力休闲裤雪花小脚牛仔裤长裤女 1366
+                                                        </p>
+                                                    </div>
+                                                </td>
+                                                <td> 
+                                                    <em class="cap">未接单：<span class="waiting">3</span></em>
+                                                    <em class="cap">进行中：<span class="doing">0</span></em>
+                                                    <em class="cap">已完成：<span class="finished">0</span></em>
+                                                </td>
+                                                <td class="express">
+                                                        <em class="cap">快递类型：
+                                                        <span class="green">韵达快递</span>
+                                                        </em>
+                                                        <em class="cap">返款类型：
+                                                        <span class="green">平台返款</span>
+                                                        
+                                                        </em>
+                                                </td>
+                                                <td class="opera">
+                                                    <a class="btnRepublish stdColorButton" href="publish.html" target="_blank">继续编辑</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+                                <div class="taskCell newtaskCell">
+                                    <div class="title clearfix">
+                                        <span class="operation"></span>
+                                        <span class="shop floatLeft mr-20 ml10"> <i class="plat_small plat_TAOBAO"></i>
+                                            捷径教育企业店
+                                        </span>
+                                        <span class="taskNo floatLeft mr-4">
+                                            任务编号：
+                                            <span>710844810881138688</span>
+                                        </span>
+                                        <a target="_blank" href="#" class="floatLeft view-detail  mr-20">【详情】</a>
+                                        <span class="floatLeft mr-4">
+                                            任务状态：
+                                            <span class="WAITING_PAY">待支付</span>
+                                        </span>
+                                        <span>发布时间：
+                                        <span class="WAITING_PAY">未发布</span></span>
+                                    </div>
+                                    <div class="body">
+                                        <table class="normTable">
+                                            <thead>
+                                                <tr>
+                                                    <td class="item-list"></td>
+                                                    <td class="doing"></td>
+                                                    <td class="express"></td>
+                                                    <td class="opera">
+                                                </td></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="item-list">
+                                                        <div class="item-box">
+                                                            <div class="pic">
+                                                                <img src="http://digg-public.qiniudn.com/o_1ae53lkrt1nr51pl7id5ir1uasf.png">
+                                                            </div>
+                                                            <p class="title tl">
+                                                                新款四层收纳柜 抽屉柜 间隙组合柜 缝隙整理柜 收纳架塑料储物柜
+                                                            </p>
+                                                        </div>
+                                                    </td>
+                                                    <td> 
+                                                        <em class="cap">未接单：<span class="waiting">1</span></em>
+                                                        <em class="cap">进行中：<span class="doing">0</span></em>
+                                                        <em class="cap">已完成：<span class="finished">0</span></em>
+                                                    </td>
+                                                    <td class="express">
+                                                        <em class="cap">快递类型：
+                                                            <span class="green">商家快递</span>
+                                                            </em>
+                                                            <em class="cap">返款类型：
+                                                            <span class="green">平台返款</span>
+                                                        </em>
+                                                    </td>
+                                                    <td class="opera">
+                                                        <a class="btnRepublish stdColorButton" href="#" target="_blank">继续支付</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabCon">
+                        </div>
+                        <div class="tabCon">
+                        </div>
+                        <div class="tabCon">
+                        </div>
+                        <div class="tabCon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+<{/block}>
+
+<{block 'footer_script'}>
+<script type="text/javascript" src="/lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript">
+    $("#menu-tasks dt").addClass("selected");
+    $("#menu-tasks dd").show();
+    $("#menu-tasks li:last").addClass("current");
+    
+    $(function(){
+        $.Huitab("#tab .tabBar span","#tab .tabCon","current","click","0");
+    });
+</script>
+<{/block}>

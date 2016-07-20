@@ -76,6 +76,10 @@ class TrafficController extends CommonController {
         $this->display();
     }
 
+    public function findflow() {
+        $this->display();
+    }
+
     protected function _getSearchTypes() {
         $taskTypes = array(
             array('label' => '淘宝搜索', 'value' => 'tbpc_c'),
