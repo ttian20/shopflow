@@ -1,0 +1,641 @@
+<{extends '../Layouts/default.html'}>
+
+<{block 'content'}>
+    <section class="Hui-article-box">
+        <nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="/" class="maincolor">首页</a> <span class="c-999 en">&gt;</span><span class="c-666">流量发布</span> <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+        <div class="Hui-article">
+            <article class="cl pd-20">
+                <div class="panel panel-default mt-20">
+                    <div class="panel-header">流量发布<span style="font-style: normal; font-size: 12px;  color: #777; padding-left: 8px;">(100%登录后的访客数，自动访问2-3个页面；停留时间为2-3分钟；是否加入购物车或收藏请自选并填入数量)</span></div>
+                    <div class="panel-body">
+                        <div class="contentCard stepCard" style="" id="taskStep-1">
+                            <div class="contentBody">
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft itemUrl">选择平台 <span class="red bold">*</span></span>
+                                    <span class="checkTextBtn  platform selectedCtb" href="javascript:;" value="TAOBAO">淘宝</span>
+                                    <span class="checkTextBtn  platform" href="javascript:;" value="TMALL">天猫</span>
+                                </div>
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft itemUrl">选择店铺 <span class="red bold">*</span></span>
+                                    <div id="dianpuContainer" curr-shop=""> <span class="checkTextBtn shop selectedCtb" href="javascript:;" value="535">洛奇服饰</span>
+                                        <span class="checkTextBtn shop" href="javascript:;" value="589">百能品牌折扣店</span>
+                                        <span class="checkTextBtn shop" href="javascript:;" value="8128">捷径教育企业店</span>
+                                    </div>
+                                    <a href="shop.html" target="_blank" id="btnBindNewShop">
+                                        绑定新店铺&nbsp;&nbsp;
+                                        <i class="Hui-iconfont">&#xe600;</i>
+                                    </a>
+                                </div>
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft itemUrl"> 任务名称 <span class="red bold">*</span>
+                                    </span>
+                                    <input type="text" class="floatLeft ls long required" id="taskName" name="name" value="" aria-required="true">
+                                </div>
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft itemUrl"> 商品链接 <span class="red bold">*</span>
+                                    </span>
+                                    <input type="text" class="floatLeft ls long required" id="txtItemUrl" name="url" value="" aria-required="true">
+                                </div>
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft itemUrl"> 商品价格 <span class="red bold">*</span>
+                                    </span>
+                                    <input type="text" class="floatLeft ls long required" id="txtPrice" name="price" value="" aria-required="true">
+                                </div>
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft ">流量类型 <span class="red bold">*</span>
+                                    </span>
+                                    <div class="floatLeft ml20">
+                                        <input type="radio" class="ktype typeTop floatLeft required mt10" name="ktype" value="ZTCFLOW" aria-required="true"><span>直通车</span>
+                                    </div>
+                                    <div class="floatLeft ml20">
+                                        <input type="radio" class="ktype typeTop floatLeft required mt10" name="ktype" value="FLOW" checked="checked" aria-required="true"><span>流量</span>
+                                    </div>
+                                    <div class="floatLeft ml20">
+                                        <input type="radio" id＝"tkl" class="ktype typeTop floatLeft required mt10" name="ktype" value="tkl" aria-required="true"><span>淘口令</span>
+                                    </div>
+                                </div>
+                                <div id="ztcBox" class="panelLine sec" style="display:none">
+                                    <span class="ls floatLeft itemUrl"> 直通车图片<span class="red bold">*</span>
+                                    </span>
+                                    <input type="text" class="floatLeft ls long required" id="txtImage" name="image" value="" aria-required="true">
+                                    <div class="buttonSection">
+                                        <a href="images/ztc.jpg" class="btn btn-primary" id="ztcImage" target="_blank">获取图片示例</a>
+                                        <!--  <input type="button" class="stdColorButton next" id="ztcImage" value="获取图片示例 ">
+                                        <img class=" imgChat-model" src="images/ztc.jpg"> -->
+                                    </div>
+                                </div>
+                                <span class="red">注意：目前同一个宝贝一天访客总数不超过10000个,直通车同一个关键词同一个宝贝的访问数不能超过40个</span>
+                                <div class="legendPanel">
+                                    <div class="l_title">
+                                        搜索关键字方案
+                                    </div>
+                                    <div class="panelLine wordPlan restHeight">
+                                        <span class="floatLefts keywordsChange">关键词
+                                        </span><span class="red bold ls">*</span>
+                                        <input type="text" class="floatLefts ls middle " name="word">
+                                        <span class="floatLefts ls">点击次数</span>
+                                        <input type="text" class="floatLefts clickTime ls short " name="times" min="1" onkeyup="value=value.replace(/\D/g,'')" onafterpaste="value=value.replace(/\D/g,'')">
+                                        <span class="floatLefts ls">收藏宝贝数<input type="checkbox" class="checkTop" name="" id=""></span>
+                                        <span class="floatLefts ls">加购物车数<input type="checkbox" class="checkTop" name="" id=""></span>
+                                        <span class="floatLefts ls">收藏店铺<input type="checkbox" class="checkTop" name="" id=""></span>
+                                        <span class="floatLefts ls">领取优惠券<input type="checkbox" class="checkTop" name="" id=""></span>
+                                        <span class="floatLefts ls">浏览评价<input type="checkbox" class="checkTop" name="" id=""></span>
+                                        <span class="floatLefts ls">旺旺聊天<input type="checkbox" class="checkTop" name="" id=""></span>
+                                        <a href="javascript:;" class="close Hui-iconfont" original-title="">&#xe6dd;</a>
+                                    </div>
+                                    <div class="panelBox panelBox2" style="margin: 10px 0;" id="tmSearchBtnBox">
+                                        <a class="plusBlockBtn" id="tmAddWordPlan" href="javascript:;" on="tm"> <i class="Hui-iconfont" style="font-size: 20px;">&#xe604;</i>
+                                            <span>点击多添加1个搜索关键字方案（最多可添加5个方案）</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft ">搜索方式 <span class="red bold">*</span>
+                                    </span>
+                                    <div class="floatLeft ml20">
+                                        <input type="radio" class="typeTop floatLeft required mt10" name="searchType" value="COMPOSITE" aria-required="true"><span>综合</span>
+                                    </div>
+                                    <div class="floatLeft ml20">
+                                        <input type="radio" class="typeTop floatLeft required mt10" name="searchType" value="SALES" aria-required="true"><span>销量</span>
+                                    </div>
+                                    <div class="floatLeft ml20">
+                                        <input type="radio" class="typeTop floatLeft required mt10" name="searchType" value="CREDIT" aria-required="true"><span>信用</span>
+                                    </div>
+                                    <div class="floatLeft ml20">
+                                        <input type="radio" class="typeTop floatLeft required mt10" name="searchType" value="PRICEASC" aria-required="true"><span>价格低到高</span>
+                                    </div>
+                                    <div class="floatLeft ml20">
+                                        <input type="radio" class="typeTop floatLeft required mt10" name="searchType" value="PRICEDESC" aria-required="true"><span>价格高到低</span>
+                                    </div>
+                                </div>
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft "> 点击天数 <span class="red bold">*</span>
+                                    </span>
+                                    <!--  <div class="spilderBox floatLeft" style="width:550px;">
+                                        <div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                                            <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 0%;">
+                                            </div>
+                                            <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span>
+                                        </div>
+                                    </div> -->
+                                    <input type="text" class="typeTop floatLeft ls required" onkeyup="value=value.replace(/\D/g,'')" onafterpaste="value=value.replace(/\D/g,'')" max="30" style="width:30px;" id="days" name="days" value="1" aria-required="true"><span class="ls floatLeft "> 天
+                                    </span>
+                                </div>
+                                <div>
+                                    <span><h2>增值服务:</h2></span>
+                                </div>
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft ">投放方式 <span class="red bold">*</span>
+                                    </span>
+                                    <div class="floatLeft ml20">
+                                        <input type="checkbox" class="typeTop floatLeft  mt10" id="putModel" name="putModel" value="SPEED"><span>极速模式<span class="red">(数量小于500在一小时内全部完成；数量大于500以每小时500个的速度完成)</span></span>
+                                    </div>
+                                </div>
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft "> 优先审核 <span class="red bold">*</span>
+                                    </span>
+                                    <div class="floatLeft ml20">
+                                        <input type="checkbox" class="typeTop floatLeft  mt10" id="speedExamine" name="speedExamine" value=""><span> 优先执行<span class="red">(任务放出后流量在30分钟后开始进店；勾选此项可立即开始)</span></span>
+                                    </div>
+                                </div>
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft ">点击优化 <span class="red bold">*</span>
+                                    </span>
+                                    <div class="floatLeft ml20">
+                                        <input type="checkbox" class="typeTop floatLeft  mt10" id="clickOptimization" name="clickOptimization" value=""><span>用户习惯点击优化<span class="red">(根据淘宝大数据，流量比列调整为白天多放，晚上少放)</span></span>
+                                    </div>
+                                </div>
+                                <div class="panelLine sec" style="display:none;">
+                                    <span class="ls floatLeft ">页面停留 <span class="red bold">*</span>
+                                    </span>
+                                    <div class="floatLeft ml20">
+                                        <input type="checkbox" class=" floatLeft  mt10" id="sleepTime" name="sleepTime" value=""><span>是否要求在页面停留时间大于2分钟<span class="red">(默认停留时间为2-3分钟左右)</span></span>
+                                    </div>
+                                </div>
+                                <div class="panelLine sec">
+                                    <span class="ls floatLeft itemUrl">
+                                            开始时间
+                                            <span class="red bold">*</span>
+                                    </span>
+                                    <select class="typeTop floatLeft ls  required" id="startTime" name="startTime" aria-required="true">
+                                        <option value="23">23</option>
+                                    </select>
+                                </div>
+                                <div class="buttonSection">
+                                    <input type="button" class="btn btn-primary  stdColorButton next" data-type="TAOBAOMOBILE" id="publishSave" value="发布 ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid_8 mt-20">
+                            <div class="locales-wrapper pricing-summary">
+                                <div class="summary-wrapper">
+                                    <h5 class="secondTile">费用概览</h5>
+                                    <div class="resources">
+                                        <div class="table-wrapper" style="">
+                                            <div id="keywordsCalculate"></div>
+                                            <table class="table" id="calculateTable">
+                                                <tbody>
+                                                    <tr class="sum_putMoel">
+                                                        <td class="res_count" colspan="2"><span>极速模式</span></td>
+                                                        <td class="res_price"><span id="putModelPrice" class="number" unit-price="1">0</span></td>
+                                                    </tr>
+                                                    <tr class="sum_examine">
+                                                        <td class="res_count" colspan="2"><span>优先审核</span></td>
+                                                        <td class="res_price"><span id="examinePrice" class="number" unit-price="1">0</span></td>
+                                                    </tr>
+                                                    <tr class="sum_clickOptimization">
+                                                        <td class="res_count" colspan="2"><span>用户习惯点击优化</span>
+                                                        </td>
+                                                        <td class="res_price"><span id="clickOptimizationPrice" class="number" unit-price="1">0</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="total" id="totalPrice">
+                                            <span class="notice"><span id="daysFlow">0</span>点币/天*<span id="planDays">1</span>天</span>
+                                            <br> 合计: &nbsp;¥<span class="number">0</span>点币
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <footer class="footer">
+                <p>Copyright &copy;2015 H-ui.admin v2.4 All Rights Reserved.
+                    <br> 本后台系统由
+                    <a href="http://www.h-ui.net/" target="_blank" title="H-ui前端框架">H-ui前端框架</a>提供前端技术支持</p>
+            </footer>
+        </div>
+    </section>
+<{/block}>
+
+<{block 'footer_script'}>
+    <script type="text/javascript" src="/lib/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="/lib/jquery.number.min.js"></script>
+    <script type="text/javascript" src="/lib/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="/lib/mustache.min.js"></script>
+    <script type="text/javascript" src="/lib/global.js"></script>
+    <script type="text/javascript" src="/lib/main.js"></script>
+    <script type="text/javascript">
+    $("#menu-publishflow dt").addClass("selected");
+    $("#menu-publishflow dd").show();
+    $("#menu-publishflow li").addClass("current");
+
+    $(function() {
+        $.Huitab("#tab .tabBar span", "#tab .tabCon", "current", "click", "0");
+        $.Huitab("#moneyTab .tabBar span", "#moneyTab .tabCon", "current", "click", "0");
+    });
+
+    var App = {
+        flowNum: 0,
+        flowPutModel: 30,
+        flowExaminePrice: 30,
+        flowOptionPrice: 30,
+        timesPrice: 3,
+        collectProductPrice: 2,
+        shoppingCart: 2,
+        limitAppFlow: 10000,
+        ztcprice: 6
+    }
+    var CDT = {
+        flowNum: App.flowNum,
+        totalFlow: 0,
+        putModelPrice: App.flowPutModel, //极速模式价格
+        examinePrice: App.flowExaminePrice, //快速审核价格
+        clickOptimizationPrice: App.flowOptionPrice, //用户习惯性操作价格
+        timesPrice: App.timesPrice, //点击数价格
+        collectProductPrice: App.collectProductPrice, //收藏宝贝数价格
+        shoppingCart: App.shoppingCart, //加购物车价格
+        sleepPrice: 1, //停留时间价格
+        limit: App.limitAppFlow, //访客限制
+        sleepTime: false,
+        clickOptimization: false,
+        speedExamine: false,
+        ztcprice: App.ztcprice, //直通车价格
+        putModel: ""
+    };
+
+    $(function() {
+        var myDate = new Date().getHours();
+        var hour = parseInt(myDate) + 1;
+        var html = "";
+        for (var i = hour; i < 24; i++) {
+            html += "<option value=" + i + ">" + i + "</option>";
+        }
+        $("#startTime").html(html);
+        initBase();
+        $("#txtItemUrl")
+            .blur(
+                function() {
+                    var url = $("#txtItemUrl").val();
+                    if (url != "" && (url.indexOf("taobao") < 0 && url
+                            .indexOf("tmall") < 0)) {
+                        alert("商品地址和所选平台不匹配！");
+                        $("#txtItemUrl").val("");
+                    }
+
+                });
+
+        $(".ktype").click(function() {
+            if ($(this).val() == "ZTCFLOW") {
+                CDT.timesPrice = CDT.ztcprice;
+                $("input[name='searchType']").attr("disabled", "disabled");
+                $("input[name='searchType']").each(function() {
+                    if ($(this).val() == "COMPOSITE") {
+                        $(this).attr("checked", true);
+                    }
+                });
+                $("#ztcBox").show();
+                 $(".keywordsChange").html("关键词");
+            }else if($(this).val() == "tkl"){
+                keywordsChange();
+            }else {
+                $("input[name='searchType']").attr("disabled", false);
+                $("#ztcBox").hide();
+                CDT.timesPrice = App.timesPrice;
+                $(".keywordsChange").html("关键词");
+            }
+            initCalculate();
+        });
+
+    });
+
+    function ztcChecked() {
+        if ($("input[name='ktype']:checked").val() == 'ZTCFLOW') {
+
+        }
+    }
+
+    function keywordsChange(){
+        $(".keywordsChange").html("口令");
+    }
+
+    function initBase() {
+        ztcChecked();
+        var validator = $('#addTrafficForm').validate({
+            onkeyup: false,
+            rules: {
+                'name': {
+                    required: true
+                },
+                'image': {
+                    required: true
+                },
+                'url': {
+                    url: true,
+                    required: true
+                },
+                'price': {
+                    number: true
+                },
+                'searchType': {
+                    required: true
+                },
+                'ktype': {
+                    required: true
+                },
+                'days': {
+                    required: true
+                }
+            },
+            messages: {
+                'name': {
+                    required: Tr.error('必填')
+                },
+                'image': {
+                    required: Tr.error('必填')
+                },
+                'url': {
+                    url: Tr.error('请输入正确的网址!'),
+                    required: Tr.error('必填')
+                },
+                'price': {
+                    number: Tr.error('请输入正确的价格!')
+                },
+                'searchType': {
+                    required: Tr.error('必填')
+                },
+                'ktype': {
+                    required: Tr.error('必选')
+                },
+                'days': {
+                    required: Tr.error('必填')
+                }
+            }
+        });
+         $(document).on('click', '#taskStep-1 .checkTextBtn', function() {
+            // 选择平台时切换店铺
+            if ($(this).hasClass('platform')) {
+                var platform = $(this).attr('value');
+               //
+               //请求加载资源
+               // loadDianpu(platform);
+            }
+            $(this).parent().children('.selectedCtb').removeClass('selectedCtb');
+            $(this).addClass('selectedCtb');
+            if ($(this).hasClass('shop')) {
+                $('#dianpuContainer').attr('curr-shop', $(this).attr('value'));
+            }
+        });
+
+        //发布任务
+        $("#publishSave").click(function() {
+            $(this).attr("disabled", true);
+            setTimeout(function() {
+                $("#publishSave").attr("disabled", false);
+            }, 10000);
+            var type = $(this).attr("data-type");
+            var url = $("#txtItemUrl").val();
+            var txtImage = $("#txtImage").val();
+            var name = $("#taskName").val();
+            var days = $("#days").val();
+            var price = $("#txtPrice").val();
+            var searchType = $("input[name='searchType']:checked").val();
+            var ktype = $("input[name='ktype']:checked").val();
+            if (validator.form()) {
+                if (confirm("确定发布吗？")) {
+                    var p = {
+                        'vo.name': name,
+                        'vo.image': txtImage,
+                        'vo.price': price,
+                        'vo.days': days,
+                        'vo.url': url,
+                        'vo.searchType': searchType,
+                        'vo.putModel': CDT.putModel,
+                        'vo.sleepTime': CDT.sleepTime,
+                        'vo.clickOptimization': CDT.clickOptimization,
+                        'vo.speedExamine': CDT.speedExamine,
+                        'vo.type': type,
+                        'vo.ktype': ktype,
+                        'vo.startTime': $("#startTime").val()
+                    };
+                    if (getParams(p)) {
+                        return alert("关键词点击总数必须小于" + CDT.limit + "且大于收藏数和加入购物车数量!");
+                    }
+                    if (CDT.flowNum < CDT.totalFlow) {
+                        return alert("点币不足，请先充值后再发布！");
+                    }
+
+                    Tr.post('/task/order/saveTaskApp', p, function(data) {
+                        if (data.code != 200) {
+                            return alert(data.msg);
+                        }
+                        alert("发布任务成功");
+                        location.href = location.href;
+                    });
+                }
+            }
+        });
+
+        $(document).on('click', '.legendPanel .close', function() {
+            var $me = $(this);
+            $me.parents('.panelBox').next().show();
+            $(this).parents(".wordPlan").remove();
+            initCalculate();
+        });
+        $("#ztcImage").mouseover(function() {
+            $(".imgChat-model").attr("src", "/public/images/ztc.jpg");
+            $(".imgChat-model").show();
+        });
+        $("#ztcImage").mouseout(function() {
+            $(".imgChat-model").hide();
+        });
+        $(document)
+            .on(
+                'click',
+                '.plusBlockBtn',
+                function() {
+                    var index = $(".wordPlan").length + 1;
+                    if (index > 5) {
+                        return false;
+                    }
+                    var html = "<div class='panelLine wordPlan restHeight'>"
+                                    +    '<span class="floatLefts ls">关键词<span class="red bold">*</span></span>'
+                                    +    '<input type="text" class="floatLefts ls middle " name="word">'
+                                    +    '<span class="floatLefts ls">点击次数</span>'
+                                    +    '<input type="text" class="floatLefts clickTime ls short " name="times" min="1">'
+                                    +    '<span class="floatLefts ls">收藏宝贝数<input type="checkbox" class="checkTop" name="" id=""></span>'
+                                    +    '<span class="floatLefts ls">加购物车数<input type="checkbox" class="checkTop" name="" id=""></span>'
+                                    +    '<span class="floatLefts ls">收藏店铺<input type="checkbox" class="checkTop" name="" id=""></span>'
+                                    +    '<span class="floatLefts ls">领取优惠券<input type="checkbox" class="checkTop" name="" id=""></span>'
+                                    +    '<span class="floatLefts ls">浏览评价<input type="checkbox" class="checkTop" name="" id=""></span>'
+                                    +    '<span class="floatLefts ls">旺旺聊天<input type="checkbox" class="checkTop" name="" id=""></span>'
+                                    +    '<a href="javascript:;" class="close Hui-iconfont" original-title="">&#xe6dd;</a>'
+                                    +'</div>';
+                    $(this).parent().before(html);
+                    initCalculate();
+                    ztcChecked();
+                });
+
+
+        $(document).on('blur', '.legendPanel .wordPlan input', function() {
+            initCalculate();
+        });
+        $("input:checkbox").click(function() {
+            initCalculate();
+
+        });
+        // splider();
+        initCalculate();
+    }
+    // function splider() {
+    //     var select = $("#days");
+    //     var slider = $("#slider").slider({
+    //         min : 2,
+    //         max : 31,
+    //         range : "min",
+    //         value : select.val(),
+    //         slide : function(event, ui) {
+    //             select.val(ui.value - 1);
+    //             calculateTotal();
+    //         }
+    //     });
+    //     $("#days").change(function() {
+    //         slider.slider("value", $(this).val());
+    //         calculateTotal();
+    //     });
+    // }
+    // 计算总额
+    function calculateTotal() {
+        var totalPrice = 0;
+        $("#calculateTable .number").each(function() {
+            totalPrice += parseFloat($(this).text());
+        });
+        $("#keywordsCalculate .number").each(function() {
+            totalPrice += parseFloat($(this).text());
+        });
+        $("#daysFlow").text(totalPrice);
+        var day = $("#days").val();
+        $("#planDays").text(day);
+        totalPrice = totalPrice * parseInt(day);
+        $("#totalPrice .number").text(totalPrice);
+        CDT.totalFlow = totalPrice;
+    }
+    // 右边计算显示
+    function initCalculate() {
+        var html = "";
+        $('.legendPanel .wordPlan')
+            .each(
+                function(n) {
+                    var words = $.trim($(this).find('input[name="word"]')
+                        .val());
+                    var times = $.trim($(this).find('input[name="times"]')
+                        .val());
+                    if (times == null || times == "") {
+                        times = 0;
+                    }
+                    var collectProduct = $.trim($(this).find(
+                        'input[name="collectProduct"]').val());
+                    if (collectProduct == null || collectProduct == "") {
+                        collectProduct = 0;
+                    }
+                    var shoppingCart = $.trim($(this).find(
+                        'input[name="shoppingCart"]').val());
+                    if (shoppingCart == null || shoppingCart == "") {
+                        shoppingCart = 0;
+                    }
+                    var total = (parseInt(times) * CDT.timesPrice + parseInt(collectProduct) * CDT.collectProductPrice + parseInt(shoppingCart) * CDT.shoppingCart);
+                    if (words != null && words != "")
+                        html += "<tr class='sum_keywords'><td class='res_type'>" + "<a href='#eip'>" + words + "</a>" + "<p class='detail'>点击数" + times + "x" + CDT.timesPrice + "=" + (parseInt(times) * CDT.timesPrice) + "</p>" + "<p class='detail'>收藏数" + collectProduct + "x" + CDT.collectProductPrice + "=" + (parseInt(collectProduct) * CDT.collectProductPrice) + "</p>" + "<p class='detail'>购物车" + shoppingCart + "x" + CDT.shoppingCart + "=" + (parseInt(shoppingCart) * CDT.shoppingCart) + "</p></td>" + "<td class='res_count'></td>" + "<td class='res_price'>" + "<span id='dayPrice' class='number' unit-price='1'>" + total + "</span></td></tr>";
+                });
+        $("#keywordsCalculate").html(html);
+
+
+        // 投放方式
+        if ($("input[name='putModel']:checkbox").attr("checked") == "checked") {
+            $("#putModelPrice").text(CDT.putModelPrice);
+            CDT.putModel = "SPEED";
+        } else {
+            $("#putModelPrice").text("0");
+            CDT.putModel = "NORMAL";
+        }
+        // 优先审核
+        if ($("input[name='speedExamine']:checkbox").attr("checked") == "checked") {
+            $("#examinePrice").text(CDT.examinePrice);
+            CDT.speedExamine = true;
+        } else {
+            $("#examinePrice").text("0");
+            CDT.speedExamine = false;
+        }
+        // 用户习惯点击优化
+        if ($("input[name='clickOptimization']:checkbox").attr("checked") == "checked") {
+            $("#clickOptimizationPrice").text(CDT.examinePrice);
+            CDT.clickOptimization = true;
+        } else {
+            $("#clickOptimizationPrice").text("0");
+            CDT.clickOptimization = false;
+        }
+        // 停留时间
+        if ($("input[name='sleepTime']:checkbox").attr("checked") == "checked") {
+            $("#sleepTimePrice").text(CDT.sleepPrice);
+            CDT.sleepTime = true;
+        } else {
+            $("#sleepTimePrice").text("0");
+            CDT.sleepTime = false;
+        }
+
+        calculateTotal();
+    }
+
+    function getKeyWordsCount() {
+        var keywordCount = 0;
+        $(".legendPanel .wordPlan").each(function() {
+            keywordCount += 1;
+        });
+        return keywordCount;
+    }
+
+    function getParams(paramMap) {
+        var wordPlanBoxesNum = [];
+        $.merge(wordPlanBoxesNum, $('.legendPanel .wordPlan'));
+        var j = 0;
+        var rest = false;
+        var totalTimes = 0;
+        $(wordPlanBoxesNum).each(
+            function(n) {
+                var words = $.trim($(this).find('input[name="word"]').val());
+                var times = $.trim($(this).find('input[name="times"]').val());
+                var collectProduct = $.trim($(this).find(
+                    'input[name="collectProduct"]').val());
+                var shoppingCart = $.trim($(this).find(
+                    'input[name="shoppingCart"]').val());
+                if (words == null || words == null) {
+                    rest = true;
+                    return rest;
+                }
+                if (times == null || times == "") {
+                    rest = true;
+                    return rest;
+                }
+
+                if (shoppingCart != null && shoppingCart != "") {
+                    if (parseInt(times) < parseInt(shoppingCart)) {
+                        rest = true;
+                        return rest;
+                    }
+                }
+
+                if (collectProduct != null && collectProduct != "") {
+                    if (parseInt(times) < parseInt(collectProduct)) {
+                        rest = true;
+                        return rest;
+                    }
+                }
+                totalTimes += parseInt(times);
+                var indexPrefix = 'vo.kwdInfos[' + j + ']';
+                paramMap[indexPrefix + '.kwd'] = words;
+                paramMap[indexPrefix + '.times'] = times;
+                paramMap[indexPrefix + '.collectProduct'] = collectProduct;
+                paramMap[indexPrefix + '.shoppingCart'] = shoppingCart;
+                j++;
+            });
+        if (parseInt(totalTimes) <= 0 || parseInt(totalTimes) > CDT.limit) {
+            rest = true;
+            return rest;
+        }
+        return rest;
+    }
+    </script>
+<{/block}>
