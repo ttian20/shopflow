@@ -1,0 +1,51 @@
+<{extends '../Layouts/default.html'}>
+
+<{block 'content'}>
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="/" class="maincolor">首页</a> <span class="c-999 en">&gt;</span><span class="c-666">邀请好友</span> <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="panel panel-default mt-20">
+                <div class="panel-header">奖励规则</div>
+                <div class="panel-body">
+                    <p>邀请的商家发布的任务成功完成，根据任务金额每单可获得相应金币奖励，如下：</p>
+                    <p>任务金额：0-50元，完成后可获得奖励：0.15金币/单</p>
+                    <p>任务金额：51-150元，完成后可获得奖励：0.2金币/单</p>
+                    <p>任务金额：151-250元，完成后可获得奖励：0.25金币/单</p>
+                    <p>任务金额：250-350元以，完成后可获得奖励：0.3金币/单</p>
+                    <p>任务金额：350元以上，完成后可获得奖励：0.35金币/单</p>
+                    <p>注：商家任务的奖金由挖顾客平台承担</p>
+                </div>
+            </div>
+            <div class="panel panel-default mt-20">
+                <div class="panel-header">我获得的任务奖励</div>
+                <div class="panel-body">
+                    <ul class="taskFilterPanel clearfix">
+                        <li><span class="fl ml20">好友昵称:</span><input class="input-smalltext" type="text" ></li>
+                        <li><span class="fl ml20">奖励时间:</span>
+                            <input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}'})" id="logmin" class="input-text Wdate" style="width:120px;">
+                            -
+                            <input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d'})" id="logmax" class="input-text Wdate" style="width:120px;">
+                        </li>
+                        <li><button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i>查询</button></li>
+                    </ul>
+                    <p class="mt-20">没有记录！</p>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+<{/block}>
+
+<{block 'footer_script'}>
+<script type="text/javascript" src="/lib/My97DatePicker/WdatePicker.js"></script> 
+
+<script type="text/javascript">
+    $("#menu-taskInvite dt").addClass("selected");
+    $("#menu-taskInvite dd").show();
+    $("#menu-taskInvite li").addClass("current");
+    $(function(){
+        $.Huitab("#tab .tabBar span","#tab .tabCon","current","click","0");
+    });
+</script> 
+<{/block}>
