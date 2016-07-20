@@ -1,0 +1,254 @@
+<{extends '../Layouts/default.html'}>
+
+<{block 'content'}>
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 查看账单<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">
+            <div class="panel panel-default mt-20">
+                <div class="panel-header">账单明细</div>
+                <div class="panel-body">
+                    <div id="tab" class="HuiTab">
+                        <div class="tabBar cl"><span>子任务明细</span><span>父任务明细</span></div>
+                        <div class="tabCon">
+                            <div class="listSelectDate pt-20">
+                                平台：<span class="select-box inline">
+                                    <select name="" class="select">
+                                        <option value="all">全部</option>
+                                        <option value="0">淘宝</option>
+                                        <option value="1">天猫</option>
+                                        <option value="2">京东</option>
+                                        <option value="3">蘑菇街</option>
+                                    </select>
+                                </span> 
+                                店铺：<span class="select-box inline">
+                                    <select name="" class="select">
+                                        <option value="all">全部</option>
+                                        <option value="0">第一家店</option>
+                                        <option value="1">第二家店</option>
+                                        <option value="2">第三家店</option>
+                                        <option value="3">第四家店</option>
+                                    </select>
+                                </span> 
+                                接手时间：
+                                <input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}'})" id="logmin" class="input-text Wdate" style="width:120px;">
+                                -
+                                <input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d'})" id="logmax" class="input-text Wdate" style="width:120px;">
+                                <button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 查询</button>
+                                <button name="" id="" class="btn btn-primary" type="button"><i class="Hui-iconfont">&#xe644;</i> 导出excel</button>
+                            </div>
+                            <div class="mt-20 mb-20">
+                                <table class="table table-border table-bordered table-bg table-hover table-sort">
+                                    <thead>
+                                        <tr class="text-c">
+                                            <th>任务编号</th>
+                                            <th>终端</th>
+                                            <th>接单时间</th>
+                                            <th>买号</th>
+                                            <th>订单号</th>
+                                            <th>任务状态</th>
+                                            <th>商品价格(元)</th>
+                                            <th>邮费(元)</th>
+                                            <th>退款保证金(元)</th>
+                                            <th>买手付款(元)</th>
+                                            <th>平台快递费(元)</th>
+                                            <th>加赏(元)</th>
+                                            <th>限制购买周期(元)</th>
+                                            <th>买手佣金(元)</th>
+                                            <th>平台返款费用(元)</th>
+                                            <th>子任务花费汇总(元)</th>
+                                            <th>返款超期扣款（元）</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-c">
+                                            <td>100033</td>
+                                            <td>PC</td>
+                                            <td>2014-6-11</td>
+                                            <td>杭州国大食品</td>
+                                            <td>134112311</td>
+                                            <td>已完成</td>
+                                            <td>64.00</td>
+                                            <td>0</td>
+                                            <td>0.00</td>
+                                            <td>64.00</td>
+                                            <td class="gold">2</td>
+                                            <td class="gold">0</td>
+                                            <td class="gold">0</td>
+                                            <td class="gold">7.00</td>
+                                            <td class="gold">0.00</td>
+                                            <td>9.00</td>
+                                            <td>0.00</td>
+                                        </tr>
+                                        <tr class="text-c">
+                                            <td>100033</td>
+                                            <td>PC</td>
+                                            <td>2014-6-11</td>
+                                            <td>杭州国大食品</td>
+                                            <td>134112311</td>
+                                            <td>已完成</td>
+                                            <td>64.00</td>
+                                            <td>0</td>
+                                            <td>0.00</td>
+                                            <td>64.00</td>
+                                            <td class="gold">2</td>
+                                            <td class="gold">0</td>
+                                            <td class="gold">0</td>
+                                            <td class="gold">7.00</td>
+                                            <td class="gold">0.00</td>
+                                            <td>9.00</td>
+                                            <td>0.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tabCon">
+                            <div class="listSelectDate pt-20">
+                                平台：<span class="select-box inline">
+                                    <select name="" class="select">
+                                        <option value="all">全部</option>
+                                        <option value="0">淘宝</option>
+                                        <option value="1">天猫</option>
+                                        <option value="2">京东</option>
+                                        <option value="3">蘑菇街</option>
+                                    </select>
+                                </span> 
+                                店铺：<span class="select-box inline">
+                                    <select name="" class="select">
+                                        <option value="all">全部</option>
+                                        <option value="0">第一家店</option>
+                                        <option value="1">第二家店</option>
+                                        <option value="2">第三家店</option>
+                                        <option value="3">第四家店</option>
+                                    </select>
+                                </span> 
+                                接手时间：
+                                <input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}'})" id="logmin" class="input-text Wdate" style="width:120px;">
+                                -
+                                <input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d'})" id="logmax" class="input-text Wdate" style="width:120px;">
+                                <button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 查询</button>
+                                <button name="" id="" class="btn btn-primary" type="button"><i class="Hui-iconfont">&#xe644;</i> 导出excel</button>
+                            </div>
+                            <div class="mt-20 mb-20">
+                                <table class="table table-border table-bordered table-bg table-hover table-sort">
+                                    <thead>
+                                        <tr class="text-c">
+                                            <th>任务编号</th>
+                                            <th>发布时间</th>
+                                            <th>平台</th>
+                                            <th>店铺名称</th>
+                                            <th>商品ID</th>
+                                            <th>商品价格(元)</th>
+                                            <th>任务总数(单)</th>
+                                            <th>接手数量(单)</th>
+                                            <th>PC端未接手数量(单)</th>
+                                            <th>PC端退还金额(元)</th>
+                                            <th>手机端未接手数量(单)</th>
+                                            <th>手机端退还金额(元)</th>
+                                            <th>完成数量(单)</th>
+                                            <th>任务状态</th>
+                                            <th>是否平台快递</th>
+                                            <th>是否平台返款</th>
+                                            <th>平台返款(元)</th>
+                                            <th>加赏(元)</th>
+                                            <th>限制购买周期(元)</th>
+                                            <th>快速完成任务(元)</th>
+                                            <th>优先审核(元)</th>
+                                            <th>定时发布(元)</th>
+                                            <th>优质评价</th>
+                                            <th>图片评价</th>
+                                            <th>发布任务金额(元)</th>
+                                            <th>父任务增值费用花费(元)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-c">
+                                            <td>5749258</td>
+                                            <td>2015-03-04</td>
+                                            <td>淘宝</td>
+                                            <td>杭州国大食品</td>
+                                            <td>134112311</td>
+                                            <td>64.00</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>0</td>
+                                            <td>0.00</td>
+                                            <td>0</td>
+                                            <td>0.00</td>
+                                            <td>3</td>
+                                            <td>已完成</td>
+                                            <td>否</td>
+                                            <td>否</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td class="gold">0</td>
+                                            <td class="gold">0</td>
+                                            <td class="gold">0.00</td>
+                                            <td class="gold">0.00</td>
+                                            <td class="gold">0.00</td>
+                                            <td class="gold">0.00</td>
+                                            <td>219.00</td>
+                                            <td>0.00</td>
+                                        </tr>
+                                        <tr class="text-c">
+                                            <td>5749258</td>
+                                            <td>2015-03-04</td>
+                                            <td>淘宝</td>
+                                            <td>杭州国大食品</td>
+                                            <td>134112311</td>
+                                            <td>64.00</td>
+                                            <td>3</td>
+                                            <td>3</td>
+                                            <td>0</td>
+                                            <td>0.00</td>
+                                            <td>0</td>
+                                            <td>0.00</td>
+                                            <td>3</td>
+                                            <td>已完成</td>
+                                            <td>否</td>
+                                            <td>否</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td class="gold">0</td>
+                                            <td class="gold">0</td>
+                                            <td class="gold">0.00</td>
+                                            <td class="gold">0.00</td>
+                                            <td class="gold">0.00</td>
+                                            <td class="gold">0.00</td>
+                                            <td>219.00</td>
+                                            <td>0.00</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </article>
+    </div>
+</section>
+<{/block}>
+
+<{block 'footer_script'}>
+<script type="text/javascript" src="/lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript">
+$("#menu-bill dt").addClass("selected");
+$("#menu-bill dd").show();
+$("#menu-bill li").addClass("current");
+
+$(function(){
+        $.Huitab("#tab .tabBar span","#tab .tabCon","current","click","0");
+    });
+
+$('.table-sort').dataTable({
+    "bSort": false,
+    "searching": false
+});
+
+</script>
+<{/block}>
